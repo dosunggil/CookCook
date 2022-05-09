@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+body {
+	background-color: #e7e7e77a;
+}
+
+header {
+	display: flex;
+	position: relative;
+	background-color: white;
+	height: 70px;
+	box-shadow: 0 0 10px 1px #d7d7d7;
+	min-width: 1190px;
+	align-items: center;
+	align-content: center;
+}
+
+div.top_nav {
+	position: relative;
+	width: 1130px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+div.logo_box {
+	/* 	width: 200px; */
+	display: flex;
+	cursor: pointer;
+	/* position: absolute;
+	left: 0; */
+	margin-right:auto;
+}
+
+div.logo_box .logo {
+	width: 200px;
+	height: auto;
+}
+
+div.search_box {
+	box-shadow: 0 0 8px 0 #d7d7d7;
+	border: 0;
+	border-radius: 10px;
+	display: flex;
+	position: relative;
+	height: 40px;
+	margin-left: 25px;
+}
+
+div.search_box input[type=text] {
+	width: 355px;
+	height: 40px;
+	border: none;
+	outline: none;
+	padding-left: 5px;
+	border-radius: 10px;
+	padding-left: 10px;
+}
+
+div.search_box button {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 0;
+	border: none;
+	outline: none;
+	background-color: white;;
+	width: 40px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+div.profile {
+	margin-left: 25px;
+	cursor: pointer;
+}
+
+section {
+	min-width: 1190px;
+	height: 100%;
+}
+
+fieldset {
+	border: none;
+	outline: none;
+}
+
+div.middle_nav {
+	position: relative;
+	width: 1130px;
+	margin: auto;
+}
+
+div.middle_nav div.container {
+	position: relative;
+	height: 55px;
+	display: flex;
+	justify-content: flex-end;
+	/* align-content: center; */
+	align-items: center;
+}
+
+/* div.search_box {
+	display: block;
+	width: 400px;
+	border: 2px solid #ff7f00;
+	border: 0;
+	box-shadow : 0 0 8px 0 #d7d7d7;
+	position: absolute;
+	left: 210px;
+	top: 10px;
+	border-radius: 10px;
+} */
+div.content_main {
+	position: relative;
+	width: 1130px;
+	background-color: white;
+	/* padding : 20px 50px 0 50px; */
+	margin: 15px auto;
+	padding: 0 20px;
+}
+
+div.content_top {
+	position: relative;
+	width: 1130px;
+	height: 600px;
+	margin: 50px auto;
+	background-image: url(../../resources/images/cooking.jpg);
+	background-size: cover;
+}
+
+div.content_top div {
+	cursor: pointer;
+	position: absolute;
+	background-color: #fff;
+	color: black;
+	font-size: 30px;
+	font-weight: 600;
+	padding: 20px;
+	bottom: 26px;
+	right: 27px;
+}
+
+div.content_main .listname {
+	display: inline-block;
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+div.content_main .list_box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+#list_today {
+	position: relative;
+	width: 1130px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+#list_today li {
+	align-items: center;
+	display: inline-block;
+	text-align: left;
+}
+
+#list_today li a {
+	cursor: pointer;
+}
+
+#list_today li a img {
+	width: 320px;
+	height: 280px;
+	object-fit: cover;
+}
+
+#list_today li a div {
+	margin: 5px;
+}
+
+#today {
+	position: relative;
+	display: flex;
+}
+#today:nth-of-type(2) {
+	width: 600px;
+	height: 400px;;
+	
+}
+.font_highlight {
+	color: #ff7f00
+}
+
+.ico_cookcook {
+	width: 50px;
+	height: 25px;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+
+footer {
+	display: flex;
+	position: relative;
+	background-color: #cdcdcd;
+	height: 70px;
+	box-shadow: 0 0 10px 1px #6c6c6c;
+	min-width: 1190px;
+	align-items: center;
+	align-content: center;
+}
+
+footer ul {
+	width: 1130px;
+	margin: 0 auto;
+	display: flex;
+}
+
+footer ul li {
+}
+
+footer ul li:not(:first-child) {
+	margin-left: 25px;
+}
