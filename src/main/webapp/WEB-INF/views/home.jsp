@@ -16,6 +16,10 @@
 <link rel="stylesheet" href="${rootPath}/resources/css/main.css" />
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+<script src="${rootPath}/resources/js/list.js?ver=2022-05-10-007"></script>
+<script>
+	const rootPath = "${rootPath}"
+</script>
 <style>
 </style>
 </head>
@@ -29,8 +33,8 @@
 			<div class="search_box">
 				<form>
 					<fieldset>
-						<input type="text" placeholder="레시피 검색!">
-						<button type="submit">
+						<input type="text" name="search" placeholder="레시피 검색!">
+						<button type="button" class="btn-search">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</fieldset>
@@ -86,12 +90,12 @@
 							<div>토마토 파슷하4</div>
 					</a></li>
 				</ul>
-				<div> 반대</div>
-				<div> ></div>
+				<div>반대</div>
+				<div>></div>
 				<div id="today">
 					<%-- <div><img src="${rootPath}/resources/images/steak.jpg" /></div>
 					<div> 설명글</div> --%>
-				
+
 				</div>
 			</div>
 		</div>
