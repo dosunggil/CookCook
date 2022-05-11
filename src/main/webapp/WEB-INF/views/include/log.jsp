@@ -24,6 +24,7 @@
       #login_body form {
         width: 600px;
         padding: 40px;
+        
         background-color: white;
         text-align: center;
         position: absolute;

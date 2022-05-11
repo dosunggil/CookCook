@@ -28,4 +28,11 @@ public class HomeController {
 		return "/include/list";
 	}
 	
+	@RequestMapping(value = "/log", method = RequestMethod.GET)
+	public String log() {
+		
+		
+		return "/include/log";
+	}
+	
 }
