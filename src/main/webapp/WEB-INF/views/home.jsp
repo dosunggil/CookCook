@@ -40,7 +40,7 @@
 					</fieldset>
 				</form>
 			</div>
-			<div class="profile">
+			<div class="profile btn-login">
 				<a> <img src="${rootPath}/resources/images/in.png" />
 				</a>
 			</div>
