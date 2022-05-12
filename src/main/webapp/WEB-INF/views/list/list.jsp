@@ -13,18 +13,22 @@ main {
 	width: 100%;
 	height: 100%;
 }
+
 main div {
 	width: 70%;
 	margin: 0px auto;
 	display: flex;
 	flex-direction: column;
 }
+
 div section {
 	height: 30%;
 }
 </style>
+<%@ include	file="/WEB-INF/views/include/include_head.jsp" %>
 </head>
 <body>
+	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
 		<div>
 			<section>
@@ -56,5 +60,6 @@ div section {
 			</section>
 		</div>
 	</main>
+	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>
