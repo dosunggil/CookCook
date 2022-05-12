@@ -1,54 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set value="${pageContext.request.contextPath}" var="rootPath" />
-
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>요리교실</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
-<link rel="stylesheet" href="${rootPath}/resources/css/main.css" />
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
-<script src="${rootPath}/resources/js/list.js?ver=2022-05-10-007"></script>
-<script src="${rootPath}/resources/js/home.js?ver=2022-05-11-003"></script>
-<script>
-	const rootPath = "${rootPath}"
-</script>
-<style>
-</style>
-</head>
+<%@ include	file="/WEB-INF/views/include/include_head.jsp" %>
 <body>
-	<header>
-		<div class="top_nav">
-			<div class="logo_box">
-				<img class="logo" src="${rootPath}/resources/images/logo.png">
-			</div>
-			<div class="cookcook">임시</div>
-			<div class="search_box">
-				<form>
-					<fieldset>
-						<input type="text" name="search" placeholder="레시피 검색!">
-						<button type="button" class="btn-search">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-					</fieldset>
-				</form>
-			</div>
-			<div class="profile btn-login">
-				<a> <img src="${rootPath}/resources/images/in.png" />
-				</a>
-			</div>
-		</div>
-	</header>
-
-
+	<%@ include	file="/WEB-INF/views/include/include_header.jsp" %>
 	<section>
 		<div class="middle_nav">
 			<div class="container">
