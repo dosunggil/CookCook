@@ -59,13 +59,6 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-		<ul>
-			<li>조도성</li>
-			<li>안 혁</li>
-			<li>장준영</li>
-
-		</ul>
-	</footer>
+	<%@ include	file="/WEB-INF/views/include/include_footer.jsp" %>
 </body>
 </html>

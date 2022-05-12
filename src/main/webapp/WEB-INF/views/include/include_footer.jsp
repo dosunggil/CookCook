@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set value="${pageContext.request.contextPath}" var="rootPath"/>
+<footer>
+		<ul>
+			<li>조도성</li>
+			<li>안 혁</li>
+			<li>장준영</li>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+		</ul>
+	</footer>
