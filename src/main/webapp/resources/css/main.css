@@ -83,7 +83,7 @@ div.profile {
 	cursor: pointer;
 }
 
-section {
+main {
 	min-width: 1190px;
 	height: 100%;
 }
@@ -125,7 +125,6 @@ div.content_main {
 	background-color: white;
 	/* padding : 20px 50px 0 50px; */
 	margin: 15px auto;
-	padding: 0 20px;
 }
 
 div.content_top {
@@ -162,9 +161,10 @@ div.content_main .list_box {
 
 #list_today {
 	position: relative;
-	width: 1130px;
+	/* width: 1130px; */
 	display: flex;
 	justify-content: space-between;
+	margin : 0 25px;
 	
 }
 
@@ -197,6 +197,24 @@ div.content_main .list_box {
 	height: 400px;;
 	
 }
+div.bracket-box {
+	height : 100%;
+	width : 50px;
+	position: absolute;
+}
+div.bracket-box:hover {
+background-color: #aaa;
+	
+	}
+div.bracket-left i {
+	top : 120px;
+	left:15px;
+	}
+div.bracket-right i {
+	top : 120px;
+	right:15px;
+	}
+	
 .font_highlight {
 	color: #ff7f00
 }
