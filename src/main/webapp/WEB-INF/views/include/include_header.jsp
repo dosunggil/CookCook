@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <header>
 	<div class="top_nav">
-		<div class="logo_box">
+		<div class="logo_box btn-go-home">
 			<img class="logo" src="${rootPath}/resources/images/logo.png">
 		</div>
 		<div class="cookcook">임시</div>

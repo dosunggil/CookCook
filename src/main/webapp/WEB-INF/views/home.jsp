@@ -7,7 +7,7 @@
 <%@ include	file="/WEB-INF/views/include/include_head.jsp" %>
 <body>
 	<%@ include	file="/WEB-INF/views/include/include_header.jsp" %>
-	<section>
+	<main>
 		<div class="middle_nav">
 			<div class="container">
 				<!-- 	
@@ -49,8 +49,8 @@
 							<div>토마토 파슷하4</div>
 					</a></li>
 				</ul>
-				<div>반대</div>
-				<div>></div>
+				<div class="bracket-box bracket-right"><i style="color:white" class="fa-solid fa-chevron-right fa-3x"></i></div>
+				<div class="bracket-box bracket-left"><i style="color:white" class="fa-solid fa-chevron-left fa-3x"></i></div>
 				<div id="today">
 					<%-- <div><img src="${rootPath}/resources/images/steak.jpg" /></div>
 					<div> 설명글</div> --%>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</main>
 	<%@ include	file="/WEB-INF/views/include/include_footer.jsp" %>
 </body>
 </html>
