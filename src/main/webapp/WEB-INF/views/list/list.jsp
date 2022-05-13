@@ -13,53 +13,47 @@ main {
 	width: 1130px;
 	height: 100%;
 	margin: 0 auto;
-}
-
-main div {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
-	border:1px solid blue;
 }
 
-div section {
-	height: 30%;
-	width: 100%;
-	margin: 10px 0;
+.section-colum {
+	width: 1130px;
+	height: 300px;
 	display: flex;
-	margin: 10px 0;
-	border:1px solid yellow;
+	margin: 10px 0px;
 }
 
-div section article {
-	width: 35%;
-	height: 100%;
+.img-article {
+	width: 300px;
+	height: 300px;
 }
-
-div section div article {
-	margin: 20px;
-}
-
-div section div article:nth-of-type(1) {
-	font-size: 20px;
-	font-weight: 900;
-	
-}
-
-div section div article:nth-of-type(2) {
-	flex: 1;
-	border:1px solid red;
-}
-
-div section div article:nth-of-type(3) {
-	
-}
-
 
 article img {
 	width: 300px;
 	height: 300px;
 	object-fit: cover;
+}
+
+.div-article {
+	flex: 1;
+	display: flex;
+	padding: 0px 0px 0px 10px; flex-direction : column;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+.title-article {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.content-article {
+	
+}
+
+.stars-article {
+	
 }
 </style>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
@@ -67,40 +61,24 @@ article img {
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
-		<div>
-			<section>
-				<article>
+		<c:forEach var="i" begin="1" end="4">
+
+			<section class="section-colum">
+				<article class="img-article">
 					<img src="${rootPath}/resources/images/steak.jpg">
 				</article>
-				<div>
-					<article>스테이크</article>
-					<article>
-						<p>맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어 맛있어</p>
+				<div class="div-article">
+					<article class="title-article">스테이크</article>
+					<article class="content-article">
+						센 불에서 튀기듯이 구워 겉은 바삭바삭 육즙이 속에 가두어져 속은 촉촉. 이건 당연히 맛이 없을 수가
+							없겠죠~거기에 홀그레인 머스타드는 고기 특유의 느끼함을 잡아주고. 요새는 마트에서 판매하는 소스도 맛있게 잘 나와서
+							넘 맛있는 한 끼네요.
 					</article>
-					<article>별점</article>
+					<article class="stars-article">4</article>
 				</div>
 			</section>
-			<section>
-				<article>
-					<img src="${rootPath}/resources/images/steak.jpg">
-				</article>
-				<div>
-					<article>요리 제목</article>
-					<article>요리 소개</article>
-					<article>별점</article>
-				</div>
-			</section>
-			<section>
-				<article>
-					<img src="${rootPath}/resources/images/steak.jpg">
-				</article>
-				<div>
-					<article>요리 제목</article>
-					<article>요리 소개</article>
-					<article>별점</article>
-				</div>
-			</section>
-		</div>
+
+		</c:forEach>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
