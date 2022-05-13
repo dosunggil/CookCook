@@ -35,4 +35,5 @@ public class HomeController {
 		return "/log/log";
 	}
 	
+	
 }
