@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>CookCook</title>
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
-<link rel="stylesheet" href="${rootPath}/resources/css/main.css" />
+<link rel="stylesheet" href="${rootPath}/resources/css/main.css?ver=20220515-001" />
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-13-003"></script>
