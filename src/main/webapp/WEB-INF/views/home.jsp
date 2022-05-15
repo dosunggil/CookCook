@@ -4,9 +4,9 @@
 <c:set value="${pageContext.request.contextPath}" var="rootPath" />
 <!DOCTYPE html>
 <html>
-<%@ include	file="/WEB-INF/views/include/include_head.jsp" %>
+<%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <body>
-	<%@ include	file="/WEB-INF/views/include/include_header.jsp" %>
+	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
 		<div class="middle_nav">
 			<div class="container">
@@ -35,30 +35,33 @@
 			</div>
 			<div class="list_box">
 				<ul id="list_today">
-					<li><a> <img
-							src="${rootPath}/resources/images/tokbokk.jpg" />
-							<div>진짜 만들기 쉬운 초간단 떡볶이1</div>
-					</a></li>
-					<li><a> <img src="${rootPath}/resources/images/toast.jpg" />
-							<div>역대급 치즈 토스트!2</div>
-					</a></li>
+					<li>
+						<div>
+							<img src="${rootPath}/resources/images/tokbokk.jpg" />
+						</div>
+						<div class="text-box">진짜 만들기 쉬운 초간단 떡볶이1</div>
+					</li>
+					<li>
+					<div>
+					<img src="${rootPath}/resources/images/toast.jpg" />
+					</div>
+						<div class="text-box">역대급 치즈 토스트!2</div></li>
 					<%-- <li><a> <img src="${rootPath}/resources/images/steak.jpg" />
 							<div>촉촉한 함박 스테이크 무조건 맛있게3</div>
 					</a></li> --%>
-					<li><a> <img src="${rootPath}/resources/images/pasta.jpg" />
-							<div>토마토 파슷하4</div>
-					</a></li>
+					<li>
+					<div>
+					<img src="${rootPath}/resources/images/pasta.jpg" />
+					</div>
+						<div class="text-box">토마토4</div></li>
 				</ul>
-				<div class="bracket-box bracket-right"><i style="color:white" class="fa-solid fa-chevron-right fa-3x"></i></div>
+				<!-- <div class="bracket-box bracket-right"><i style="color:white" class="fa-solid fa-chevron-right fa-3x"></i></div>
 				<div class="bracket-box bracket-left"><i style="color:white" class="fa-solid fa-chevron-left fa-3x"></i></div>
-				<div id="today">
-					<%-- <div><img src="${rootPath}/resources/images/steak.jpg" /></div>
-					<div> 설명글</div> --%>
+				<div id="today"> -->
 
-				</div>
 			</div>
 		</div>
 	</main>
-	<%@ include	file="/WEB-INF/views/include/include_footer.jsp" %>
+	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>

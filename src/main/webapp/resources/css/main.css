@@ -122,7 +122,6 @@ div.middle_nav div.container {
 div.content_main {
 	position: relative;
 	width: 1130px;
-	background-color: white;
 	/* padding : 20px 50px 0 50px; */
 	margin: 15px auto;
 }
@@ -137,7 +136,6 @@ div.content_top {
 }
 
 div.content_top div {
-	cursor: pointer;
 	position: absolute;
 	background-color: #fff;
 	color: black;
@@ -147,11 +145,21 @@ div.content_top div {
 	bottom: 26px;
 	right: 27px;
 }
+div.content_top div:hover {
+	text-decoration: underline;
+	  text-underline-offset : 2px;
+	cursor: pointer;
+	
+}
 
 div.content_main .listname {
 	display: inline-block;
 	font-size: 24px;
 	margin-bottom: 30px;
+	font-weight: 700;
+}
+
+div.content_main .listname h3 {
 }
 div.content_main .list_box {
 	position: relative;
@@ -174,21 +182,35 @@ div.content_main .list_box {
 	text-align: left;
 }
 
-#list_today li a {
+#list_today li:hover {
 	cursor: pointer;
+	text-decoration: underline;
+	  text-underline-offset : 2px;
 }
 
-#list_today li a img {
+#list_today li div:first-child {
+	width: 320px;
+	height: 280px;
+	overflow: hidden;
+}
+#list_today li:hover img {
+	transform : scale(1.1, 1.1);
+}
+
+#list_today li div img {
 	width: 320px;
 	height: 280px;
 	object-fit: cover;
+	transition-duration : 300ms;
 }
 
-#list_today li a div {
+div.text-box {
 	margin: 5px;
+	font-weight: 500;
+	font-size: 20px;
 }
 
-#today {
+/* #today {
 	position: relative;
 	display: flex;
 }
@@ -214,7 +236,7 @@ div.bracket-right i {
 	top : 120px;
 	right:15px;
 	}
-	
+	 */
 .font_highlight {
 	color: #ff7f00
 }
@@ -227,11 +249,12 @@ div.bracket-right i {
 }
 
 footer {
+	margin-top : 150px;
 	display: flex;
 	position: relative;
 	background-color: #cdcdcd;
 	height: 70px;
-	box-shadow: 0 0 10px 1px #6c6c6c;
+	box-shadow: 0 0 5px 1px #6c6c6c;
 	min-width: 1190px;
 	align-items: center;
 	align-content: center;
