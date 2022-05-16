@@ -19,6 +19,7 @@ header {
 	min-width: 1190px;
 	align-items: center;
 	align-content: center;
+	z-index:1000 !important;
 }
 
 div.top_nav {
@@ -36,27 +37,63 @@ div.logo_box {
 	cursor: pointer;
 	/* position: absolute;
 	left: 0; */
-	margin-right:auto;
+	margin-right: auto;
 }
 
 div.logo_box .logo {
 	width: 200px;
 	height: auto;
 }
-
 div.cookcook .drop-menu {
 	border: 1px solid #d7d7d7;
 	position: absolute;
 	width: 1130px;
-	background-color : #fff;
-
-	top : 66px;
-	left:0;
+	background-color: #fff;
+	top: 66px;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	opacity: 0;	
+	transition : 300ms;
+	transform : translateY(-1rem);
 }
-div.cookcook .drop-menu>div {
-	padding : 5px 10px;
+
+div.cookcook:hover .drop-menu {
+	visibility: visible;
+	transform: translateY(0);
+	opacity: 1;
+	transform : translateY(0);
 	
 }
+.drop-menu-container {
+	padding: 30px 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.drop-menu-container>div {
+	height: 50px;
+	padding : 20px 0;
+	width : 300px;
+}
+.drop-menu-container>div:not(:last-child) {
+	border-right : 1px solid #aaa;
+
+	}
+.drop-menu-search {
+	width: 200px;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+.drop-menu-search input {
+	width: 200px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 10px;
+}
+
 div.search_box {
 	box-shadow: 0 0 8px 0 #d7d7d7;
 	border: 0;
@@ -158,11 +195,11 @@ div.content_top div {
 	bottom: 26px;
 	right: 27px;
 }
+
 div.content_top div:hover {
 	text-decoration: underline;
-	  text-underline-offset : 2px;
+	text-underline-offset: 2px;
 	cursor: pointer;
-	
 }
 
 div.content_main .listname {
@@ -173,7 +210,9 @@ div.content_main .listname {
 }
 
 div.content_main .listname h3 {
+	
 }
+
 div.content_main .list_box {
 	position: relative;
 	display: flex;
@@ -185,8 +224,7 @@ div.content_main .list_box {
 	/* width: 1130px; */
 	display: flex;
 	justify-content: space-between;
-	margin : 0 25px;
-	
+	margin: 0 25px;
 }
 
 #list_today li {
@@ -198,7 +236,7 @@ div.content_main .list_box {
 #list_today li:hover {
 	cursor: pointer;
 	text-decoration: underline;
-	  text-underline-offset : 2px;
+	text-underline-offset: 2px;
 }
 
 #list_today li div:first-child {
@@ -206,15 +244,16 @@ div.content_main .list_box {
 	height: 280px;
 	overflow: hidden;
 }
+
 #list_today li:hover img {
-	transform : scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
 }
 
 #list_today li div img {
 	width: 320px;
 	height: 280px;
 	object-fit: cover;
-	transition-duration : 300ms;
+	transition-duration: 300ms;
 }
 
 div.text-box {
@@ -262,7 +301,7 @@ div.bracket-right i {
 }
 
 footer {
-	margin-top : 150px;
+	margin-top: 150px;
 	display: flex;
 	position: relative;
 	background-color: #cdcdcd;
@@ -280,6 +319,7 @@ footer ul {
 }
 
 footer ul li {
+	
 }
 
 footer ul li:not(:first-child) {
