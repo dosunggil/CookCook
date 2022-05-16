@@ -7,10 +7,12 @@
 		</div>
 		<div class="cookcook">임시
 			<div class="drop-menu">
-				<div>
-					<div>재료 검색</div>
-					<div>재료 목록</div>
-					<div>선택 목록</div>
+				<div class="drop-menu-container">
+					<div class="drop-menu-search">재료 검색
+						<input type="text">
+					</div>
+					<div class="drop-menu-result">재료 목록</div>
+					<div class="drop-menu-list">선택 목록</div>
 				</div>
 			</div>
 		</div>
