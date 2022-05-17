@@ -2,6 +2,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const login = document.querySelector("div.btn-login");
   const search = document.querySelector("button.btn-search");
   const go_home = document.querySelector("div.btn-go-home");
+  const btn_open = document.querySelector("div.btn-open");
+  const btn_close = document.querySelector("div.btn-close");
+
+  const drop_menu = document.querySelector("div.drop-menu");
+
+  if (btn_open) {
+    btn_open.addEventListener("click", () => {
+      // const visibility = drop_menu.style.visibility;
+      // const visi = btn_open.getAttribute("visibility");
+      const visibility = drop_menu.className;
+      if (visibility === "drop-menu") {
+        drop_menu.classList.add("visibility");
+      } else {
+        drop_menu.classList.remove("visibility");
+      }
+
+      // console.log(visibility);
+      //  = "visible";
+      // drop_menu.style.opacity = "1";
+    });
+
+    // if (btn_open.getAttribute("visibility") == "visible") {
+    //   btn_open.addEventListener("click", () => {
+    //     drop_menu.style.visibility = "hidden";
+    //     drop_menu.style.opacity = "0";
+    //   });
+    // }
+    btn_close.addEventListener("click", () => {
+      drop_menu.style.visibility = "hidden";
+      drop_menu.style.opacity = "0";
+    });
+  }
+
   /*
     로그인 버튼 눌렀을 때 로그인 화면으로 이동.
     */

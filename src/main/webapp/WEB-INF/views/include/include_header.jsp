@@ -5,7 +5,7 @@
 		<div class="logo_box btn-go-home">
 			<img class="logo" src="${rootPath}/resources/images/logo.png">
 		</div>
-		<div class="cookcook">임시버튼
+		<div class="cookcook btn-open">임시버튼
 			<div class="drop-menu">
 				<div class="drop-menu-container">
 					<div class="drop-menu-search">재료 검색
