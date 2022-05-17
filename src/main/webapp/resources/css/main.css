@@ -47,22 +47,23 @@ div.logo_box .logo {
 div.cookcook .drop-menu {
 	border: 1px solid #d7d7d7;
 	position: absolute;
-	width: 1130px;
+	width: 1131px;
 	background-color: #fff;
 	top: 66px;
 	left: 0;
 	z-index: 100;
+	transition : 200ms;
+	 opacity: 0;	
 	visibility: hidden;
-	opacity: 0;	
-	transition : 300ms;
-	transform : translateY(-1rem);
+	/* transform : translateY(-1rem); */
+	
+	box-sizing: border-box;
 }
 
 div.cookcook:hover .drop-menu {
 	visibility: visible;
-	transform: translateY(0);
+	/* transform: translateY(0); */
 	opacity: 1;
-	transform : translateY(0);
 	
 }
 .drop-menu-container {
@@ -77,10 +78,29 @@ div.cookcook:hover .drop-menu {
 	padding : 20px 0;
 	width : 300px;
 }
-.drop-menu-container>div:not(:last-child) {
+.drop-menu-container>div:nth-child(1), .drop-menu-container>div:nth-child(2) {
 	border-right : 1px solid #aaa;
 
 	}
+.drop-menu-close {
+	position: absolute;
+	width : 33px !important;
+	height: 16px !important;
+	padding: 0.5rem !important;
+	bottom: -1px;
+	right: 0;
+	background-color: #2c2d30;
+	color: #fff;
+	text-align: center;
+	line-height: 16px;
+	font-size: 16px;
+	border-top-left-radius: 5px;
+}
+	
+	
+	
+	
+	
 .drop-menu-search {
 	width: 200px;
 	font-size: 24px;
@@ -235,25 +255,31 @@ div.content_main .list_box {
 
 #list_today li:hover {
 	cursor: pointer;
+}
+#list_today .text-box:hover {
+	
+	cursor: pointer;
 	text-decoration: underline;
 	text-underline-offset: 2px;
+	
 }
 
 #list_today li div:first-child {
 	width: 320px;
 	height: 280px;
 	overflow: hidden;
+	border: 1px solid #aaa;
 }
 
 #list_today li:hover img {
-	transform: scale(1.1, 1.1);
+	transform: scale(1.05, 1.05);
 }
 
 #list_today li div img {
 	width: 320px;
 	height: 280px;
 	object-fit: cover;
-	transition-duration: 300ms;
+	transition-duration: 200ms;
 }
 
 div.text-box {

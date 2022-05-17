@@ -10,7 +10,6 @@ public class LogController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail() {
 		
-		
 		return "/log/detail";
 	}
 }
