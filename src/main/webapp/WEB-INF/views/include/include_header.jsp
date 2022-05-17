@@ -5,7 +5,7 @@
 		<div class="logo_box btn-go-home">
 			<img class="logo" src="${rootPath}/resources/images/logo.png">
 		</div>
-		<div class="cookcook">임시
+		<div class="cookcook">임시버튼
 			<div class="drop-menu">
 				<div class="drop-menu-container">
 					<div class="drop-menu-search">재료 검색
@@ -14,6 +14,7 @@
 					<div class="drop-menu-result">재료 목록</div>
 					<div class="drop-menu-list">선택 목록</div>
 				</div>
+				<div class="drop-menu-close btn-close">접기</div>
 			</div>
 		</div>
 		<div class="search_box">
