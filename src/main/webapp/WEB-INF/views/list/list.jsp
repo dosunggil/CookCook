@@ -10,11 +10,11 @@
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <link rel="stylesheet" href="${rootPath}/resources/css/list.css" />
-<script src="${rootPath}/resources/js/list.js?ver=2022-05-13-001"></script>
+<script src="${rootPath}/resources/js/list.js?ver=2022-05-13-002"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
-	<main>
+	<div class ="main">
 		<c:forEach var="i" begin="1" end="5">
 
 			<section class="section-colum">
@@ -31,7 +31,7 @@
 			</section>
 
 		</c:forEach>
-	</main>
+	</div>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>
