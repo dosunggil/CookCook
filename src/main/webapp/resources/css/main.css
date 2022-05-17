@@ -56,16 +56,20 @@ div.cookcook .drop-menu {
 	 opacity: 0;	
 	visibility: hidden;
 	/* transform : translateY(-1rem); */
-	
 	box-sizing: border-box;
 }
 
-div.cookcook:hover .drop-menu {
-	visibility: visible;
-	/* transform: translateY(0); */
-	opacity: 1;
+div.cookcook .visibility {
+		visibility:visible;
+		opacity: 1;
+
 	
-}
+	}
+
+/* div.cookcook:hover .drop-menu {
+	visibility: visible;
+	opacity: 1;
+} */
 .drop-menu-container {
 	padding: 30px 100px;
 	display: flex;
