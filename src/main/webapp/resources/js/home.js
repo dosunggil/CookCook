@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const search = document.querySelector("button.btn-search");
   const go_home = document.querySelector("div.btn-go-home");
   const btn_open = document.querySelector("div.btn-open");
-  const btn_close = document.querySelector("div.btn-close");
   const btn_theme = document.querySelector("div.btn-theme");
 
   const drop_menu = document.querySelector("div.drop-menu");
@@ -22,13 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.add("dark-theme-header");
         footer.classList.add("dark-theme-header");
         search_box.classList.add("dark-theme-search");
-        drop_menu.classList.add("dark-theme-search");
+        drop_menu.classList.add("dark-theme-drop");
       } else {
         main.classList.remove("dark-theme-body");
         header.classList.remove("dark-theme-header");
         footer.classList.remove("dark-theme-header");
         search_box.classList.remove("dark-theme-search");
         search_btn.classList.remove("dark-theme-search");
+        drop_menu.classList.remove("dark-theme-drop");
       }
     });
   }
@@ -39,14 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // const visi = btn_open.getAttribute("visibility");
       const visibility = drop_menu.className;
       if (
-        visibility === "drop-menu" ||
-        visibility === "drop-menu dark-theme-search"
+        visibility == "drop-menu" ||
+        visibility === "drop-menu dark-theme-drop"
       ) {
-        drop_menu.classList.add("visibility");
-      } else {
-        drop_menu.classList.remove("visibility");
-      }
-      if (visibility === "drop-menu dark-theme-search") {
+        console.log("안녕");
         drop_menu.classList.add("visibility");
       } else {
         drop_menu.classList.remove("visibility");
@@ -63,10 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //     drop_menu.style.opacity = "0";
     //   });
     // }
-    btn_close.addEventListener("click", () => {
-      drop_menu.style.visibility = "hidden";
-      drop_menu.style.opacity = "0";
-    });
   }
 
   /*
@@ -85,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   */
   if (search) {
     search.addEventListener("click", () => {
+      console.log("검색");
       let url = `${rootPath}`;
       url += "/list";
       document.location.href = url;

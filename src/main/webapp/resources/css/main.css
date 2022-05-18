@@ -16,11 +16,11 @@ header {
 	background-color: white;
 	height: 70px;
 	/* box-shadow: 0 0 10px 1px #d7d7d7; */
-	border-bottom : 1px solid #4444444a;
+	border-bottom: 1px solid #4444444a;
 	min-width: 1190px;
 	align-items: center;
 	align-content: center;
-	z-index:1000 !important;
+	z-index: 1000 !important;
 }
 
 div.top_nav {
@@ -45,7 +45,8 @@ div.logo_box .logo {
 	width: 200px;
 	height: auto;
 }
-div.cookcook .drop-menu {
+
+.drop-menu {
 	border: 1px solid #d7d7d7;
 	position: absolute;
 	width: 1131px;
@@ -53,19 +54,17 @@ div.cookcook .drop-menu {
 	top: 66px;
 	left: 0;
 	z-index: 100;
-	transition : 200ms;
-	 opacity: 0;	
+	transition: opacity 200ms;
+	opacity: 0;
 	visibility: hidden;
 	/* transform : translateY(-1rem); */
 	box-sizing: border-box;
 }
 
-div.cookcook .visibility {
-		visibility:visible;
-		opacity: 1;
-
-	
-	}
+.visibility {
+	visibility: visible;
+	opacity: 1;
+}
 
 /* div.cookcook:hover .drop-menu {
 	visibility: visible;
@@ -80,16 +79,18 @@ div.cookcook .visibility {
 
 .drop-menu-container>div {
 	height: 50px;
-	padding : 20px 0;
-	width : 300px;
+	padding: 20px 0;
+	width: 300px;
 }
-.drop-menu-container>div:nth-child(1), .drop-menu-container>div:nth-child(2) {
-	border-right : 1px solid #aaa;
 
-	}
+.drop-menu-container>div:nth-child(1), .drop-menu-container>div:nth-child(2)
+	{
+	border-right: 1px solid #aaa;
+}
+
 .drop-menu-close {
 	position: absolute;
-	width : 33px !important;
+	width: 33px !important;
 	height: 16px !important;
 	padding: 0.5rem !important;
 	bottom: -1px;
@@ -101,11 +102,7 @@ div.cookcook .visibility {
 	font-size: 16px;
 	border-top-left-radius: 5px;
 }
-	
-	
-	
-	
-	
+
 .drop-menu-search {
 	width: 200px;
 	font-size: 24px;
@@ -121,7 +118,7 @@ div.cookcook .visibility {
 
 div.search_box {
 	/* box-shadow: 0 0 8px 0 #d7d7d7; */
-		border: 1px solid #d7d7d7;
+	border: 1px solid #d7d7d7;
 	border-radius: 10px;
 	display: flex;
 	position: relative;
@@ -161,7 +158,7 @@ div.profile {
 main {
 	min-width: 1190px;
 	height: 100%;
-	padding-bottom : 150px;
+	padding-bottom: 150px;
 }
 
 fieldset {
@@ -210,10 +207,11 @@ div.content_top {
 	background-image: url(../../resources/images/cooking.jpg);
 	background-size: cover;
 }
-div.content_top>div{
-	color : black ;
 
-	}
+div.content_top>div {
+	color: black;
+}
+
 div.content_top div {
 	position: absolute;
 	background-color: #fff;
@@ -265,12 +263,11 @@ div.content_main .list_box {
 #list_today li:hover {
 	cursor: pointer;
 }
+
 #list_today .text-box:hover {
-	
 	cursor: pointer;
 	text-decoration: underline;
 	text-underline-offset: 2px;
-	
 }
 
 #list_today li div:first-child {
@@ -340,7 +337,7 @@ footer {
 	position: relative;
 	background-color: #cdcdcd;
 	height: 70px;
-	border-top : 1px solid #4444444a;
+	border-top: 1px solid #4444444a;
 	/* box-shadow: 0 0 5px 1px #6c6c6c; */
 	min-width: 1190px;
 	align-items: center;
@@ -364,23 +361,31 @@ footer ul li:not(:first-child) {
 /*
 	다크모드 관련
 */
-
 .btn-theme {
-	position : absolute;
+	position: absolute;
 	right: -300px;
 	cursor: pointer;
 }
 
 .dark-theme-body {
-	background-color:  #252525;
+	background-color: #252525;
 	color: #fff;
 }
+
 .dark-theme-header {
-	background-color:  #303030 !important;
-	border-bottom : 1px solid #444444e3 !important;
+	background-color: #303030 !important;
+	border-bottom: 1px solid #444444e3 !important;
 	color: #fff !important;
 }
+
 .dark-theme-search {
 	background-color: #303030 !important;
-	color:#fff;
+	color: #fff;
+}
+
+.dark-theme-drop { 
+	border: 1px solid #444444e3 !important;
+	background-color: #303030 !important;
+	color: #fff;
+	
 }
