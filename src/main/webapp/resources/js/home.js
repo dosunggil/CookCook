@@ -4,15 +4,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const go_home = document.querySelector("div.btn-go-home");
   const btn_open = document.querySelector("div.btn-open");
   const btn_close = document.querySelector("div.btn-close");
+  const btn_theme = document.querySelector("div.btn-theme");
 
   const drop_menu = document.querySelector("div.drop-menu");
+  const main = document.querySelector("main");
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  const search_box = document.querySelector(".btn-search");
+  const search_btn = document.querySelector("button.btn-search");
+
+  if (btn_theme) {
+    btn_theme.addEventListener("click", () => {
+      const dark_theme_main = main.className;
+      if (dark_theme_main === "") {
+        main.classList.add("dark-theme-body");
+        search_btn.classList.add("dark-theme-search");
+        header.classList.add("dark-theme-header");
+        footer.classList.add("dark-theme-header");
+        search_box.classList.add("dark-theme-search");
+        drop_menu.classList.add("dark-theme-search");
+      } else {
+        main.classList.remove("dark-theme-body");
+        header.classList.remove("dark-theme-header");
+        footer.classList.remove("dark-theme-header");
+        search_box.classList.remove("dark-theme-search");
+        search_btn.classList.remove("dark-theme-search");
+      }
+    });
+  }
 
   if (btn_open) {
     btn_open.addEventListener("click", () => {
       // const visibility = drop_menu.style.visibility;
       // const visi = btn_open.getAttribute("visibility");
       const visibility = drop_menu.className;
-      if (visibility === "drop-menu") {
+      if (
+        visibility === "drop-menu" ||
+        visibility === "drop-menu dark-theme-search"
+      ) {
+        drop_menu.classList.add("visibility");
+      } else {
+        drop_menu.classList.remove("visibility");
+      }
+      if (visibility === "drop-menu dark-theme-search") {
         drop_menu.classList.add("visibility");
       } else {
         drop_menu.classList.remove("visibility");

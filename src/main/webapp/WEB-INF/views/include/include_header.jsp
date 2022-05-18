@@ -20,7 +20,7 @@
 		<div class="search_box">
 			<form>
 				<fieldset>
-					<input type="text" name="search" placeholder="레시피 검색!">
+					<input class="btn-search" type="text" name="search" placeholder="레시피 검색!">
 					<button type="button" class="btn-search">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
@@ -31,5 +31,8 @@
 			<a> <img src="${rootPath}/resources/images/in.png" />
 			</a>
 		</div>
+	<div class="btn-theme">
+		<i class="fa-solid fa-circle-half-stroke"></i>
+	</div>
 	</div>
 </header>

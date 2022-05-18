@@ -15,7 +15,8 @@ header {
 	position: relative;
 	background-color: white;
 	height: 70px;
-	box-shadow: 0 0 10px 1px #d7d7d7;
+	/* box-shadow: 0 0 10px 1px #d7d7d7; */
+	border-bottom : 1px solid #4444444a;
 	min-width: 1190px;
 	align-items: center;
 	align-content: center;
@@ -119,8 +120,8 @@ div.cookcook .visibility {
 }
 
 div.search_box {
-	box-shadow: 0 0 8px 0 #d7d7d7;
-	border: 0;
+	/* box-shadow: 0 0 8px 0 #d7d7d7; */
+		border: 1px solid #d7d7d7;
 	border-radius: 10px;
 	display: flex;
 	position: relative;
@@ -160,6 +161,7 @@ div.profile {
 main {
 	min-width: 1190px;
 	height: 100%;
+	padding-bottom : 150px;
 }
 
 fieldset {
@@ -208,7 +210,10 @@ div.content_top {
 	background-image: url(../../resources/images/cooking.jpg);
 	background-size: cover;
 }
+div.content_top>div{
+	color : black ;
 
+	}
 div.content_top div {
 	position: absolute;
 	background-color: #fff;
@@ -320,7 +325,7 @@ div.bracket-right i {
 	}
 	 */
 .font_highlight {
-	color: #ff7f00
+	color: #ff7f00 !important;
 }
 
 .ico_cookcook {
@@ -331,12 +336,12 @@ div.bracket-right i {
 }
 
 footer {
-	margin-top: 150px;
 	display: flex;
 	position: relative;
 	background-color: #cdcdcd;
 	height: 70px;
-	box-shadow: 0 0 5px 1px #6c6c6c;
+	border-top : 1px solid #4444444a;
+	/* box-shadow: 0 0 5px 1px #6c6c6c; */
 	min-width: 1190px;
 	align-items: center;
 	align-content: center;
@@ -354,4 +359,28 @@ footer ul li {
 
 footer ul li:not(:first-child) {
 	margin-left: 25px;
+}
+
+/*
+	다크모드 관련
+*/
+
+.btn-theme {
+	position : absolute;
+	right: -300px;
+	cursor: pointer;
+}
+
+.dark-theme-body {
+	background-color:  #252525;
+	color: #fff;
+}
+.dark-theme-header {
+	background-color:  #303030 !important;
+	border-bottom : 1px solid #444444e3 !important;
+	color: #fff !important;
+}
+.dark-theme-search {
+	background-color: #303030 !important;
+	color:#fff;
 }

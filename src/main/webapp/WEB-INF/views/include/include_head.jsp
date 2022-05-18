@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${rootPath}/resources/css/main.css?ver=20220515-001" />
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
-<script src="${rootPath}/resources/js/home.js?ver=2022-05-17-009"></script>
+<script src="${rootPath}/resources/js/home.js?ver=2022-05-18-008"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
 <script>const rootPath = "${rootPath}"</script>
 </head>
