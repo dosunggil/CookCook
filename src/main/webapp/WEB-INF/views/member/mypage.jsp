@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <link rel="stylesheet" href="${rootPath}/resources/css/list.css" />
+<script src="${rootPath}/resources/js/list.js?ver=2022-05-13-004"></script>
 <style>
 div.main {
 	width: 1130px;
@@ -118,6 +119,11 @@ fieldset.form legend {
 	font-size: 24px;
 	text-align: center;
 }
+
+.colum-main.password2 .check {
+	color: red;
+	margin-left: 5px;
+}
 </style>
 </head>
 <body>
@@ -144,7 +150,7 @@ fieldset.form legend {
 						<div>
 							<input type="password" placeholder="변경할 비밀번호를 입력해주세요">
 						</div>
-						<div class="check">checking....(빨강) checked(검정)</div>
+						<div class="check">checking....</div>
 					</div>
 					<div class="colum-main name">
 						<div>닉네임 :</div>

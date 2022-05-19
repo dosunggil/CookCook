@@ -80,9 +80,9 @@ fieldset.form legend {
 form button.btn-blue {
 	border: none;
 	outline: none;
-	padding: 12px 16px;
 	border-radius: 5px;
 	font-size: 16px;
+	padding: 12px 16px;
 }
 
 form button.checkid {
@@ -107,9 +107,14 @@ button.btn-blue {
 	margin-left: auto;
 }
 
-button.btn-check {
+form button.btn-blue.btn-check {
 	margin-left: 10px;
-	font-size: 14px;
+	padding: 6px 8px;
+}
+
+.colum-main.password2 .check {
+	color: red;
+	margin-left: 5px;
 }
 </style>
 </head>
@@ -140,7 +145,7 @@ button.btn-check {
 						<div>
 							<input type="password" placeholder="비밀번호를 입력해주세요">
 						</div>
-						<div class="check">checking....(빨강) checked(검정)</div>
+						<div class="check">checking....</div>
 					</div>
 					<div class="colum-main name">
 						<div>닉네임 :</div>
