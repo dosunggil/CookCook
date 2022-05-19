@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (section_colum) {
     section_colum.addEventListener("click", () => {
       let url = `${rootPath}`;
-      url += "/listDetail";
+      url += "/detail";
       document.location.href = url;
     });
   }

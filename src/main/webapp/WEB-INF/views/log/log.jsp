@@ -114,7 +114,7 @@ p {
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/resources/js/log.js?ver=2022-05-09-001" /></script>
+<script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script>
 </head>
 <body>
 	<section>
@@ -139,7 +139,7 @@ p {
 					<ul>
 						<li>비밀번호 찾기</li>
 						<li>아이디 찾기</li>
-						<li>회원가입</li>
+						<li class="signup">회원가입</li>
 					</ul>
 				</div>
 			</div>

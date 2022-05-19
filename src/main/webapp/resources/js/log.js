@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const login = document.querySelector("button.login");
   const home = document.querySelector("img.logo");
+  const signup = document.querySelector(".signup");
+
+  if (signup) {
+    signup.addEventListener("click", () => {
+      let url = `${rootPath}`;
+      url += "/signup";
+      document.location.href = url;
+    });
+  }
 
   /*
     로그인 눌렀을 때 빨간글씨로 입력오류 노출

@@ -215,9 +215,17 @@ body {
 				</div>
 				<div class=right_area>
 					<div>[재료]</div>
-					<p>마늘쫑</p>
+					<ul>
+					<li>닭</li>
+					<li>대파</li>
+					<li>꽈리고추</li>
+					</ul>
 					<div>[양념]]</div>
-					<p>고춧가루</p>
+					<ul>
+					<li>고춧가루</li>
+					<li>후추</li>
+					<li>통깨</li>
+					</ul>
 				</div>
 			</div>
 		</section>
