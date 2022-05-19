@@ -31,7 +31,7 @@ fieldset.form {
 	margin: 20px;
 	width: 650px;
 	font-weight: 900;
-	color : #282121;
+	color: #282121;
 }
 
 fieldset.form legend {
@@ -41,7 +41,7 @@ fieldset.form legend {
 }
 
 .colum-main div:nth-of-type(1) {
-	width: 100px;
+	width: 150px;
 	line-height: 30px;
 }
 
@@ -49,26 +49,43 @@ fieldset.form legend {
 	height: 50px;
 	display: flex;
 	margin: 30px 0;
+	align-items: center;
 }
 
-.colum-main div:nth-of-type(2) input[type=text] {
-	width: 500px;
+.form-main .id div:nth-of-type(2) input[type=text] {
+	width: 250px;
 	height: 30px;
 }
 
-.form-main .second {
-	height: 100px;
+.form-main .password div:nth-of-type(2) input[type=password] {
+	width: 250px;
+	height: 30px;
 }
 
-.form-main .third div:nth-of-type(2) input[type=text] {
+.form-main .password2 div:nth-of-type(2) input[type=password] {
 	width: 250px;
+	height: 30px;
 }
 
-.form-main .fourth div:nth-of-type(2) input[type=text] {
+.form-main .name div:nth-of-type(2) input[type=text] {
 	width: 250px;
+	height: 30px;
+}
+
+.form-main .password2 div:nth-of-type(3).check {
+	padding-top: 8px;
+	padding-left: 2px;
 }
 
 form button.btn-blue {
+	border: none;
+	outline: none;
+	padding: 12px 16px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+form button.checkid {
 	border: none;
 	outline: none;
 	padding: 12px 16px;
@@ -80,7 +97,7 @@ button.btn-blue:hover {
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7)
 }
 
-.form-main .colum-main:nth-of-type(6) {
+.form-main .colum-main:nth-of-type(5) {
 	width: 600px;
 }
 
@@ -89,6 +106,11 @@ button.btn-blue {
 	color: white;
 	margin-left: auto;
 }
+
+button.btn-check {
+	margin-left: 10px;
+	font-size: 14px;
+}
 </style>
 </head>
 <body>
@@ -96,40 +118,38 @@ button.btn-blue {
 	<div class="main">
 		<form>
 			<fieldset class="form">
-				<legend>CookCook Contents</legend>
+				<legend>Sign Up</legend>
 				<div class="form-main">
-					<div class="colum-main">
-						<div>요리 제목 :</div>
+					<div class="colum-main id">
+						<div>아이디 :</div>
 						<div>
-							<input type="text" placeholder="요리 제목">
+							<input type="text" placeholder="아이디를 입력해주세요">
+						</div>
+						<div>
+							<button type="button" class="btn-blue btn-check">중복확인</button>
 						</div>
 					</div>
-					<div class="colum-main second">
-						<div>요리 내용 :</div>
+					<div class="colum-main password">
+						<div>비밀번호 :</div>
 						<div>
-							<textarea rows="7" cols="70"></textarea>
+							<input type="password" placeholder="비밀번호를 입력해주세요">
 						</div>
 					</div>
-					<div class="colum-main third">
-						<div>칼로리 :</div>
+					<div class="colum-main password2">
+						<div>비밀번호 확인 :</div>
 						<div>
-							<input type="text" placeholder="칼로리를 대략 적으로 입력해 주세요">
+							<input type="password" placeholder="비밀번호를 입력해주세요">
+						</div>
+						<div class="check">checking....(빨강) checked(검정)</div>
+					</div>
+					<div class="colum-main name">
+						<div>닉네임 :</div>
+						<div>
+							<input type="text" placeholder="닉네임을 입력해주세요">
 						</div>
 					</div>
-					<div class="colum-main fourth">
-						<div>요리 시간 :</div>
-						<div>
-							<input type="text" placeholder="요리시간을 대략 적으로 입력해 주세요">
-						</div>
-					</div>
-					<div class="colum-main">
-						<div>사진 선택 :</div>
-						<div>
-							<input type="file">
-						</div>
-					</div>
-					<div class="colum-main">
-						<button type="button" class="btn-blue">등록</button>
+					<div class="colum-main btn">
+						<button type="button" class="btn-blue">Sign Up</button>
 					</div>
 				</div>
 			</fieldset>
