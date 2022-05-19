@@ -6,13 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>retisterContent</title>
+<title>마이페이지</title>
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
+<link rel="stylesheet" href="${rootPath}/resources/css/list.css" />
 <style>
 div.main {
 	width: 1130px;
-	height: 100vh;
+	height: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -111,6 +112,12 @@ button.btn-check {
 	margin-left: 10px;
 	font-size: 14px;
 }
+
+fieldset.form legend {
+	color: #ff7f00;
+	font-size: 24px;
+	text-align: center;
+}
 </style>
 </head>
 <body>
@@ -118,46 +125,63 @@ button.btn-check {
 	<div class="main">
 		<form>
 			<fieldset class="form">
-				<legend>Sign Up</legend>
+				<legend>Privacy</legend>
 				<div class="form-main">
 					<div class="colum-main id">
 						<div>아이디 :</div>
 						<div>
-							<input type="text" placeholder="아이디를 입력해주세요">
-						</div>
-						<div>
-							<button type="button" class="btn-blue btn-check">중복확인</button>
+							<input type="text" value="아이디" readonly>
 						</div>
 					</div>
 					<div class="colum-main password">
 						<div>비밀번호 :</div>
 						<div>
-							<input type="password" placeholder="비밀번호를 입력해주세요">
+							<input type="password" placeholder="변경할 비밀번호를 입력해주세요">
 						</div>
 					</div>
 					<div class="colum-main password2">
 						<div>비밀번호 확인 :</div>
 						<div>
-							<input type="password" placeholder="비밀번호를 입력해주세요">
+							<input type="password" placeholder="변경할 비밀번호를 입력해주세요">
 						</div>
 						<div class="check">checking....(빨강) checked(검정)</div>
 					</div>
 					<div class="colum-main name">
 						<div>닉네임 :</div>
 						<div>
-							<input type="text" placeholder="닉네임을 입력해주세요">
-						</div>
-						<div>
-							<button type="button" class="btn-blue btn-check">중복확인</button>
+							<input type="text" value="닉네임" readonly>
 						</div>
 					</div>
 					<div class="colum-main btn">
-						<button type="button" class="btn-blue">Sign Up</button>
+						<button type="button" class="btn-blue">update</button>
 					</div>
 				</div>
 			</fieldset>
 		</form>
 	</div>
+
+	<div class="main">
+		<fieldset class="form">
+			<legend>I posted</legend>
+			<c:forEach var="i" begin="1" end="3">
+
+				<section class="section-colum">
+					<article class="img-article">
+						<img src="${rootPath}/resources/images/steak.jpg">
+					</article>
+					<div class="div-article">
+						<article class="title-article">스테이크</article>
+						<article class="content-article">센 불에서 튀기듯이 구워 겉은 바삭바삭
+							육즙이 속에 가두어져 속은 촉촉. 이건 당연히 맛이 없을 수가 없겠죠~거기에 홀그레인 머스타드는 고기 특유의 느끼함을
+							잡아주고. 요새는 마트에서 판매하는 소스도 맛있게 잘 나와서 넘 맛있는 한 끼네요.</article>
+						<article class="stars-article">4</article>
+					</div>
+				</section>
+
+			</c:forEach>
+		</fieldset>
+	</div>
+
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>

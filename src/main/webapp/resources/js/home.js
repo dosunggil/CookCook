@@ -12,6 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const search_box = document.querySelector(".btn-search");
   const search_btn = document.querySelector("button.btn-search");
 
+  const list_box = document.querySelector(".list_box");
+
+  if (list_box) {
+    list_box.addEventListener("click", () => {
+      // 추후 수정 예정 현재 li에 클릭이벤트중
+      let url = `${rootPath}`;
+      url += "/detail";
+      document.location.href = url;
+    });
+  }
+
   if (btn_theme) {
     btn_theme.addEventListener("click", () => {
       const dark_theme_main = main.className;
