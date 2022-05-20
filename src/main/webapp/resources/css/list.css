@@ -3,7 +3,7 @@
 .main {
 	width: 1130px;
 	height: 100%;
-	margin: 0 auto;
+	margin: 130px auto 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -13,6 +13,8 @@
 	height: 300px;
 	display: flex;
 	margin: 10px 0px;
+	background-color: #fdfdfd7d;
+	border: 1px solid #bbbbbb6e;
 }
 
 .section-colum:hover {
@@ -21,7 +23,6 @@
 
 .section-colum:hover article img {
 	transform: scale(1.1, 1.1);
-	
 }
 
 .section-colum:hover .title-article {

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <link rel="stylesheet" href="${rootPath}/resources/css/list.css" />
-<script src="${rootPath}/resources/js/list.js?ver=2022-05-13-004"></script>
+<script src="${rootPath}/resources/js/alter.js?ver=2022-05-13-004"></script>
 <style>
 div.main {
 	width: 1130px;
