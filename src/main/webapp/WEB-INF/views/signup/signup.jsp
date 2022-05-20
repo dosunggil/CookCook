@@ -23,7 +23,8 @@ form.form-main {
 	flex-direction: column;
 	display: flex;
 }
-
+.main form {
+margin: 150px auto;}
 fieldset.form {
 	border: 2px solid #ff7f00;
 	border-radius: 10px;

@@ -48,12 +48,16 @@ body {
 	padding: 20px 100px;
 }
 
+.divs _first {
+	width: 700px;
+}
+
 .cont {
 	width: 820px;
 }
 
 .right_area {
-	border: 1px solid black;
+	border: 1px solid #888;
 	width: 330px;
 	height: 300px;
 	padding: 0 0 30px 0;
@@ -77,6 +81,11 @@ body {
 
 .content_in {
 	font-size: 30px;
+	line-height: 26px;
+}
+
+.content_in h1 {
+	line-height: 45px;
 }
 
 #proc {
@@ -90,8 +99,6 @@ body {
 	padding: 20px;
 	font-size: 20px;
 }
-
-
 
 .best_tit {
 	padding: 30px 10px 20px 10px;
@@ -114,12 +121,12 @@ body {
 }
 
 .rea_tit {
-	width: 70px;
+	width: 200px;
 }
 
 .ready ul {
 	padding: 0 0 25px 0;
-	width: 50%;
+	width: 1000px;
 	display: inline-block;
 	vertical-align: top;
 	float: left;
@@ -129,13 +136,27 @@ body {
 	border-bottom: 1px solid #ececec;
 	padding: 10px 6px;
 	list-style: none;
-	margin: 0 35px;
+	margin: 0 10px;
 	font-size: 16px;
 }
 
 .ready li ingre_unit {
 	float: right;
 	color: #999;
+}
+
+.right_area ul {
+	padding: 5px 10px;
+	list-style: none;
+}
+
+.right_area input {
+	margin: 7px;
+}
+.ready table {
+	border: 1px solid black;
+	width: 200px;
+	heigth: 100px;	
 }
 </style>
 <meta charset="UTF-8">
@@ -153,7 +174,8 @@ body {
 							<img src="${rootPath}/resources/images/tokbokk.jpg" />
 						</article>
 						<article class=content_in>
-							<h1>마늘쫑고추장무침 만드는 법 : 10분만에 완성되는 간단한 밑반찬 ♩</h1>
+							<h1>마늘쫑고추장무침 만드는 법 :</h1>
+							<h1>10분만에 완성되는 간단한 밑반찬 ♩</h1>
 							<p>요즘 식비 좀 줄여보겠다고 늘 있는 반찬에만 간단히 먹었더니 새로운 반찬이 먹고 싶더라고요. 그래서
 								오래간만에 매콤달콤 밥도둑 마늘쫑 고추장 무침을 만들어 봤어요! 끓는 물에 마늘쫑 데쳐 양념 넣고 무치기만 하면
 								간단하게 완성되는 밑반찬이다 보니 주부들에게 늘 사랑받는 반찬, 마늘쫑 고추장 무침 ♩ 그럼 한 번 만들어볼까요?
@@ -162,44 +184,68 @@ body {
 						</article>
 					</div>
 					<div class=divs>
-						<div class=best_tit>
-							<b class=ready_tit>재료</b> <span>Ingredients</span>
-						</div>
-						<div class=ready>
-							<b class=rea_tit>[재료]</b>
-							<ul>
-								<li>"마늘쫑"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-							</ul>
-							<b class=rea_tit>[양념]</b>
-							<ul>
-								<li>"고춧가루"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-								<li>"고춧가루"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-								<li>"고춧가루"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-								<li>"고춧가루"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-								<li>"고춧가루"<img
-									src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-									style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-									<span class="ingre_unit">1묶음(약 160g)</span></li>
-							</ul>
+						<div class="divs_first">
+							<div class=best_tit>
+								<b class=ready_tit>재료</b> <span>Ingredients</span>
+							</div>
+							<div class=ready>
+								<div>
+									<table>
+										<tr>
+											<th>보관온도</th>
+											<td>0~5℃</td>
+										</tr>
+										<tr>
+											<th>100g당 열량</th>
+											<td>253Kcal</td>
+										</tr>
+									</table>
+								</div>
+								<b class=rea_tit>[재료]</b>
+								<ul>
+									<li>"닭"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1마리(약 800g)</span></li>
+									<li>"대파"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1단(약 100g)</span></li>
+									<li>"꽈리고추"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1묶음(약 80g)</span></li>
+								</ul>
+								<b class=rea_tit>[양념]</b>
+								<ul>
+									<li>"고춧가루"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1T(약 10g)</span></li>
+									<li>"후추가루"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">0.5T(약 5g)</span></li>
+									<li>"통깨"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">0.5T(약 5g)</span></li>
+									<li>"다진마늘"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1T(약 10g)</span></li>
+									<li>"고추장"<img
+										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
+										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
+										<span class="ingre_unit">1T(약 10g)</span></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 					<div class=divs>
-						<p id=proc><span>RECIPE 순서</span></p>
+						<p id=proc>
+							<span>RECIPE 순서</span>
+						</p>
 						<div>
 							<p>1.대파는 송송 썬다.</p>
 							<p>2.팬에 기름을 두르고 닭을 굽듯이 볶는다.</p>
@@ -216,16 +262,19 @@ body {
 				<div class=right_area>
 					<div>[재료]</div>
 					<ul>
-					<li>닭</li>
-					<li>대파</li>
-					<li>꽈리고추</li>
+						<li><input type="checkbox">닭</li>
+						<li><input type="checkbox">대파</li>
+						<li><input type="checkbox">꽈리고추</li>
 					</ul>
-					<div>[양념]]</div>
+					<div>[양념]</div>
 					<ul>
-					<li>고춧가루</li>
-					<li>후추</li>
-					<li>통깨</li>
+						<li><input type="checkbox">고춧가루</li>
+						<li><input type="checkbox">후추가루</li>
+						<li><input type="checkbox">통깨</li>
+						<li><input type="checkbox">다진마늘</li>
+						<li><input type="checkbox">고추장</li>
 					</ul>
+
 				</div>
 			</div>
 		</section>
