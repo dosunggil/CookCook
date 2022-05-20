@@ -1,0 +1,158 @@
+* {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	min-width: 1190px;
+}
+
+body {
+	display: block;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+.container {
+	position: relative;
+	width: 1130px;
+	max-width: none !important;
+	margin: 20px auto;
+	justify-content: space-between;
+}
+
+.contents_area {
+	margin: 50px 0;
+	display: flex;
+	position: relative;
+	width: 1130px;
+}
+
+.divs {
+	float: left;
+	border: 1px solid black;
+	width: 600px;
+	background: white;
+	position: relative;
+	margin: 10px;
+	padding: 20px 100px;
+}
+
+.divs _first {
+	width: 700px;
+}
+
+.cont {
+	width: 820px;
+}
+
+.right_area {
+	border: 1px solid #888;
+	width: 330px;
+	height: 300px;
+	padding: 0 0 30px 0;
+	background: white;
+	margin: 10px 0;
+	padding: 0 0 30px 0;
+	font-size: 20px;
+	position: sticky;
+	margin-left: auto;
+	top: 20%;
+}
+
+.right_area p {
+	padding: 20px;
+}
+
+.content_in img {
+	width: 600px;
+	margin: 20px auto;
+}
+
+.content_in {
+	font-size: 30px;
+	line-height: 26px;
+}
+
+.content_in h1 {
+	line-height: 45px;
+}
+
+#proc div{
+	margin: 0 auto;
+	font-size: 50px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+#proc p {
+	padding: 20px;
+	font-size : 20px;
+	text-decoration: none;
+	font-weight: normal;
+	}
+
+div.sub-content {
+	padding: 20px;
+	font-size: 20px;
+}
+
+.best_tit {
+	padding: 30px 10px 20px 10px;
+}
+
+.ready {
+	padding: 0 20px 18px 24px;
+	vertical-align: top;
+	display: flex;
+}
+
+.ready_tit {
+	padding-bottom: 8px;
+	color: #333;
+	font-size: 16px;
+	padding-left: 20px;
+	display: flex;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.rea_tit {
+	width: 200px;
+}
+
+.ready ul {
+	padding: 0 0 25px 0;
+	width: 1000px;
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+}
+
+.ready li {
+	border-bottom: 1px solid #ececec;
+	padding: 10px 6px;
+	list-style: none;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+.ready li ingre_unit {
+	float: right;
+	color: #999;
+}
+
+.right_area ul {
+	padding: 5px 10px;
+	list-style: none;
+}
+
+.right_area input {
+	margin: 7px;
+}
+.ready table {
+	border: 1px solid black;
+	width: 200px;
+	heigth: 100px;	
+}
