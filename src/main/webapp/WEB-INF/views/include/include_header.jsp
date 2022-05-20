@@ -27,7 +27,7 @@
 			</form>
 		</div>
 		<div class="profile btn-login">
-			<a> <img src="${rootPath}/resources/images/in.png" />
+			<a> <img class="img-login" src="${rootPath}/resources/images/in.png" />
 			</a>
 		</div>
 	<div class="btn-theme">

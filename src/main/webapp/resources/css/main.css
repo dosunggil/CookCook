@@ -122,7 +122,7 @@ div.search_box {
 	border-radius: 10px;
 	display: flex;
 	position: relative;
-	height: 40px;
+	height: 42px;
 	margin-left: 25px;
 }
 
@@ -287,7 +287,9 @@ div.content_main .list_box {
 	object-fit: cover;
 	transition-duration: 200ms;
 }
-
+img.img-login {
+	width:auto;
+}
 div.text-box {
 	margin: 5px;
 	font-weight: 500;

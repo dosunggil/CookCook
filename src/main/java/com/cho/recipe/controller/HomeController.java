@@ -25,14 +25,14 @@ public class HomeController {
 	public String List() {
 		
 		
-		return "/list/list";
+		return "/chang/list/list";
 	}
 	
 	@RequestMapping(value = "/log", method = RequestMethod.GET)
 	public String log() {
 		
 		
-		return "/log/log";
+		return "/ahn/log/log";
 	}
 	
 	

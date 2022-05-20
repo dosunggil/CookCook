@@ -4,164 +4,6 @@
 <c:set var="rootpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-* {
-	box-sizing: content-box;
-	margin: 0;
-	padding: 0;
-}
-
-main {
-	min-width: 1190px;
-}
-
-body {
-	display: block;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #333;
-}
-
-.container {
-	position: relative;
-	width: 1130px;
-	max-width: none !important;
-	margin: 20px auto;
-	justify-content: space-between;
-}
-
-.contents_area {
-	margin: 50px 0;
-	display: flex;
-	position: relative;
-	width: 1130px;
-}
-
-.divs {
-	float: left;
-	border: 1px solid black;
-	width: 600px;
-	background: white;
-	position: relative;
-	margin: 10px;
-	padding: 20px 100px;
-}
-
-.divs _first {
-	width: 700px;
-}
-
-.cont {
-	width: 820px;
-}
-
-.right_area {
-	border: 1px solid #888;
-	width: 330px;
-	height: 300px;
-	padding: 0 0 30px 0;
-	background: white;
-	margin: 10px 0;
-	padding: 0 0 30px 0;
-	font-size: 20px;
-	position: sticky;
-	margin-left: auto;
-	top: 20%;
-}
-
-.right_area p {
-	padding: 20px;
-}
-
-.content_in img {
-	width: 600px;
-	margin: 20px auto;
-}
-
-.content_in {
-	font-size: 30px;
-	line-height: 26px;
-}
-
-.content_in h1 {
-	line-height: 45px;
-}
-
-#proc {
-	font-size: 50px;
-	text-align: center;
-	text-decoration: underline;
-	font-weight: bold;
-}
-
-.divs p {
-	padding: 20px;
-	font-size: 20px;
-}
-
-.best_tit {
-	padding: 30px 10px 20px 10px;
-}
-
-.ready {
-	padding: 0 20px 18px 24px;
-	vertical-align: top;
-	display: flex;
-}
-
-.ready_tit {
-	padding-bottom: 8px;
-	color: #333;
-	font-size: 16px;
-	padding-left: 20px;
-	display: flex;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.rea_tit {
-	width: 200px;
-}
-
-.ready ul {
-	padding: 0 0 25px 0;
-	width: 1000px;
-	display: inline-block;
-	vertical-align: top;
-	float: left;
-}
-
-.ready li {
-	border-bottom: 1px solid #ececec;
-	padding: 10px 6px;
-	list-style: none;
-	margin: 0 10px;
-	font-size: 16px;
-}
-
-.ready li ingre_unit {
-	float: right;
-	color: #999;
-}
-
-.right_area ul {
-	padding: 5px 10px;
-	list-style: none;
-}
-
-.right_area input {
-	margin: 7px;
-}
-.ready table {
-	border: 1px solid black;
-	width: 200px;
-	heigth: 100px;	
-}
-</style>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
@@ -176,10 +18,10 @@ body {
 						<article class=content_in>
 							<h1>마늘쫑고추장무침 만드는 법 :</h1>
 							<h1>10분만에 완성되는 간단한 밑반찬 ♩</h1>
-							<p>요즘 식비 좀 줄여보겠다고 늘 있는 반찬에만 간단히 먹었더니 새로운 반찬이 먹고 싶더라고요. 그래서
+							<div class="sub-content">요즘 식비 좀 줄여보겠다고 늘 있는 반찬에만 간단히 먹었더니 새로운 반찬이 먹고 싶더라고요. 그래서
 								오래간만에 매콤달콤 밥도둑 마늘쫑 고추장 무침을 만들어 봤어요! 끓는 물에 마늘쫑 데쳐 양념 넣고 무치기만 하면
 								간단하게 완성되는 밑반찬이다 보니 주부들에게 늘 사랑받는 반찬, 마늘쫑 고추장 무침 ♩ 그럼 한 번 만들어볼까요?
-								:)></p>
+								:)></div>
 
 						</article>
 					</div>
@@ -243,9 +85,8 @@ body {
 						</div>
 					</div>
 					<div class=divs>
-						<p id=proc>
-							<span>RECIPE 순서</span>
-						</p>
+						<div id=proc>
+							<div>RECIPE 순서</div>
 						<div>
 							<p>1.대파는 송송 썬다.</p>
 							<p>2.팬에 기름을 두르고 닭을 굽듯이 볶는다.</p>
@@ -255,6 +96,7 @@ body {
 							<p>6.물, 다진마늘을 넣고 국물이 자작할 때까지 졸인다.</p>
 							<p>7.꽈리고추를 넣고 빠르게 볶은 후 불을 끈다.</p>
 							<p>8.후추, 통깨를 뿌려 완성한다.</p>
+						</div>
 						</div>
 					</div>
 

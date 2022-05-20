@@ -10,7 +10,7 @@ public class LogController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail() {
 		
-		return "/log/detail";
+		return "/ahn/log/detail";
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
