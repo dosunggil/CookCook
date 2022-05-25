@@ -23,6 +23,6 @@ public class ListController {
 	@RequestMapping(value = "/content", method = RequestMethod.GET)
 	public String content() {
 
-		return "/content/registerContent";
+		return "/chang/content/registerContent";
 	}
 }
