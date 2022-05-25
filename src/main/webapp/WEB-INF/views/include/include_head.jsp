@@ -28,6 +28,7 @@
 
 <!-- 장준영 -->
 <link rel="stylesheet" href="${rootPath}/resources/css/chang/list.css" />
+<link rel="stylesheet" href="${rootPath}/resources/css/chang/registerContent.css" />
 <script src="${rootPath}/resources/js/chang/list.js?ver=2022-05-13-004"></script>
 <!-- 장준영 끝 -->
 <script>const rootPath = "${rootPath}"</script>
