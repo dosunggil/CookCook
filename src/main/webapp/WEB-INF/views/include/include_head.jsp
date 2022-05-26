@@ -23,6 +23,7 @@
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script>
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/log.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/detail.css" />
+<link rel="stylesheet" href="${rootPath}/resources/css/ahn/signup.css" />
 <!-- 안혁끝 -->
 
 
