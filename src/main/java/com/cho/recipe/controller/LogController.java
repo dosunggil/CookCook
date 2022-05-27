@@ -13,15 +13,9 @@ public class LogController {
 		return "/ahn/log/detail";
 	}
 	
-	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage() {
-
-		return "/member/mypage";
-	}
-	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signUp() {
 
-		return "/signup/signup";
+		return "/ahn/signup/signup";
 	}
 }

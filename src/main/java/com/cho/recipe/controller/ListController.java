@@ -14,12 +14,6 @@ public class ListController {
 		return "/list/listDetail";
 	}
 	
-	@RequestMapping(value = "/alter", method = RequestMethod.GET)
-	public String alter() {
-
-		return "/alter/alter";
-	}
-	
 	@RequestMapping(value = "/content", method = RequestMethod.GET)
 	public String content() {
 
