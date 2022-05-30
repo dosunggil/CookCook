@@ -374,15 +374,16 @@ footer ul li:not(:first-child) {
 	color: #fff;
 }
 
-.dark-theme-header {
+.dark-theme-bold {
 	background-color: #303030 !important;
-	border-bottom: 1px solid #444444e3 !important;
 	color: #fff !important;
 }
 
-.dark-theme-search {
-	background-color: #303030 !important;
-	color: #fff;
+.dark-theme-header {
+	border-bottom: 1px solid #444444e3 !important;
+}
+.dark-theme-footer{
+	border-top: 1px solid #444444e3 !important;
 }
 
 .dark-theme-drop { 

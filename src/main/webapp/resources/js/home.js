@@ -3,14 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const search = document.querySelector("button.btn-search");
   const go_home = document.querySelector("div.btn-go-home");
   const btn_open = document.querySelector("div.btn-open");
-  const btn_theme = document.querySelector("div.btn-theme");
 
   const drop_menu = document.querySelector("div.drop-menu");
-  const main = document.querySelector("main");
-  const header = document.querySelector("header");
-  const footer = document.querySelector("footer");
-  const search_box = document.querySelector(".btn-search");
-  const search_btn = document.querySelector("button.btn-search");
 
   const list_box = document.querySelector(".list_box");
 
@@ -20,27 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let url = `${rootPath}`;
       url += "/detail";
       document.location.href = url;
-    });
-  }
-
-  if (btn_theme) {
-    btn_theme.addEventListener("click", () => {
-      const dark_theme_main = main.className;
-      if (dark_theme_main === "") {
-        main.classList.add("dark-theme-body");
-        search_btn.classList.add("dark-theme-search");
-        header.classList.add("dark-theme-header");
-        footer.classList.add("dark-theme-header");
-        search_box.classList.add("dark-theme-search");
-        drop_menu.classList.add("dark-theme-drop");
-      } else {
-        main.classList.remove("dark-theme-body");
-        header.classList.remove("dark-theme-header");
-        footer.classList.remove("dark-theme-header");
-        search_box.classList.remove("dark-theme-search");
-        search_btn.classList.remove("dark-theme-search");
-        drop_menu.classList.remove("dark-theme-drop");
-      }
     });
   }
 

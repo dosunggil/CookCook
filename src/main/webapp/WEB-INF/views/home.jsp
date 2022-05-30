@@ -8,21 +8,21 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
-		<div class="middle_nav">
-			<div class="container">
-				<!-- 	
-				<div class="search_box">
-					<form>
-						<fieldset>
-							<input type="text" placeholder="레시피 검색!">
-							<button type="submit">
-								<i class="fa-solid fa-magnifying-glass"></i>
-							</button>
-						</fieldset>
-					</form>
-				</div> -->
-			</div>
-		</div>
+<!-- 		<div class="middle_nav"> -->
+<!-- 			<div class="container"> -->
+<!-- 					
+<!-- 				<div class="search_box"> -->
+<!-- 					<form> -->
+<!-- 						<fieldset> -->
+<!-- 							<input type="text" placeholder="레시피 검색!"> -->
+<!-- 							<button type="submit"> -->
+<!-- 								<i class="fa-solid fa-magnifying-glass"></i> -->
+<!-- 							</button> -->
+<!-- 						</fieldset> -->
+<!-- 					</form> -->
+<!-- 				</div> --> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 		<div class="content_top">
 			<div>손쉬운 식재료 보관법</div>
 		</div>

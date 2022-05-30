@@ -14,7 +14,8 @@
 <!-- 공용 끝 -->
 
 <!-- 조도성 -->
-<link rel="stylesheet" href="${rootPath}/resources/css/main.css?ver=20220518-002" />
+<script src="${rootPath}/resources/js/theme.js?ver=2022-05-30-0002"></script>
+<link  href="${rootPath}/resources/css/main.css?ver=2022-05-30-0002" rel="stylesheet" />
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
 <!-- 조도성 끝-->
