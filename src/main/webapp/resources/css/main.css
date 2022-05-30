@@ -203,7 +203,10 @@ div.content_top {
 	position: relative;
 	width: 1130px;
 	height: 600px;
-	margin: 50px auto;
+	margin: 0 auto;
+	padding-top : 50px;
+	padding-bottom : 50px;
+	
 	background-image: url(../../resources/images/cooking.jpg);
 	background-size: cover;
 }
