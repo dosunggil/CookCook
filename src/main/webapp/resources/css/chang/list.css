@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
-.main {
+div.ch-main {
 	width: 1130px;
+	min-width: 1130px;
 	height: 100%;
-	margin: 130px auto 0;
+	padding-top: 130px;
+	margin: auto;
 	display: flex;
 	flex-direction: column;
 }
