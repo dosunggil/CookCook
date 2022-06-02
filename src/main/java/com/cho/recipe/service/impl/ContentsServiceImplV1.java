@@ -2,15 +2,23 @@ package com.cho.recipe.service.impl;
 
 import java.util.List;
 
+
+import org.springframework.stereotype.Service;
+
+import com.cho.recipe.dao.ContentListDao;
 import com.cho.recipe.model.ContentVO;
 import com.cho.recipe.service.ContentsService;
 
+@Service("contentsServicev1")
 public class ContentsServiceImplV1 implements ContentsService {
 	
+	ContentListDao contentListDao;
+	public ContentsServiceImplV1(ContentListDao contentListDao) {
+		this.contentListDao=contentListDao;
+	}
 	@Override
 	public List<ContentVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return contentListDao.selectAll();
 	}
 
 	@Override
@@ -36,5 +44,7 @@ public class ContentsServiceImplV1 implements ContentsService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+
 
 }
