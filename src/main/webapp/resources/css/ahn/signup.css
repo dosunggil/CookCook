@@ -67,6 +67,10 @@ div.form-mainA {
 	width: 100px;
 	height: 30px;
 }
+.colum-mainA.email div:nth-of-type(2) input[type=text] {
+	width: 250px;
+	height: 30px;
+}
 
 
 form button.btn-blueA {

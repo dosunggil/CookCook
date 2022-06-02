@@ -16,6 +16,7 @@
 		<property name="username" value="cookcook"/>
 		<property name="password" value="1234"/>
 	</bean>
+
 	
 	
 	<!-- SqlSessionFactory -->

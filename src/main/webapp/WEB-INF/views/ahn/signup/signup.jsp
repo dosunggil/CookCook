@@ -41,6 +41,12 @@
 								<button type="button" class="btn-blueA btn-checkA">중복확인</button>
 							</div>
 						</div>
+						<div class="colum-mainA email">
+							<div>이메일</div>
+							<div>
+								<input type="text">
+							</div>
+						</div>
 						<div class="colum-mainA password">
 							<div>비밀번호</div>
 							<div>
