@@ -8,9 +8,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
-	<main>
-		<div class="ch-main"></div>
-	</main>
+	
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>

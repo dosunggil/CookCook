@@ -1,16 +1,28 @@
 package com.cho.recipe.service.impl;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Collections;
 import java.util.List;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.cho.recipe.config.DosungPostConfig;
+import com.cho.recipe.model.DosungCOOK;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.service.DosungPostService;
 
@@ -51,12 +63,12 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 	}
 
 	@Override
-	public String queryString(String search) {
+	public String queryString(String cat, String search) {
 
 		String queryString = DosungPostConfig.API_URL;
 		queryString += String.format("/%s", DosungPostConfig.API_ID);
 		log.debug("현재 쿼리스트링 : " + queryString);
-		
+
 		String encodeSearch = null;
 		try {
 			encodeSearch = URLEncoder.encode(search, "UTF-8");
@@ -73,18 +85,35 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 
 		URL url = null;
 		HttpURLConnection httpCon = null;
-		
+
 		try {
 			url = new URL(queryString);
 			httpCon = (HttpURLConnection) url.openConnection();
-			
+
 			httpCon.setRequestMethod("GET");
-			
+
 			int resCode = httpCon.getResponseCode();
-			
-			
-			
-			
+
+			BufferedReader buffer = null;
+			InputStreamReader is = null;
+
+			if (resCode == 200) {
+				is = new InputStreamReader(httpCon.getInputStream());
+			} else {
+				is = new InputStreamReader(httpCon.getErrorStream());
+			}
+			buffer = new BufferedReader(is);
+
+			String retString = "";
+			while (true) {
+				String line = buffer.readLine();
+				if (line == null)
+					break;
+
+				retString += line;
+			}
+			return retString;
+
 		} catch (MalformedURLException e) {
 			log.debug("Query String 문자열 오류");
 			return null;
@@ -92,11 +121,35 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 			log.debug("네트워크 연결을 할 수 없음");
 			return null;
 		}
-		
-		
+	}
+
+	@Override
+	public List<DosungPostVO> getRecipes(String queryString) {
+		URI restURI = null;
+
+		try {
+			restURI = new URI(queryString);
+		} catch (URISyntaxException e) {
+			log.debug("URI 오류 (getRecipes)");
+			return null;
+		}
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+		HttpEntity<String> entity = new HttpEntity<String>("Parameter", headers);
+
+//		ResponseEntity<String> resData= null;
+//		RestTemplate restTemp = new RestTemplate();
+//		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, String.class);
+//		log.debug(resData.getBody().toString());
+
+		ResponseEntity<DosungCOOK> resData = null;
+		RestTemplate restTemp = new RestTemplate();
+		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, DosungCOOK.class);
+
+		log.debug(resData.getBody().toString());
+//		return resData.getBody().COOKRCP01.row;
 		return null;
 	}
-	
-	
 
 }

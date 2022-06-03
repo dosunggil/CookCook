@@ -17,9 +17,9 @@
 				<!-- <div class="drop-menu-close btn-close">접기</div> -->
 			</div>
 		<div class="search_box">
-			<form>
+			<form method="POST" action="${rootPath}/cho/recipes">
 				<fieldset>
-					<input class="btn-search" type="text" name="search" placeholder="레시피 검색!">
+					<input class="btn-search" type="text" name="title" id="title" placeholder="레시피 검색!">
 					<button type="button" class="btn-search">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
@@ -34,4 +34,7 @@
 		<i class="fa-solid fa-circle-half-stroke"></i>
 	</div>
 	</div>
+		<section class="modal" id="modal-box">
+	
+	</section>
 </header>

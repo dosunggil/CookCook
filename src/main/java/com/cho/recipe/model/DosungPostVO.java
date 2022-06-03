@@ -12,19 +12,29 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Builder
 public class DosungPostVO {
 
-	private String RCP_SEQ;//	일련번호
-	private String RCP_NM;//	메뉴명
-	private String INFO_ENG;//	열량
-	private String HASH_TAG;//	해쉬태그
-	private String ATT_FILE_NO_MAIN;//	이미지경로(소)
-	private String ATT_FILE_NO_MK;//	이미지경로(대)
+	
+	
+	public DosungPostVO(String rCP_PARTS_DTLS) {
+		RCP_PARTS_DTLS = rCP_PARTS_DTLS;
+	}
+
+//	private String RCP_SEQ;//	일련번호
+//	private String RCP_NM;//	메뉴명
+//	private String INFO_ENG;//	열량
+//	private String HASH_TAG;//	해쉬태그
+//	private String ATT_FILE_NO_MAIN;//	이미지경로(소)
+//	private String ATT_FILE_NO_MK;//	이미지경로(대)
 	private String RCP_PARTS_DTLS;//	재료정보
-	private String POST_STAR;// 별점
+
+				   
+//	private String POST_STAR;// 별점
+	
+	
+	
 
 }
