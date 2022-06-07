@@ -17,7 +17,7 @@ header {
 	height: 70px;
 	/* box-shadow: 0 0 10px 1px #d7d7d7; */
 	border-bottom: 1px solid #4444444a;
-	min-width: 1190px;
+	min-width: 1024px;
 	align-items: center;
 	align-content: center;
 	z-index: 1000 !important;
@@ -25,7 +25,7 @@ header {
 
 div.top_nav {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: flex-end;
@@ -168,7 +168,7 @@ fieldset {
 
 div.middle_nav {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	margin: auto;
 }
 
@@ -194,14 +194,14 @@ div.middle_nav div.container {
 } */
 div.content_main {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	/* padding : 20px 50px 0 50px; */
 	margin: 15px auto;
 }
 
 div.content_top {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	height: 600px;
 	margin: 0 auto;
 	padding-top : 50px;
@@ -350,7 +350,7 @@ footer {
 }
 
 footer ul {
-	width: 1130px;
+	width: 1030px;
 	margin: 0 auto;
 	display: flex;
 }

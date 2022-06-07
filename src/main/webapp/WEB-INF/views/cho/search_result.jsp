@@ -9,23 +9,22 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
-	<div class="cho-list-container">
-		<c:forEach items="${RECIPES}" var="RECIPE">
-			<div class="cho-list-box">
-				<div class="">
-					<div class="">
-						<div class="">
-							<div>${RECIPE.RCP_NM}</div>
-						</div>
+		<div class="cho-list-container">
+			<c:forEach items="${RECIPES}" var="RECIPE">
+				<div class="cho-list-box">
+
+					<div class="cho-list-main">
+						<div id="cho-rcp_nm">${RECIPE.RCP_NM}</div>
+						<div id="cho-info_eng">${RECIPE.INFO_ENG}kcal</div>
+						<div id="cho-post_star">${RECIPE.POST_STAR}</div>
 					</div>
+
 					<div class="cho-list-img">
 						<img src="${RECIPE.ATT_FILE_NO_MAIN}">
-						<%-- <div>${RECIPE.ATT_FILE_NO_MAIN}</div> --%>
 					</div>
 				</div>
-			</div>
-		</c:forEach>
-	</div>
+			</c:forEach>
+		</div>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>

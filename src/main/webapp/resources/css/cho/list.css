@@ -1,21 +1,32 @@
 @charset "UTF-8";
 div.cho-list-container {
 	position:relative;
-	border: 1px solid blue;
-	width: 1130px;
+	width: 1030px;
 	margin: 0 auto;
 	padding : 100px 0 150px;
 	
 	
 }
 div.cho-list-box {
-	border: 1px solid red;
+	border-top: 1px solid #ccc;
 	
 	position: relative;
-	height: 270px;
-	
+	height: 190px;
+	display : flex;
+	flex-direction: column;
+	padding: 15px 0;
 }
 
+#cho-rcp_nm {
+	font-size: 24px;
+	font-weight: 800;
+	margin-bottom : 15px;
+	
+}
+#cho-info_eng {
+	font-size: 18px;
+	font-weight: 600;
+}
 div.cho-list-img {
 	border: 1px solid black;
 	
@@ -23,9 +34,12 @@ div.cho-list-img {
 	right:0;
 	
 	width: 250px;
-	height: 220px;
+	height: 190px;
+	overflow: hidden;
 }
 
 div.cho-list-img img {
-	width:250px;
+	width: 250px;
+	height: 190px;
+	object-fit: cover;
 }
