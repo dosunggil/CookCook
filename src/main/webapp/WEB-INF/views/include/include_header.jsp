@@ -17,10 +17,10 @@
 				<!-- <div class="drop-menu-close btn-close">접기</div> -->
 			</div>
 		<div class="search_box">
-			<form method="POST" action="${rootPath}/cho/recipes">
+			<form method="POST" action="${rootPath}/cho/search_result">
 				<fieldset>
 					<input class="btn-search" type="text" name="title" id="title" placeholder="레시피 검색!">
-					<button type="button" class="btn-search">
+					<button type="submit" class="btn-search">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</fieldset>

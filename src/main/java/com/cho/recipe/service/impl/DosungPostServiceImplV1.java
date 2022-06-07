@@ -63,7 +63,7 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 	}
 
 	@Override
-	public String queryString(String cat, String search) {
+	public String queryString(String title) {
 
 		String queryString = DosungPostConfig.API_URL;
 		queryString += String.format("/%s", DosungPostConfig.API_ID);
@@ -71,7 +71,7 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 
 		String encodeSearch = null;
 		try {
-			encodeSearch = URLEncoder.encode(search, "UTF-8");
+			encodeSearch = URLEncoder.encode(title, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			log.debug("URL Encoding 오류 발생");
 			return null;
@@ -148,8 +148,8 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, DosungCOOK.class);
 
 		log.debug(resData.getBody().toString());
-//		return resData.getBody().COOKRCP01.row;
-		return null;
+		return resData.getBody().COOKRCP01.row;
+	
 	}
 
 }

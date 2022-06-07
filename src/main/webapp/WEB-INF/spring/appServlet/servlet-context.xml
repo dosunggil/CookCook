@@ -22,11 +22,9 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.cho.recipe.controller" />
-<<<<<<< HEAD
+
 	<context:component-scan base-package="com.cho.recipe.service.impl" />
-=======
-	<context:component-scan base-package="com.cho.recipe.service" />
->>>>>>> 5d902ff35b363937c3334d9836438d648022b110
+
 	
 	
 	

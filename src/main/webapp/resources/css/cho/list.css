@@ -1,0 +1,31 @@
+@charset "UTF-8";
+div.cho-list-container {
+	position:relative;
+	border: 1px solid blue;
+	width: 1130px;
+	margin: 0 auto;
+	padding : 100px 0 150px;
+	
+	
+}
+div.cho-list-box {
+	border: 1px solid red;
+	
+	position: relative;
+	height: 270px;
+	
+}
+
+div.cho-list-img {
+	border: 1px solid black;
+	
+	position: absolute;
+	right:0;
+	
+	width: 250px;
+	height: 220px;
+}
+
+div.cho-list-img img {
+	width:250px;
+}

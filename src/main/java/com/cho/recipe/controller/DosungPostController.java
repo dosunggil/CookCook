@@ -24,20 +24,20 @@ public class DosungPostController {
 	}
 	
 	
-	@RequestMapping(value="/recipes", method=RequestMethod.GET)
+	@RequestMapping(value="/search_result", method=RequestMethod.GET)
 	public String getRecipes() {
 		return "cho/search_result";
 	}	
-	@RequestMapping(value="/recipes", method=RequestMethod.POST)
+	@RequestMapping(value="/search_result", method=RequestMethod.POST)
 	public String getRecipes(String title, Model model) {
 		
-		String quString = post.queryString("RECIPE", title);
+		String quString = post.queryString(title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		
 		model.addAttribute("RECIPES", recipeList);
 
 		log.debug("쿼리스트링" + quString);
 		
-		return "cho/search_result";
+		return null;
 	}
 }

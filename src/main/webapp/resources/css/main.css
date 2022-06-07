@@ -158,7 +158,7 @@ div.profile {
 main {
 	min-width: 1190px;
 	height: 100%;
-	padding-bottom: 150px;
+/* 	padding-bottom: 150px; */
 }
 
 fieldset {
