@@ -19,7 +19,7 @@
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
-<!-- <script src="${rootPath}/resources/js/cho/search.js?ver=2022-05-13-02"></script> -->
+<script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-003"></script>
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->

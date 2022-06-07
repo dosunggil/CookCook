@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.cho.recipe.config.DosungPostConfig;
+import com.cho.recipe.dao.DosungPostDao;
 import com.cho.recipe.model.DosungCOOK;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.service.DosungPostService;
@@ -32,16 +34,24 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class DosungPostServiceImplV1 implements DosungPostService {
 
+
+	@Autowired
+	private DosungPostDao postDao;
+	/*
+	 * API 가 아닌 DB 에서의 검색 결과 찾아주기.
+	 */
 	@Override
 	public List<DosungPostVO> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/*
+	 * 한 레시피에 대한 결과를 찾아주기.
+	 */
 	@Override
 	public DosungPostVO findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return postDao.findById(id);
 	}
 
 	@Override
@@ -63,7 +73,7 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 	}
 
 	@Override
-	public String queryString(String title) {
+	public String queryString(String title, String dtls) {
 
 		String queryString = DosungPostConfig.API_URL;
 		queryString += String.format("/%s", DosungPostConfig.API_ID);

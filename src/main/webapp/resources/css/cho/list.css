@@ -4,7 +4,7 @@ div.cho-list-container {
 	width: 1030px;
 	margin: 0 auto;
 	padding : 100px 0 150px;
-	
+	min-height: 1000px;
 	
 }
 div.cho-list-box {
@@ -14,7 +14,7 @@ div.cho-list-box {
 	height: 190px;
 	display : flex;
 	flex-direction: column;
-	padding: 15px 0;
+	padding: 35px 0;
 }
 
 #cho-rcp_nm {
@@ -28,7 +28,7 @@ div.cho-list-box {
 	font-weight: 600;
 }
 div.cho-list-img {
-	border: 1px solid black;
+	border: 1px solid #9e9e9e;
 	
 	position: absolute;
 	right:0;

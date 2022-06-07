@@ -13,8 +13,13 @@
 	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="cookcook"/>
-		<property name="password" value="1234"/>
+		<property name="username" value="cookmaster"/> <!-- cookmaster -->
+		<property name="password" value="12341234"/> <!-- 12341234 -->
+		<!-- cookmaster.db
+				tbl_recipe
+				tbl_recipe_detail 
+				tbl_recipe_post
+				-->
 	</bean>
 	
 	
@@ -26,6 +31,13 @@
 		<property name="dataSource" ref="ds"/>
 		<property name="typeAliasesPackage" value="com.cho.recipe.model"/>
 		<property name="mapperLocations" value="/WEB-INF/spring/mapper/*-mapper.xml"/>
+		<property name="configuration">
+			<bean class="org.apache.ibatis.session.Configuration">
+				<property name="jdbcTypeForNull" value="VARCHAR"/>
+				<property name="cacheEnabled" value="true"/>
+				<property name="defaultExecutorType" value="REUSE"/>
+			</bean>
+		</property>
 	</bean>
 	
 	
