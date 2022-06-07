@@ -17,9 +17,10 @@
 <script src="${rootPath}/resources/js/theme.js?ver=2022-05-30-0004"></script>
 <link  href="${rootPath}/resources/css/main.css?ver=2022-05-30-0002" rel="stylesheet" />
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />
+<link  href="${rootPath}/resources/css/cho/detail.css" rel="stylesheet" />
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
-<script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-003"></script>
+<script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-007"></script>
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->

@@ -73,15 +73,17 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 	}
 
 	@Override
-	public String queryString(String title, String dtls) {
+	public String queryString(String title) {
 
 		String queryString = DosungPostConfig.API_URL;
 		queryString += String.format("/%s", DosungPostConfig.API_ID);
 		log.debug("현재 쿼리스트링 : " + queryString);
 
+		String[] sp = title.split("&");
+	
 		String encodeSearch = null;
 		try {
-			encodeSearch = URLEncoder.encode(title, "UTF-8");
+			encodeSearch = URLEncoder.encode(sp[0], "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			log.debug("URL Encoding 오류 발생");
 			return null;

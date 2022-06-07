@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.cho-detail {
+	border:1px solid black;
+	height:  300px;
+}
+.cho-detail-container {
+	width : 1030px;
+	margin:0 auto;
+}

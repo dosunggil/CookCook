@@ -11,7 +11,8 @@
 	<main>
 		<div class="cho-list-container">
 			<c:forEach items="${RECIPES}" var="RECIPE">
-				<div class="cho-list-box" data-nm="${RECIPE.RCP_NM}">
+				<div class="cho-list-box" data-nm="${RECIPE.RCP_NM}"
+										data-seq="${RECIPE.RCP_SEQ}">
 					<div class="cho-list-main">
 						<div id="cho-rcp_nm">${RECIPE.RCP_NM}</div>
 						<div id="cho-info_eng">${RECIPE.INFO_ENG}kcal</div>
