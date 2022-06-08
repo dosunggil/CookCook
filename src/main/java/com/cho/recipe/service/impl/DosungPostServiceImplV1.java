@@ -79,7 +79,7 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 		queryString += String.format("/%s", DosungPostConfig.API_ID);
 		log.debug("현재 쿼리스트링 : " + queryString);
 
-		String[] sp = title.split("&");
+		String[] sp = title.split(" ");
 	
 		String encodeSearch = null;
 		try {
@@ -135,6 +135,31 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 		}
 	}
 
+//	@Override
+//	public List<Object> getRecipes(String queryString) {
+//		URI restURI = null;
+//
+//		try {
+//			restURI = new URI(queryString);
+//		} catch (URISyntaxException e) {
+//			log.debug("URI 오류 (getRecipes)");
+//			return null;
+//		}
+//
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+//		HttpEntity<String> entity = new HttpEntity<String>("Parameter", headers);
+//
+//		RestTemplate restTemp = new RestTemplate();
+//
+//		ResponseEntity<DosungPostParent<DosungPostVO>> resData = null;
+//		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, new ParameterizedTypeReference<DosungPostParent<DosungPostVO>>() {} );
+//	
+//		log.debug(resData.getBody().toString());
+//
+//		return resData.getBody().row;
+//	}
+	
 	@Override
 	public List<DosungPostVO> getRecipes(String queryString) {
 		URI restURI = null;
@@ -159,9 +184,9 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 		RestTemplate restTemp = new RestTemplate();
 		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, DosungCOOK.class);
 
-		log.debug(resData.getBody().toString());
+// 		log.debug(resData.getBody().toString());
 		return resData.getBody().COOKRCP01.row;
 	
 	}
-
 }
+	

@@ -20,9 +20,9 @@ import lombok.ToString;
 @Builder
 public class DosungPostVO {
 
-	public DosungPostVO(String rCP_PARTS_DTLS) {
-		RCP_PARTS_DTLS = rCP_PARTS_DTLS;
-	}
+//	public DosungPostVO(String rCP_PARTS_DTLS) {
+//		RCP_PARTS_DTLS = rCP_PARTS_DTLS;
+//	}
 
 	@JsonProperty("RCP_SEQ")
 	private String RCP_SEQ;// 일련번호
@@ -44,6 +44,8 @@ public class DosungPostVO {
 
 	@JsonProperty("RCP_PARTS_DTLS")
 	private String RCP_PARTS_DTLS;// 재료정보
+
+
 
 	private int POST_STAR;// 별점
 

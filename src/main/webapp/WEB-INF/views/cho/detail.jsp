@@ -11,6 +11,10 @@
 	<main>
 		<div class="cho-detail-container">
 			<div class="cho-detail-top cho-detail">
+				<div class="cho-big-img-box">
+					<img src="${RECIPE.ATT_FILE_NO_MK}">
+				</div>
+				<div><h1>${RECIPE.RCP_NM}</h1></div>
 			</div>
 			<div class="cho-detail-middle cho-detail">
 			</div>

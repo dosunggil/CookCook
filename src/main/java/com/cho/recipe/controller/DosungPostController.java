@@ -29,32 +29,56 @@ public class DosungPostController {
 		return "cho/search_result";
 	}
 
-	@RequestMapping(value = "/search_result", method = RequestMethod.POST)
+	@RequestMapping(value = "/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title,String dtls, Model model) {
 
 		String quString = post.queryString(title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
-
 		model.addAttribute("RECIPES", recipeList);
-
-		log.debug("쿼리스트링" + quString);
 
 		return null;
 	}
 
-	@RequestMapping(value = "/{seq}/{nm}/detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public String detail(@PathVariable("nm") String nm, @PathVariable("seq")  String seq, Model model) {
 
+		
+	/*
+	 * String queryString = naver.queryString("LIST", isbn);
+	 * String queryString = naver.queryString("DETAIL", isbn);
+	 * 
+	 * 이렇게 해서 두 경우로 나누자!
+	 * NaverServiceImplV1 getNaver 참고 !!
+	 */
 		String quString = post.queryString(nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
-		DosungPostVO vo = null;
+	//	List<DosungDetailVO> detailList = post.getDetail(quString);
+	//	log.debug("디테일이 잘 왔나?" + detailList.toString());
+		DosungPostVO postVO = null;
 		for(DosungPostVO dVO : recipeList) {
 			if(dVO.getRCP_SEQ().equals(seq)){
-				vo = dVO;
+				postVO = dVO;
 				break;
 			}
 		}
-		model.addAttribute("RECIPE", vo);
+		model.addAttribute("RECIPE", postVO);
+		
+		
+		
+//		@ResponseBody
+//		@RequestMapping(value="/{isbn}/book",method=RequestMethod.GET)
+//		public BookVO book(@PathVariable("isbn") String isbn) {
+//			
+//			String queryString = naver.queryString("BOOK", isbn);
+//			List<Object> bookList = naver.getNaver(queryString);
+//			
+//			BookVO bookVO = (BookVO) bookList.get(0);
+//			return bookVO;
+//			
+//		}
+		
+		
+		
 		/*
 		 * open api 에서는 findbyid 가 아닌 다른 방법을 찾아야한다.
 		 */
@@ -62,7 +86,7 @@ public class DosungPostController {
 		 * DosungPostVO postVO = post.findById(seq);
 		 * model.addAttribute("RECIPE",postVO);
 		 */
-		log.debug("결과는? " + vo.toString());
+		//log.debug("결과는? " + vo.toString());
 
 		return "cho/detail";
 	}
