@@ -14,13 +14,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 /*
- * 게시글 테이블 
+ * 게시글 테이블
  */
 public class ContentVO {
-	private String postSeq; // PK
-	private String contentsTitle;
-	private String contentsArticle;
-	private String contentSmallPhoto;
-	private String contentBigPhoto;
-	private String cookInfoSeq; // 게시글 테이블 FK,요리정보 테이블의 PK
+	private String POST_SEQ;
+	private String POST_TITLE;
+	private String POST_CONTENT;
+	private String POST_IMG_BIG;
+	private String POST_IMG_SMALL;
+	private String MANUAL_SEQ;
+	private String POST_STAR;
+
 }
