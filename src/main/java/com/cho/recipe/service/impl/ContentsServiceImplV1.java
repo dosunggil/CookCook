@@ -9,7 +9,7 @@ import com.cho.recipe.dao.ContentListDao;
 import com.cho.recipe.model.ContentVO;
 import com.cho.recipe.service.ContentsService;
 
-//@Service("contentsServicev1")
+@Service("contentsServicev1")
 public class ContentsServiceImplV1 implements ContentsService {
 	
 	ContentListDao contentListDao;

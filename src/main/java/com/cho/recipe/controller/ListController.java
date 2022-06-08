@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.ContentVO;
 import com.cho.recipe.service.ContentsService;
 
-//@Controller
+@Controller
 public class ListController {
 
 	private final ContentsService contentsService;
@@ -23,7 +23,7 @@ public class ListController {
 	@RequestMapping(value = "/list")
 	public String List(Model model) {
 		List<ContentVO> contentList = contentsService.selectAll();
-		model.addAttribute("c", contentList);
+		model.addAttribute("CONTENT", contentList);
 		return "chang/list/list";
 	}
 
