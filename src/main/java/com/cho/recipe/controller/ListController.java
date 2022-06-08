@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.ContentVO;
 import com.cho.recipe.service.ContentsService;
 
-//@Controller
+@Controller
 public class ListController {
 
 	private final ContentsService contentsService;

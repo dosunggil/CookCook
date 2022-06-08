@@ -19,21 +19,23 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.cho.recipe.config.DosungPostConfig;
 import com.cho.recipe.dao.DosungPostDao;
 import com.cho.recipe.model.DosungCOOK;
+import com.cho.recipe.model.DosungCOOK2;
+import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.service.DosungPostService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Service
-public class DosungPostServiceImplV1 implements DosungPostService {
+@org.springframework.stereotype.Service
+public class DosungPostServiceImplV1 extends DosungDetailServiceImplV1 implements DosungPostService {
 
+	protected String cat = "LIST";
 
 	@Autowired
 	private DosungPostDao postDao;
@@ -73,7 +75,7 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 	}
 
 	@Override
-	public String queryString(String title) {
+	public String queryString(String cat, String title) {
 
 		String queryString = DosungPostConfig.API_URL;
 		queryString += String.format("/%s", DosungPostConfig.API_ID);
@@ -183,10 +185,34 @@ public class DosungPostServiceImplV1 implements DosungPostService {
 		ResponseEntity<DosungCOOK> resData = null;
 		RestTemplate restTemp = new RestTemplate();
 		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, DosungCOOK.class);
+		
+		
 
-// 		log.debug(resData.getBody().toString());
+ 		log.debug(resData.getBody().toString());
 		return resData.getBody().COOKRCP01.row;
-	
+	}
+
+	@Override
+	public List<DosungDetailVO> getDetail(String queryString) {
+		URI restURI = null;
+
+		try {
+			restURI = new URI(queryString);
+		} catch (URISyntaxException e) {
+			log.debug("URI 오류 (getRecipes)");
+			return null;
+		}
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+		HttpEntity<String> entity = new HttpEntity<String>("Parameter", headers);
+
+		ResponseEntity<DosungCOOK2> resData = null;
+		RestTemplate restTemp = new RestTemplate();
+		resData = restTemp.exchange(restURI, HttpMethod.GET, entity, DosungCOOK2.class);
+
+//		log.debug("받아온 디테일 내용입니다1." + resData.getBody().toString());
+		return resData.getBody().COOKRCP01.row;
 	}
 }
 	

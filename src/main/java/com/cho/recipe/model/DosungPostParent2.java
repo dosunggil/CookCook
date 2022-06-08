@@ -4,10 +4,10 @@ import java.util.List;
 
 import lombok.ToString;
 @ToString
-public class DosungPostParent {
+public class DosungPostParent2 {
 	
 	public String total_count;
-	public List<DosungPostVO> row;
+	public List<DosungDetailVO> row;
 	
 
 }

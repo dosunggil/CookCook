@@ -20,4 +20,11 @@ div.cho-big-img-box {
 div.cho-big-img-box img{
 	width: 100%;
 	height: 100%;
+	
+}
+div.cho-detail-container h1 {
+	font-size: 30px;
+	text-align: center;
+	font-weight: 800;
+	margin-top: 20px;
 }

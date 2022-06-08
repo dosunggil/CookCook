@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.service.DosungPostService;
+import com.cho.recipe.service.impl.DosungPostServiceImplV1;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,8 +34,10 @@ public class DosungPostController {
 	@RequestMapping(value = "/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title,String dtls, Model model) {
 
-		String quString = post.queryString(title);
+		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
+		
+		recipeList.add(null)
 		model.addAttribute("RECIPES", recipeList);
 
 		return null;
@@ -50,10 +54,11 @@ public class DosungPostController {
 	 * 이렇게 해서 두 경우로 나누자!
 	 * NaverServiceImplV1 getNaver 참고 !!
 	 */
-		String quString = post.queryString(nm);
+		String quString = post.queryString("LIST", nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
-	//	List<DosungDetailVO> detailList = post.getDetail(quString);
-	//	log.debug("디테일이 잘 왔나?" + detailList.toString());
+		List<DosungDetailVO> detailList = post.getDetail(quString);
+//		log.debug("받아온 디테일 내용입니다2. " + detailList.toString());
+		
 		DosungPostVO postVO = null;
 		for(DosungPostVO dVO : recipeList) {
 			if(dVO.getRCP_SEQ().equals(seq)){
@@ -61,9 +66,15 @@ public class DosungPostController {
 				break;
 			}
 		}
+		DosungDetailVO dVO  = null;
+		dVO = detailList.get(0);
+		log.debug("디테일브이오" + dVO.toString());
+		
+//		DosungDetailVO detailVO = null;
+//		detailVO = detaill.splitDetail(dVO);
+		
 		model.addAttribute("RECIPE", postVO);
-		
-		
+		model.addAttribute("DETAIL",dVO);
 		
 //		@ResponseBody
 //		@RequestMapping(value="/{isbn}/book",method=RequestMethod.GET)
