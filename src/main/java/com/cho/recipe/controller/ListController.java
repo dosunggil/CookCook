@@ -23,7 +23,7 @@ public class ListController {
 	@RequestMapping(value = "/list")
 	public String List(Model model) {
 		List<ContentVO> contentList = contentsService.selectAll();
-		model.addAttribute("CONTENT", contentList);
+		model.addAttribute("c", contentList);
 		return "chang/list/list";
 	}
 
