@@ -10,6 +10,7 @@
 <!-- 공용 -->
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 <!-- 공용 끝 -->
 
@@ -21,10 +22,12 @@
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
 <script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-007"></script>
+<script src="${rootPath}/resources/js/cho/join.js?007"></script>
+<script src="${rootPath}/resources/js/cho/login.js?007"></script>
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->
-<script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script>
+<%-- <script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script> --%>
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/log.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/detail.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/signup.css" />

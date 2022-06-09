@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const go_home = document.querySelector("div.btn-go-home");
   const btn_open = document.querySelector("div.btn-open");
 
-  const drop_menu = document.querySelector("div.drop-menu");
+  const hidden_box = document.querySelector("div.hidden-box");
 
   const list_box = document.querySelector(".list_box");
 
@@ -21,15 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
     btn_open.addEventListener("click", () => {
       // const visibility = drop_menu.style.visibility;
       // const visi = btn_open.getAttribute("visibility");
-      const visibility = drop_menu.className;
+      const visibility = hidden_box.className;
       if (
-        visibility == "drop-menu" ||
-        visibility === "drop-menu dark-theme-drop"
+        visibility == "hidden-box" ||
+        visibility == "hidden-box" ||
+        visibility === "hidden-box dark-theme-drop"
       ) {
         console.log("안녕");
-        drop_menu.classList.add("visibility");
+        hidden_box.classList.add("visibility");
       } else {
-        drop_menu.classList.remove("visibility");
+        hidden_box.classList.remove("visibility");
       }
 
       // console.log(visibility);

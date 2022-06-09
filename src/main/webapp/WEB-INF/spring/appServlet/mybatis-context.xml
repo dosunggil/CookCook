@@ -52,6 +52,6 @@
 		DB 에서 조회하여 가져온 데이터를 VO, List 에 담는 코드 대신 생성
 		DB 에 보낼 SQL 을 변환하는 코드를 대신 생성
 	 -->
-	<mybatis-spring:scan base-package="com.cho.recipe.dao"/>
+	<mybatis-spring:scan base-package="com.cho.recipe.persistance"/>
 
 </beans>

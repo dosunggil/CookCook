@@ -2,6 +2,7 @@ package com.cho.recipe.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,24 +12,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.service.DosungPostService;
-import com.cho.recipe.service.impl.DosungPostServiceImplV1;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping(value = "/cho")
+@RequestMapping(value = "/cho/post")
 @Controller
 public class DosungPostController {
 
-	private final DosungPostService post;
-
-	public DosungPostController(DosungPostService dosungP) {
-		this.post = dosungP;
-	}
+	@Autowired
+	private DosungPostService post;
 
 	@RequestMapping(value = "/search_result", method = RequestMethod.GET)
 	public String getRecipes() {
-		return "cho/search_result";
+		return "cho/post/search_result";
 	}
 
 	@RequestMapping(value = "/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
@@ -37,10 +34,9 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		
-		recipeList.add(null);
 		model.addAttribute("RECIPES", recipeList);
 
-		return null;
+		return "cho/post/search_result";
 	}
 
 	@RequestMapping(value = "/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
@@ -99,7 +95,14 @@ public class DosungPostController {
 		 */
 		//log.debug("결과는? " + vo.toString());
 
-		return "cho/detail";
+		return "cho/post/detail";
 	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.GET)
+	public String insert() {
+		
+		return null;
+	}
+
 
 }
