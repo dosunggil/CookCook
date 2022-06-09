@@ -37,7 +37,7 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		
-		recipeList.add(null)
+		recipeList.add(null);
 		model.addAttribute("RECIPES", recipeList);
 
 		return null;
