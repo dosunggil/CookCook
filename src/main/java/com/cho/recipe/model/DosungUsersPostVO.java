@@ -29,6 +29,7 @@ public class DosungUsersPostVO {
 	private String RCP_NM;// 메뉴명
 
 	private String INFO_ENG;// 열량
+	
 	private String HASH_TAG;// 해쉬태그
 
 
