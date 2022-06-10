@@ -3,17 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="com.cho.recipe.persistance.DosungUserPostDao">
-	<select id="selectAll" resultType="DosungUserPostVO">
+<mapper namespace="com.cho.recipe.persistance.DosungRecipeDao">
+	<select id="selectAll" resultType="DosungRecipeVO">
 		Select * From tbl_user_post
 	</select>
-	<select id="findById" resultType="DosungUserPostVO">
+	<select id="findById" resultType="DosungRecipeVO">
 		Select *
 		from tbl_user_post where post_seq = #{post_seq}
 	</select>
 
 
-	<insert id="insert" parameterType="DosungUserPostVO">
+	<insert id="insert" parameterType="DosungRecipeVO">
 
 	insert into tbl_user(	
 			post_seq,
@@ -42,7 +42,7 @@
 			)
 	</insert>
 
-	<update id="update" parameterType="DosungUserPostVO">
+	<update id="update" parameterType="DosungRecipeVO">
 		update tbl_user set 
 				password = #{password},	
 				email = #{email},
