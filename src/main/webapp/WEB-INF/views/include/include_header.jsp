@@ -37,9 +37,10 @@
 			</c:if>
 			<c:if test="${not empty USER}">
 			<div class="btn-profile btn-open">
-				<a href="${rootPath}/cho/user/mypage"> <img class="img-login"
+				<a href="${rootPath}/cho/user/mypage">
+				 <img class="img-login"
 						src="${rootPath}/resources/images/mokoko.png" />
-				</a>
+ 				</a> 
 			</div>
 			<div class="hidden-box">
 				<div class="profile-menu-container"></div>"

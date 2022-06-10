@@ -14,6 +14,6 @@
 <body>
 <h1>여기는 마이페이지</h1>
 
-<a href="${rootPath}/cho/post/insert">레시피 등록하기</a>
+<a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>
 </body>
 </html>

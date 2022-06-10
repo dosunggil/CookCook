@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cho.recipe.config.QualifierConfig;
 import com.cho.recipe.model.DosungUserVO;
@@ -81,5 +83,24 @@ public class DosungUserController {
 	public String mypage(Model model, HttpSession session) {
 
 		return null;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/idcheck/{username}",method=RequestMethod.GET)
+	public String idCheck(@PathVariable("username") String username) {
+		DosungUserVO userVO = user.findById(username);
+		if(userVO == null) {
+			return "OK";
+		}
+		return "FAIL";
+	}
+	@ResponseBody
+	@RequestMapping(value="/emailcheck",method=RequestMethod.GET)
+	public String emailCheck( String email) {
+		DosungUserVO userVO = user.findByEmail(email);
+		if(userVO == null) {
+			return "OK";
+		}
+		return "FAIL";
 	}
 }

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const password = document.querySelector("#password");
   const btn_login = document.querySelector("#btn-login");
 
-  btn_login.addEventListener("click", () => {
+  btn_login?.addEventListener("click", () => {
     console.log("버튼누름");
 
     if (username.value === "") {

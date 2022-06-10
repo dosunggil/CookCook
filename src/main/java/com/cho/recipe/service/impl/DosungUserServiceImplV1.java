@@ -44,8 +44,7 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 
 	@Override
 	public DosungUserVO findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.findByEmail(email);
 	}
 
 

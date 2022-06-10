@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const login = document.querySelector("div.btn-login");
   const search = document.querySelector("button.btn-search");
   const go_home = document.querySelector("div.btn-go-home");
-  const btn_open = document.querySelector("div.btn-open");
 
-  const hidden_box = document.querySelector("div.hidden-box");
+  const btn_open = document.querySelectorAll("div.btn-open");
+  const hidden_box = document.querySelectorAll("div.hidden-box");
 
   const list_box = document.querySelector(".list_box");
 
@@ -17,33 +17,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (btn_open) {
-    btn_open.addEventListener("click", () => {
+  if (btn_open[0]) {
+    btn_open[0].addEventListener("click", () => {
       // const visibility = drop_menu.style.visibility;
       // const visi = btn_open.getAttribute("visibility");
-      const visibility = hidden_box.className;
+      const visibility = hidden_box[0].className;
       if (
-        visibility == "hidden-box" ||
         visibility == "hidden-box" ||
         visibility === "hidden-box dark-theme-drop"
       ) {
-        console.log("안녕");
-        hidden_box.classList.add("visibility");
+        hidden_box[0].classList.add("visibility");
       } else {
-        hidden_box.classList.remove("visibility");
+        hidden_box[0].classList.remove("visibility");
       }
 
       // console.log(visibility);
       //  = "visible";
       // drop_menu.style.opacity = "1";
     });
+  }
 
-    // if (btn_open.getAttribute("visibility") == "visible") {
-    //   btn_open.addEventListener("click", () => {
-    //     drop_menu.style.visibility = "hidden";
-    //     drop_menu.style.opacity = "0";
-    //   });
-    // }
+  if (btn_open[1]) {
+    btn_open[1].addEventListener("click", () => {
+      // const visibility = drop_menu.style.visibility;
+      // const visi = btn_open.getAttribute("visibility");
+      const visibility = hidden_box[1].className;
+      if (
+        visibility == "hidden-box" ||
+        visibility === "hidden-box dark-theme-drop"
+      ) {
+        hidden_box[1].classList.add("visibility");
+      } else {
+        hidden_box[1].classList.remove("visibility");
+      }
+    });
   }
 
   /*
