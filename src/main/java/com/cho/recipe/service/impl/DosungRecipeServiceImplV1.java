@@ -40,20 +40,12 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 		return 0;
 	}
 
-	// 사용하지 않을 insert
 	@Override
 	public int insert(DosungRecipeVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
-	/*
-	 * 
-	 */
-	@Override
-	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }

@@ -22,10 +22,7 @@
 			post_img,
 			post_eng,
 			post_dtls,
-			post_hashtag,
-			post_star,
-			post_user,
-			post_date	
+			post_hashtag	
 			)
 		values 
 			(
@@ -35,10 +32,7 @@
 			#{post_img},
 			#{post_eng},
 			#{post_dtls},
-			#{post_hashtag},
-			#{post_star},
-			#{post_user},
-			#{post_date}	
+			#{post_hashtag}
 			)
 	</insert>
 
@@ -70,4 +64,3 @@
 	</select>
 
 </mapper>
-

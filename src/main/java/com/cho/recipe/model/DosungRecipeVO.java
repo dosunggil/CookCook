@@ -29,8 +29,6 @@ public class DosungRecipeVO {
 	private String recipe_eng	;//	    NUMBER(5)				,
 	private String recipe_dtls;//		nVARCHAR2(1000)				,
 	private String recipe_hashtag;//	    nVARCHAR2(200)				,
-	private String recipe_star		;//NUMBER(3)				,
-	private String recipe_user  ;//     VARCHAR2(50),
-	private String recipe_date;//       varchar2(125)
+
 
 }
