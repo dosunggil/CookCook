@@ -1,105 +1,95 @@
 div.mainA {
-	width: 1130px;
-	height: 100vh;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
+  width: 1130px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 div.form-mainA {
-	width: 650px;
-	flex-direction: column;
-	display: flex;
-
+  width: 650px;
+  flex-direction: column;
+  display: flex;
 }
-
 
 .formA {
-	
-	padding: 20px 20px;
-	width: 650px;
-	font-weight: 900;
-	color: #282121;
-	margin: 50px auto;
+  padding: 20px 20px;
+  width: 650px;
+  font-weight: 900;
+  color: #282121;
+  margin: 50px auto;
 }
 .formA fieldset {
-	border: 2px solid #ff7f00;
-	border-radius: 5px;
-	
+  border: 2px solid #ff7f00;
+  border-radius: 5px;
 }
 .formA legend {
-	color: #ff7f00;
-	font-size: 24px;
-	text-align: center;
-	
+  color: #ff7f00;
+  font-size: 24px;
+  text-align: center;
 }
 
 .colum-mainA div:nth-of-type(1) {
-	width: 200px;
-	height: 30px;
-	text-align: center;
-	
-}	
+  width: 200px;
+  height: 30px;
+  text-align: center;
+}
 
 .colum-mainA {
-	height: 80px;
-	display: flex;
-	align-items: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
-.colum-mainA.id div:nth-of-type(2) input[type=text] {
-	width: 200px;
-	height: 30px;
+.name div:nth-of-type(2) input[type="text"] {
+  width: 100px;
+  height: 30px;
 }
-.colum-mainA.nickname div:nth-of-type(2) input[type=text] {
-	width: 200px;
-	height: 30px;
+.colum-mainA.username div:nth-of-type(2) input[type="text"] {
+  width: 200px;
+  height: 30px;
 }
-.colum-mainA.password div:nth-of-type(2) input[type=password] {
-	width: 250px;
-	height: 30px;
+.colum-mainA.nickname div:nth-of-type(2) input[type="text"] {
+  width: 200px;
+  height: 30px;
 }
-.colum-mainA.password2 div:nth-of-type(2) input[type=password] {
-	width: 250px;
-	height: 30px;
+.colum-mainA.password div:nth-of-type(2) input[type="password"] {
+  width: 250px;
+  height: 30px;
 }
-.colum-mainA.name div:nth-of-type(2) input[type=text] {
-	width: 100px;
-	height: 30px;
+.re_password div:nth-of-type(2) input[type="password"] {
+  width: 250px;
+  height: 30px;
 }
-.colum-mainA.email div:nth-of-type(2) input[type=text] {
-	width: 250px;
-	height: 30px;
-}
-
-
-form button.btn-blueA {
-	border: none;
-	outline: none;
-	border-radius: 5px;
-	font-size: 12px;
-	padding: 8px 12px;
-	background-color: #ff7f00;
-	margin-left: 10px;
-	color: white;
-	width: 50px;
+.colum-mainA.email div:nth-of-type(2) input[type="text"] {
+  width: 250px;
+  height: 30px;
 }
 
+button.btn-checkA {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 8px 12px;
+  background-color: #ff7f00;
+  margin-left: 10px;
+  color: white;
+  width: 50px;
+}
 
 .btn-sign {
-	border: none;
-	outline: none;
-	border-radius: 5px;
-	width: 400px;
-	font-size: 20px;
-	margin-left: 0 auto;
-	padding: 10px 16px;
-	background-color: #ff7f00;
-	color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 400px;
+  font-size: 20px;
+  margin-left: 0 auto;
+  padding: 10px 16px;
+  background-color: #ff7f00;
+  color: white;
 }
 
 .colum-mainA-btn {
-	margin: 30px auto;
+  margin: 30px auto;
 }
-
-	

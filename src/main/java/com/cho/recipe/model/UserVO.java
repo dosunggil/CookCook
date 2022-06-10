@@ -1,4 +1,4 @@
-package com.ahn.recipe.model;
+package com.cho.recipe.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,5 +20,6 @@ public class UserVO {
 	private String name;
 	private String nickname;
 	private String email;
+	private String role;
 }
 

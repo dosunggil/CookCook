@@ -13,9 +13,9 @@ public class LogController {
 		return "/ahn/log/detail";
 	}
 	
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
-	public String signUp() {
+	@RequestMapping(value = "join", method = RequestMethod.GET)
+	public String join() {
 
-		return "/ahn/signup/signup";
+		return "/ahn/user/join";
 	}
 }
