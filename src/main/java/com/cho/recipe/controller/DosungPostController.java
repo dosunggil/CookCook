@@ -2,6 +2,8 @@ package com.cho.recipe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,35 +13,66 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
+import com.cho.recipe.model.DosungRecipeVO;
+import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.service.DosungPostService;
+import com.cho.recipe.service.DosungRecipeService;
+import com.cho.recipe.service.DosungUserRecipeService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping(value = "/cho/post")
+@RequestMapping(value = "/cho")
 @Controller
 public class DosungPostController {
 
 	@Autowired
 	private DosungPostService post;
+	
+	
+	@Autowired 
+	private DosungRecipeService recipeService;
+	
+	@Autowired
+	private DosungUserRecipeService userRecipeService;
+	
+	
 
-	@RequestMapping(value = "/search_result", method = RequestMethod.GET)
-	public String getRecipes() {
+	@RequestMapping(value = "/post/search", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	public String getRecipes(String title, Model model) {
+		/*
+		 * title 이 검색어
+		 */
+		String quString = post.queryString("LIST", title);
+		List<DosungPostVO> recipeList = post.getRecipes(quString);
+		List<DosungRecipeVO> llist = recipeService.findByNm(title);
+		
+		log.debug("짜짠" + llist.toString());
+		/* recipeList.addAll(llist); */
+			model.addAttribute("RECIPES", recipeList);
+	
+
 		return "cho/post/search_result";
 	}
 
-	@RequestMapping(value = "/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/post/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title,String dtls, Model model) {
 
+		/*
+		 * title 이 검색어
+		 */
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
+		List<DosungRecipeVO> llist = recipeService.findByNm(title.split(" ")[0]);
+		
+		//recipeList.addAll(llist);
 		
 		model.addAttribute("RECIPES", recipeList);
 
 		return "cho/post/search_result";
 	}
 
-	@RequestMapping(value = "/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/post/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public String detail(@PathVariable("nm") String nm, @PathVariable("seq")  String seq, Model model) {
 
 		
@@ -64,7 +97,6 @@ public class DosungPostController {
 		}
 		DosungDetailVO dVO  = null;
 		dVO = detailList.get(0);
-		log.debug("디테일브이오" + dVO.toString());
 		
 //		DosungDetailVO detailVO = null;
 //		detailVO = detaill.splitDetail(dVO);
@@ -98,11 +130,34 @@ public class DosungPostController {
 		return "cho/post/detail";
 	}
 	
-	@RequestMapping(value="/insert",method=RequestMethod.GET)
-	public String insert() {
+	@RequestMapping(value="/recipe/insert",method=RequestMethod.GET)
+	public String insert(Model model,HttpSession session) {
+		model.addAttribute("LAYOUT","POST-INPUT");
 		
+		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
+		if(userVO == null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/cho/user/login";
+		}
 		return null;
 	}
+	
+	@RequestMapping(value="/recipe/insert",method=RequestMethod.POST)
+	public String insert(DosungRecipeVO recipeVO,HttpSession session, Model model) {
+		
+		log.debug("레피시 정보 : " + recipeVO.toString());
+		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
+		if(userVO == null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/cho/user/login";
+		}
+		recipeService.insert(recipeVO);
+		userRecipeService.insert(userVO, recipeVO);
+		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
+		return "redirect:/cho/user/mypage";
+		
+	}
+	
 
 
 }

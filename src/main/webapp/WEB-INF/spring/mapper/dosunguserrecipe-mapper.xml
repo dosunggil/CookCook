@@ -27,7 +27,7 @@
 
 	<insert id="insert" parameterType="DosungUserRecipeVO">
 
-	insert into tbl_user(	
+	insert into tbl_user_recipe(	
 		b_seq,
 		b_username,
 		b_date

@@ -12,7 +12,7 @@ public interface DosungUserRecipeDao  {
 public List<DosungUserRecipeVO> selectAll();
 	
 
-	public DosungUserRecipeVO findBySeqAndUserName(@Param("seq")  String seq,
+	public DosungUserRecipeVO findBySeqAndUserName(@Param("b_seq")  String b_seq,
 											@Param("username") String username);
 	
 	public List<DosungUserRecipeVO> findBySeq(String seq);

@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class DosungPostVO {
+public class DosungPostVO extends CookVO {
 
 //	public DosungPostVO(String rCP_PARTS_DTLS) {
 //		RCP_PARTS_DTLS = rCP_PARTS_DTLS;
@@ -35,9 +35,6 @@ public class DosungPostVO {
 
 	@JsonProperty("HASH_TAG")
 	private String HASH_TAG;// 해쉬태그
-
-	@JsonProperty("ATT_FILE_NO_MAIN")
-	private String ATT_FILE_NO_MAIN;// 이미지경로(소)
 
 	@JsonProperty("ATT_FILE_NO_MK")
 	private String ATT_FILE_NO_MK;// 이미지경로(대)

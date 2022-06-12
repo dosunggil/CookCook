@@ -17,7 +17,7 @@
 			<!-- <div class="drop-menu-close btn-close">접기</div> -->
 		</div>
 		<div class="search_box">
-			<form method="POST" action="${rootPath}/cho/post/search_result">
+			<form method="GET" action="${rootPath}/cho/post/search">
 				<fieldset>
 					<input class="btn-search" type="text" name="title" id="title"
 						placeholder="레시피 검색!">
@@ -36,20 +36,24 @@
 				</div>
 			</c:if>
 			<c:if test="${not empty USER}">
-			<div class="btn-profile btn-open">
-				<a href="${rootPath}/cho/user/mypage">
-				 <img class="img-login"
-						src="${rootPath}/resources/images/mokoko.png" />
- 				</a> 
-			</div>
-			<div class="hidden-box">
-				<div class="profile-menu-container"></div>"
-			</div>
+				<div class="btn-profile btn-open">
+					<img class="img-profile"src="${rootPath}/resources/images/mokoko.png" />
+				</div>
+				<div class="hidden-box">
+					<div class="profile-menu-container">
+						<div class="profile-menu profile-mypage">
+							<a href="${rootPath}/cho/user/mypage">마이페이지</a></div>
+						<div class="profile-menu profile-recipe">레시피관리</div>
+						<div class="profile-menu profile-logout">
+							<a href="${rootPath}/cho/user/logout"><img class="img-logout"src="${rootPath}/resources/images/logout.png" />
+							로그아웃</a></div>
+					</div>
+				</div>
 			</c:if>
 		</div>
-	</div>
-	<div class="btn-theme">
-		<i class="fa-solid fa-circle-half-stroke"></i>
+		<!-- <div class="btn-theme">
+			<i class="fa-solid fa-circle-half-stroke"></i>
+		</div> -->
 	</div>
 	<section class="modal" id="modal-box"></section>
 </header>

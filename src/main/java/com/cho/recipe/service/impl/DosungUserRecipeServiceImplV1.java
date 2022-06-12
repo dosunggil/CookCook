@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cho.recipe.model.DosungRecipeVO;
 import com.cho.recipe.model.DosungUserRecipeVO;
@@ -13,10 +14,14 @@ import com.cho.recipe.persistance.DosungRecipeDao;
 import com.cho.recipe.persistance.DosungUserRecipeDao;
 import com.cho.recipe.service.DosungUserRecipeService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
 public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 
 	@Autowired
-	protected DosungRecipeDao recipeDao;
+	protected DosungRecipeDao recipeDao;	
 	
 	@Autowired
 	protected DosungUserRecipeDao userRecipeDao;
@@ -56,15 +61,17 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 	@Override
 	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO) {
 		// 구입한 도서정보를 tbl_buybooks 에 추가하기
+	//	recipeDao.insert(recipeVO);
 		
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
 		DosungUserRecipeVO userrecipeVO = DosungUserRecipeVO.builder()
 				.b_date(dateFormat.format(date))
-				.b_seq(recipeVO.getRecipe_seq())
+				.b_seq(recipeVO.getRCP_SEQ())
 				.b_username(userVO.getUsername())
 				.build();
+		log.debug("짜잔" + userrecipeVO.getB_seq());
 		userRecipeDao.insert(userrecipeVO);
 		return 0;
 	}

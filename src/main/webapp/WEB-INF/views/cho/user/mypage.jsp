@@ -13,7 +13,11 @@
 </head>
 <body>
 <h1>여기는 마이페이지</h1>
-
+<ul>
+		<c:forEach items="${BUY_BOOKS}" var="BOOK">
+			<li>${BOOK.book.isbn}, &nbsp; &nbsp; ${BOOK.book.title},&nbsp; &nbsp; ${BOOK.book.author} 
+		</c:forEach>
+	</ul>
 <a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>
 </body>
 </html>

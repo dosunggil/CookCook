@@ -69,21 +69,17 @@ public class DosungUserController {
 		return "redirect:/";
 	}
 
-//	@RequestMapping(value="/mypage",method=RequestMethod.GET)
-//	public String mypage(Model model, HttpSession session) {
-//		DosungUserVO loginUser = (DosungUserVO) session.getAttribute("USER");
-//		if(loginUser ==null) {
-//			model.addAttribute("error","LOGIN_NEED");
-//			return "redirect:/cho/user/login";
-//		}
-//		model.addAttribute("LAYOUT","MYPAGE");
-//		return "home";
-//	}
-	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	@RequestMapping(value="/mypage",method=RequestMethod.GET)
 	public String mypage(Model model, HttpSession session) {
-
+		DosungUserVO loginUser = (DosungUserVO) session.getAttribute("USER");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/cho/user/login";
+		}
+		model.addAttribute("LAYOUT","MYPAGE");
 		return null;
 	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="/idcheck/{username}",method=RequestMethod.GET)

@@ -24,6 +24,7 @@
 <script src="${rootPath}/resources/js/cho/findbyid.js?ver-010"></script>
 <script src="${rootPath}/resources/js/cho/join.js?ver-008"></script>
 <script src="${rootPath}/resources/js/cho/login.js?ver-008"></script>
+<script src="${rootPath}/resources/js/cho/recipe/input.js?ver-001"></script>
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->

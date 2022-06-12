@@ -22,7 +22,7 @@
 						<div id="cho-post_star">${RECIPE.POST_STAR}</div>
 					</div>
 					<div class="cho-list-img">
-						<img src="${RECIPE.ATT_FILE_NO_MAIN}">
+						<img src="${RECIPE.ATT_FILE_NO_MK}">
 					</div>
 				</div>
 			</c:forEach>

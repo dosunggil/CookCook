@@ -11,6 +11,10 @@
 		Select * from tbl_user where username = #{username}
 	</select>
 
+	<select id="findByEmail" resultType="DosungUserVO">
+		Select * from tbl_user where email = #{email}
+	</select>
+
 
 	<insert id="insert" parameterType="DosungUserVO">
 

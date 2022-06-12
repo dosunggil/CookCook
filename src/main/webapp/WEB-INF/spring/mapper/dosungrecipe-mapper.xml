@@ -5,39 +5,44 @@
  
 <mapper namespace="com.cho.recipe.persistance.DosungRecipeDao">
 	<select id="selectAll" resultType="DosungRecipeVO">
-		Select * From tbl_user_post
+		Select * From tbl_recipe
 	</select>
 	<select id="findById" resultType="DosungRecipeVO">
 		Select *
-		from tbl_user_post where post_seq = #{post_seq}
+		from tbl_recipe where RCP_SEQ = #{RCP_SEQ}
+	</select>
+
+	<select id="findByNm"  resultType="DosungRecipeVO">
+		Select *
+		from tbl_recipe where RCP_NM = #{RCP_NM}
 	</select>
 
 
 	<insert id="insert" parameterType="DosungRecipeVO">
 
-	insert into tbl_user(	
-			post_seq,
-			post_title,
-			post_content,
-			post_img,
-			post_eng,
-			post_dtls,
-			post_hashtag	
+	insert into tbl_recipe(	
+		RCP_SEQ		,
+		RCP_NM		,
+		recipe_content,
+		ATT_FILE_NO_MK	,
+		INFO_ENG		 ,
+		RCP_PARTS_DTLS	,
+		HASH_TAG	    		
 			)
 		values 
 			(
-			seq_post.NEXTVAL,
-			#{post_title},
-			#{post_content},
-			#{post_img},
-			#{post_eng},
-			#{post_dtls},
-			#{post_hashtag}
+			seq_recipe.NEXTVAL,
+			#{RCP_NM},
+			#{recipe_content},
+			#{ATT_FILE_NO_MK},
+			#{INFO_ENG},
+			#{RCP_PARTS_DTLS},
+			#{HASH_TAG}
 			)
 	</insert>
 
 	<update id="update" parameterType="DosungRecipeVO">
-		update tbl_user set 
+		update tbl_recipeset 
 				password = #{password},	
 				email = #{email},
 				name = #{name},
@@ -51,16 +56,6 @@
 	</delete>	
 	
 	
-	<select id="create_user_post_table">
-	
-		create table tbl_user (
-			username		VARCHAR2(50)		PRIMARY KEY	,
-			password		VARCHAR2(125)		not null,
-			email	    	nVARCHAR2(125)		not null unique,
-			nickname		nVARCHAR2(50)		,
-			name		    nVARCHAR2(50)		,
-			role	    	VARCHAR2(20)		
-)
-	</select>
+
 
 </mapper>
