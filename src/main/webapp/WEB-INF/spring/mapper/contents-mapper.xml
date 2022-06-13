@@ -7,4 +7,19 @@
 	<select id="selectAll" resultType="ContentVO">
 		select * from tbl_post
 	</select>
+	
+	<select id="findByPostSeq" resultType = "ContentVO">
+		select * from tbl_post 
+		where post_seq = #{post_seq}
+	</select>
+	<!--manual_seq 이 칼럼은 ContentVO에 있는 값  -->
+	<select id="findByContnetID" resultType="RecipeVO">
+		select * from tbl_recipe 
+		where RCP_SEQ = #{manual_seq}
+	</select>
+	<select id="findByRecipeID" resultType="ManualVO">
+		select * from tbl_manual 
+		where MANUAL_SEQ = #{RCP_SEQ}
+	</select>
+	
 </mapper>

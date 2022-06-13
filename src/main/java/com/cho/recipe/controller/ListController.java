@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.ContentVO;
 import com.cho.recipe.service.ContentsService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Controller
 public class ListController {
 
@@ -23,6 +25,7 @@ public class ListController {
 	@RequestMapping(value = "/list")
 	public String List(Model model) {
 		List<ContentVO> contentList = contentsService.selectAll();
+		log.debug(contentList.toString());
 		model.addAttribute("CONTENT", contentList);
 		return "chang/list/list";
 	}

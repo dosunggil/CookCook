@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.cho.recipe.dao.ContentListDao;
 import com.cho.recipe.model.ContentVO;
+import com.cho.recipe.model.ManualVO;
+import com.cho.recipe.model.RecipeVO;
 import com.cho.recipe.service.ContentsService;
 
 @Service("contentsServicev1")
@@ -43,6 +45,16 @@ public class ContentsServiceImplV1 implements ContentsService {
 	public int delete(String id) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	@Override
+	public RecipeVO findByContnetID(String contentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<ManualVO> findByRecipeID(String recipeId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

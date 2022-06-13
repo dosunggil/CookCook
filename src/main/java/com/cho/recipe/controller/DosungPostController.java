@@ -16,8 +16,7 @@ import com.cho.recipe.service.impl.DosungPostServiceImplV1;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping(value = "/cho")
-@Controller
+@RequestMapping(value = "/cho")@Controller
 public class DosungPostController {
 
 	private final DosungPostService post;
@@ -37,7 +36,7 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		
-		recipeList.add(null)
+		recipeList.add(null);
 		model.addAttribute("RECIPES", recipeList);
 
 		return null;

@@ -24,5 +24,9 @@ public class ContentVO {
 	private String POST_IMG_SMALL;
 	private String MANUAL_SEQ;
 	private String POST_STAR;
+	private ManualVO manuals;
+	private RecipeVO recipeVO; 
+	
+	
 
 }
