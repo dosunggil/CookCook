@@ -3,17 +3,21 @@ package com.cho.recipe.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import com.cho.recipe.model.DosungRecipeVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.persistance.DosungRecipeDao;
 import com.cho.recipe.service.DosungRecipeService;
 
+@Service
+@Primary
 public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 
 	@Autowired
-	protected DosungRecipeDao recipeDao;
-	
+	protected DosungRecipeDao dosungRecipeDaoVv1;
 	
 	@Override
 	public List<DosungRecipeVO> selectAll() {
@@ -44,6 +48,11 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 	public int insert(DosungRecipeVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<DosungRecipeVO> findByNm(String title) {
+		return dosungRecipeDaoVv1.findByNm(title);
 	}
 	
 	

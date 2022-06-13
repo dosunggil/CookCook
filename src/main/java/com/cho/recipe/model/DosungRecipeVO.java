@@ -1,7 +1,8 @@
 package com.cho.recipe.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,20 +16,36 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Builder
-public class DosungRecipeVO {
+public class DosungRecipeVO extends DosungPostVO{
 	
 	/*
 	 * tbl_recipe 테이블과 연결
+	 * 관계테이블 아님!!
 	 */
+	
+	@JsonProperty("RCP_SEQ")
+	private String RCP_SEQ;// 일련번호
 
-	private String recipe_seq	;//	VARCHAR2(10)			PRIMARY KEY	,
-	private String recipe_title;//		nVARCHAR2(125)		not null		,
-	private String recipe_content;//	nVARCHAR2(1000)		not null		,
-	private String recipe_img;//		VARCHAR2(500)				,
-	private String recipe_eng	;//	    NUMBER(5)				,
-	private String recipe_dtls;//		nVARCHAR2(1000)				,
-	private String recipe_hashtag;//	    nVARCHAR2(200)				,
+	@JsonProperty("RCP_NM")
+	private String RCP_NM;// 메뉴명
+
+	@JsonProperty("INFO_ENG")
+	private String INFO_ENG;// 열량
+
+	@JsonProperty("HASH_TAG")
+	private String HASH_TAG;// 해쉬태그
+
+	@JsonProperty("ATT_FILE_NO_MK")
+	private String ATT_FILE_NO_MK;// 이미지경로(대)
+
+	@JsonProperty("RCP_PARTS_DTLS")
+	private String RCP_PARTS_DTLS;// 재료정보
+
+	private String rcp_content;//	nVARCHAR2(1000)		not null		,
+
+	private int POST_STAR;// 별점
+	
+	
 
 
 }

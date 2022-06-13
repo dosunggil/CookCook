@@ -24,9 +24,9 @@
 	
 	
 	<label>User Name(ID)</label>
-	<input id="username" name="username" placeholder="USERNAME" class="w3-input w3-border">
+	<input name="username" placeholder="USERNAME" class="username w3-input w3-border">
 	<label>비밀번호</label>
-	<input id="password" name="password" placeholder="PASSWORD"class="w3-input w3-border">
+	<input name="password" placeholder="PASSWORD"class="password w3-input w3-border">
 
 	<button id="btn-login" class="w3-button w3-blue" type="button">로그인</button>
 </form>

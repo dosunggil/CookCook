@@ -9,19 +9,15 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-
+	
 	<!-- dataSource -->
 	<!-- db에 연결하기 -->
 	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="cookmaster"/> <!-- cookmaster -->
-		<property name="password" value="12341234"/> <!-- 12341234 -->
-		<!-- cookmaster.db
-				tbl_recipe
-				tbl_recipe_detail 
-				tbl_recipe_post
-				-->
+		<property name="username" value="cookmaster"/> 
+		<property name="password" value="12341234"/> 
+
 	</bean>
 
 	

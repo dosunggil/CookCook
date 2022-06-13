@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+/*
+ * tbl_user_recipe 와 연결
+ */
 
 @Setter
 @Getter
@@ -13,12 +16,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class DosungUserRecipeVO {
-	/*
-	 * tbl_user_recipe 와 연결
-	 */
+public class UserRecipeVO {
 
-	private String  b_seq;// varchar2(10) not null,
-	private String  b_username;// varchar2(50) not null,
-	private String  b_date;// varchar2(10),
+	private String  b_seq;
+	private String  b_username;
+	private String  b_date;
 }

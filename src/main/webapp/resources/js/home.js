@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
   */
   if (search) {
     search.addEventListener("click", () => {
-      console.log("검색");
       let url = `${rootPath}`;
       url += "/list";
       document.location.href = url;
