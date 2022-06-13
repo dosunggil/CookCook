@@ -6,19 +6,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-/*
- * tbl_user_recipe 와 연결
- */
 
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Builder
-public class UserRecipeVO {
+public class DosungUserVO {
 
-	private String  b_seq;
-	private String  b_username;
-	private String  b_date;
+	private String username;
+	private String password;
+	private String email;
+	private String name;
+	private String nickname;
+	private String role;
 }

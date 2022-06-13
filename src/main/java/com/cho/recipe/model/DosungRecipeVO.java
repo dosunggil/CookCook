@@ -24,7 +24,7 @@ public class DosungRecipeVO extends DosungPostVO{
 	 */
 	
 	@JsonProperty("RCP_SEQ")
-	private String RCP_SEQ;// 일련번호
+	private long RCP_SEQ;// 일련번호
 
 	@JsonProperty("RCP_NM")
 	private String RCP_NM;// 메뉴명

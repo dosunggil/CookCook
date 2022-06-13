@@ -5,17 +5,12 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-
-<style>
- 	#username { 
- 	display: none;} 
-</style>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<h1>여기는 레시피 등록페이지</h1>
 	
 	<form method="POST" class="w3-container">
-		<input class="w3-input" name="username" id="username"  value="${USER.username}">
+		<input class="w3-input" name="username" id="username"  value="${USER.username}" hidden="hidden">
 		<input class="w3-input" name="RCP_NM" id="title" placeholder="제목" value="${RECIPE.recipe_title}">
 		
 		<input class="w3-input" name="recipe_content" id="content" placeholder="요리를 간략하게 설명하세요." value="${RECIPE.recipe_content}">

@@ -28,8 +28,8 @@
 					  
 					  
 						
-				     <p>책명 : ${DETAIL.manual.get(0)}</p>
-				     <p>책명 : ${DETAIL.MANUAL01}</p>
+				  <%--    <p>책명 : ${DETAIL.manual.get(0)}</p>
+				     <p>책명 : ${DETAIL.MANUAL01}</p> --%>
 			
 			</div>
 			<div class="cho-detail-bottom cho-detail">

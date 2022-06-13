@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.model.DosungRecipeVO;
-import com.cho.recipe.model.UserVO;
+import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.service.DosungPostService;
 import com.cho.recipe.service.DosungRecipeService;
 import com.cho.recipe.service.DosungUserRecipeService;
@@ -73,7 +73,7 @@ public class DosungPostController {
 	}
 
 	@RequestMapping(value = "/post/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-	public String detail(@PathVariable("nm") String nm, @PathVariable("seq")  String seq, Model model) {
+	public String detail(@PathVariable("nm") String nm, @PathVariable("seq")  long seq, Model model) {
 
 		
 	/*
@@ -90,7 +90,7 @@ public class DosungPostController {
 		
 		DosungPostVO postVO = null;
 		for(DosungPostVO dVO : recipeList) {
-			if(dVO.getRCP_SEQ().equals(seq)){
+			if(dVO.getRCP_SEQ() == seq){
 				postVO = dVO;
 				break;
 			}
@@ -134,7 +134,7 @@ public class DosungPostController {
 	public String insert(Model model,HttpSession session) {
 		model.addAttribute("LAYOUT","POST-INPUT");
 		
-		UserVO userVO = (UserVO) session.getAttribute("USER");
+		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
 		if(userVO == null) {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/cho/user/login";
@@ -146,7 +146,7 @@ public class DosungPostController {
 	public String insert(DosungRecipeVO recipeVO,HttpSession session, Model model) {
 		
 		log.debug("레피시 정보 : " + recipeVO.toString());
-		UserVO userVO = (UserVO) session.getAttribute("USER");
+		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
 		if(userVO == null) {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/cho/user/login";

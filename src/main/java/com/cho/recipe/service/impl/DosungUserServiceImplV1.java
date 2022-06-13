@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cho.recipe.config.QualifierConfig;
-import com.cho.recipe.model.UserVO;
+import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.persistance.DosungUserDao;
 import com.cho.recipe.service.DosungUserService;
 
@@ -31,43 +31,43 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 		
 	}
 	@Override
-	public List<UserVO> findByName(String name) {
+	public List<DosungUserVO> findByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<UserVO> findByNickName(String name) {
+	public List<DosungUserVO> findByNickName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UserVO findByEmail(String email) {
+	public DosungUserVO findByEmail(String email) {
 		return userDao.findByEmail(email);
 	}
 
 
 
 	@Override
-	public List<UserVO> selectAll() {
+	public List<DosungUserVO> selectAll() {
 		return null;
 		//return userDao.selectAll();
 	}
 
 	@Override
-	public UserVO findById(String id) {
+	public DosungUserVO findById(String id) {
 		return userDao.findById(id);
 	}
 
 	@Override
-	public int insert(UserVO vo) {
+	public int insert(DosungUserVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(UserVO vo) {
+	public int update(DosungUserVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -79,8 +79,8 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 	}
 
 	@Override
-	public UserVO login(UserVO vo) {
-		UserVO loginUser = userDao.findById(vo.getUsername());
+	public DosungUserVO login(DosungUserVO vo) {
+		DosungUserVO loginUser = userDao.findById(vo.getUsername());
 		if(loginUser != null &&
 			loginUser.getPassword().equals(vo.getPassword())) {
 				return loginUser;
@@ -89,12 +89,12 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 	}
 
 	@Override
-	public int join(UserVO vo) {
+	public int join(DosungUserVO vo) {
 		/*
 		 * 가입요청한 정보가 최초인지 검사하여
 		 * 최초이면 현재 사용자의 role 정보를 ADMIN 으로 설정한다.
 		 */
-		List<UserVO> users = userDao.selectAll();
+		List<DosungUserVO> users = userDao.selectAll();
 		if(users ==null || users.size() <1) {
 			vo.setRole("ADMIN");
 		} else {
