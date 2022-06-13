@@ -77,3 +77,57 @@
  
  </mapper>
  
+<<<<<<< HEAD:src/main/webapp/WEB-INF/spring/mapper/user-mapper.xml
+=======
+<mapper namespace="com.cho.recipe.persistance.DosungUserDao">
+	<select id="selectAll" resultType="DosungUserVO">
+		Select * From tbl_user
+	</select>
+	<select id="findById" resultType="DosungUserVO">
+		Select * from tbl_user where username = #{username}
+	</select>
+
+	<select id="findByEmail" resultType="DosungUserVO">
+		Select * from tbl_user where email = #{email}
+	</select> 
+
+
+	<insert id="insert" parameterType="DosungUserVO">
+
+	insert into tbl_user(	
+			username,
+			password,	
+			email,		
+			name,		
+			nickname,	
+			role		
+			)
+		values 
+			(
+			#{username},
+			#{password},	
+			#{email},		
+			#{name},		
+			#{nickname},	
+			#{role}
+			)
+	</insert>
+
+	<update id="update" parameterType="DosungUserVO">
+		update tbl_user set 
+				password = #{password},	
+				email = #{email},
+				name = #{name},
+				nickname = #{nickname},
+				role = #{role}	
+		where	username = #{username}
+	</update>
+	<delete id="delete">
+		delete from tbl_users where username= #{username}
+	
+	</delete>	
+	
+	
+</mapper>
+
+>>>>>>> master:src/main/webapp/WEB-INF/spring/mapper/dosunguser-mapper.xml

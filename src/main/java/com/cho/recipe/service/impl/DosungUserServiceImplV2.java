@@ -7,7 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cho.recipe.config.QualifierConfig;
-import com.cho.recipe.model.UserVO;
+import com.cho.recipe.model.DosungUserVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,9 +19,9 @@ public class DosungUserServiceImplV2 extends DosungUserServiceImplV1{
 	protected PasswordEncoder passwordEncoder;
 	
 	@Override
-	public int join(UserVO vo) {
+	public int join(DosungUserVO vo) {
 		
-		List<UserVO> users = userDao.selectAll();
+		List<DosungUserVO> users = userDao.selectAll();
 		if(users ==null || users.size() <1) {
 			vo.setRole("ADMIN");
 		} else {
@@ -41,8 +41,8 @@ public class DosungUserServiceImplV2 extends DosungUserServiceImplV1{
 	}
 
 	@Override
-	public UserVO login(UserVO vo) {
-		UserVO loginUser = userDao.findById(vo.getUsername());
+	public DosungUserVO login(DosungUserVO vo) {
+		DosungUserVO loginUser = userDao.findById(vo.getUsername());
 
 		String encPassword = loginUser.getPassword();
 		String planPassword = vo.getPassword();

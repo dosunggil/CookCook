@@ -19,27 +19,29 @@
 
 
 	<insert id="insert" parameterType="DosungRecipeVO">
-
-	insert into tbl_recipe(	
-		RCP_SEQ		,
-		RCP_NM		,
-		recipe_content,
-		ATT_FILE_NO_MK	,
-		INFO_ENG		 ,
-		RCP_PARTS_DTLS	,
-		HASH_TAG	    		
-			)
-		values 
-			(
-			seq_recipe.NEXTVAL,
-			#{RCP_NM},
-			#{recipe_content},
-			#{ATT_FILE_NO_MK},
-			#{INFO_ENG},
-			#{RCP_PARTS_DTLS},
-			#{HASH_TAG}
-			)
-	</insert>
+		<selectKey keyProperty="RCP_SEQ" resultType="Long" order="BEFORE">
+			Select seq_recipe.nextval from dual
+		</selectKey>
+			insert into tbl_recipe(	
+					RCP_SEQ		,
+					RCP_NM		,
+					recipe_content,
+					ATT_FILE_NO_MK	,
+					INFO_ENG		 ,
+					RCP_PARTS_DTLS	,
+					HASH_TAG	    		
+					)
+				values 
+					(
+					#{RCP_SEQ},
+					#{RCP_NM},
+					#{recipe_content},
+					#{ATT_FILE_NO_MK},
+					#{INFO_ENG},
+					#{RCP_PARTS_DTLS},
+					#{HASH_TAG}
+					)
+			</insert>
 
 	<update id="update" parameterType="DosungRecipeVO">
 		update tbl_recipeset 

@@ -16,9 +16,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class UserRecipeVO {
+public class DosungUserRecipeVO {
 
-	private String  b_seq;
+	private long  b_seq;
 	private String  b_username;
 	private String  b_date;
 }

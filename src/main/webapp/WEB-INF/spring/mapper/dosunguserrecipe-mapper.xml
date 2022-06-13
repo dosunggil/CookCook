@@ -3,29 +3,29 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="com.cho.recipe.persistance.UserRecipeDao">
-	<select id="selectAll" resultType="UserRecipeVO">
+<mapper namespace="com.cho.recipe.persistance.DosungUserRecipeDao">
+	<select id="selectAll" resultType="DosungUserRecipeVO">
 		Select * From tbl_user_recipe
 	</select>
-	<select id="findById" resultType="UserRecipeVO">
+	<select id="findById" resultType="DosungUserRecipeVO">
 		Select *
 		from tbl_user_recipe where b_seq = #{recipe_seq}
 	</select>
 	
-	<select id="findBySeqAndUserName" resultType="UserRecipeVO">
+	<select id="findBySeqAndUserName" resultType="DosungUserRecipeVO">
 		Select * from tbl_user_recipe where b_seq = #{recipe_seq} And b_username = #{username}
 	</select>
 
-	<select id="findBySeq" resultType="UserRecipeVO">
+	<select id="findBySeq" resultType="DosungUserRecipeVO">
 		Select * from tbl_user_recipe where b_seq = #{recipe_seq}
 	</select>
 
-	<select id="findByUserName" resultType="UserRecipeVO">
+	<select id="findByUserName" resultType="DosungUserRecipeVO">
 		Select * from tbl_user_recipe where b_username = #{username}
 	</select>
 
 
-	<insert id="insert" parameterType="UserRecipeVO">
+	<insert id="insert" parameterType="DosungUserRecipeVO">
 
 	insert into tbl_user_recipe(	
 		b_seq,
@@ -40,7 +40,7 @@
 			)
 	</insert>
 
-	<update id="update" parameterType="UserRecipeVO">
+	<update id="update" parameterType="DosungUserRecipeVO">
 		update tbl_user set 
 				password = #{password},	
 				email = #{email},
