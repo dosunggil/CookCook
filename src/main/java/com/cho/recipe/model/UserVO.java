@@ -14,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Builder
-public class DosungUserVO {
+public class UserVO {
 
 	private String username;
 	private String password;

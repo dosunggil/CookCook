@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.cho.recipe.*" /> 
+
 	<context:component-scan base-package="com.cho.recipe.controller" />
 	<context:component-scan base-package="com.cho.recipe.service.impl" />
 	<context:component-scan base-package="com.cho.recipe.config" /> 

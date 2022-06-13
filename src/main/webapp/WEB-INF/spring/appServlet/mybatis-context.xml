@@ -19,6 +19,7 @@
 		<property name="password" value="12341234"/> 
 
 	</bean>
+
 	
 	
 	<!-- SqlSessionFactory -->
