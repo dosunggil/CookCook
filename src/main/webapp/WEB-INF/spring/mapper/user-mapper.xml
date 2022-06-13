@@ -2,7 +2,6 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<<<<<<< HEAD
   
  <mapper namespace="com.cho.recipe.dao.UserDao">
  
@@ -76,58 +75,5 @@
  
  
  
- </mapper> 
-=======
+ </mapper>
  
-<mapper namespace="com.cho.recipe.persistance.DosungUserDao">
-	<select id="selectAll" resultType="UserVO">
-		Select * From tbl_user
-	</select>
-	<select id="findById" resultType="UserVO">
-		Select * from tbl_user where username = #{username}
-	</select>
-
-	<select id="findByEmail" resultType="UserVO">
-		Select * from tbl_user where email = #{email}
-	</select> 
-
-
-	<insert id="insert" parameterType="UserVO">
-
-	insert into tbl_user(	
-			username,
-			password,	
-			email,		
-			name,		
-			nickname,	
-			role		
-			)
-		values 
-			(
-			#{username},
-			#{password},	
-			#{email},		
-			#{name},		
-			#{nickname},	
-			#{role}
-			)
-	</insert>
-
-	<update id="update" parameterType="UserVO">
-		update tbl_user set 
-				password = #{password},	
-				email = #{email},
-				name = #{name},
-				nickname = #{nickname},
-				role = #{role}	
-		where	username = #{username}
-	</update>
-	<delete id="delete">
-		delete from tbl_users where username= #{username}
-	
-	</delete>	
-	
-	
-</mapper>
-
->>>>>>> master

@@ -13,7 +13,6 @@ import com.cho.recipe.persistance.DosungRecipeDao;
 import com.cho.recipe.service.DosungRecipeService;
 
 @Service
-@Primary
 public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 
 	@Autowired

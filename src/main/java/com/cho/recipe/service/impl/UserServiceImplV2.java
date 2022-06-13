@@ -1,11 +1,15 @@
 package com.cho.recipe.service.impl;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cho.recipe.dao.UserDao;
 import com.cho.recipe.model.UserVO;
+
+
 @Service
+@Primary
 public class UserServiceImplV2 extends UserServiceImplV1{
 
 	// V1의 생성자 호출하기
