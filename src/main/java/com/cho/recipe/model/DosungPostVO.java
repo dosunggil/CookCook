@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class DosungPostVO extends CookVO {
+public class DosungPostVO  {
 
 //	public DosungPostVO(String rCP_PARTS_DTLS) {
 //		RCP_PARTS_DTLS = rCP_PARTS_DTLS;

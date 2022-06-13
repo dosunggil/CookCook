@@ -23,7 +23,8 @@
 	
 	<context:component-scan base-package="com.cho.recipe.controller" />
 	<context:component-scan base-package="com.cho.recipe.service.impl" />
-	<context:component-scan base-package="com.cho.recipe.config" />
+	<context:component-scan base-package="com.cho.recipe.config" /> 
+	<context:component-scan base-package="com.cho.recipe.model" /> 
 
 	
 	

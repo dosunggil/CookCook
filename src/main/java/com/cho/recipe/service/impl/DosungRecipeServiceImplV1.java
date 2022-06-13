@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.cho.recipe.model.DosungRecipeVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.persistance.DosungRecipeDao;
 import com.cho.recipe.service.DosungRecipeService;
 

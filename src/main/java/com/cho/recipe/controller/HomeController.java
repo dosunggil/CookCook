@@ -20,20 +20,6 @@ public class HomeController {
 		
 		return "home";
 	}
-	
-//	@RequestMapping(value = "/list", method = RequestMethod.GET)
-//	public String List() {
-//		
-//		
-//		return "/chang/list/list";
-//	}
-	
-	@RequestMapping(value = "/log", method = RequestMethod.GET)
-	public String log() {
-		
-		
-		return "/ahn/log/log";
-	}
-	
+
 	
 }

@@ -9,16 +9,16 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Builder
-public class DosungUserRecipeVO {
-	/*
-	 * tbl_user_recipe 와 연결
-	 */
+public class UserVO {
 
-	private String  b_seq;// varchar2(10) not null,
-	private String  b_username;// varchar2(50) not null,
-	private String  b_date;// varchar2(10),
+	private String username;
+	private String password;
+	private String email;
+	private String name;
+	private String nickname;
+	private String role;
 }

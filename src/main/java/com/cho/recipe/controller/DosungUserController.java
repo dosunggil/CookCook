@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cho.recipe.config.QualifierConfig;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.DosungUserService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class DosungUserController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(DosungUserVO vo) {
+	public String join(UserVO vo) {
 		log.debug("회원정보 : " + vo.toString());
 		user.join(vo);
 		return "redirect:/cho/user/login";
@@ -47,8 +47,8 @@ public class DosungUserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(DosungUserVO vo, Model model, HttpSession session) {
-		DosungUserVO loginUser = user.findById(vo.getUsername());
+	public String login(UserVO vo, Model model, HttpSession session) {
+		UserVO loginUser = user.findById(vo.getUsername());
 		if (loginUser == null) {
 			model.addAttribute("error", "USERNAME_FAIL");
 			return "redirect:/cho/user/login";
@@ -71,7 +71,7 @@ public class DosungUserController {
 
 	@RequestMapping(value="/mypage",method=RequestMethod.GET)
 	public String mypage(Model model, HttpSession session) {
-		DosungUserVO loginUser = (DosungUserVO) session.getAttribute("USER");
+		UserVO loginUser = (UserVO) session.getAttribute("USER");
 		if(loginUser ==null) {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/cho/user/login";
@@ -84,7 +84,7 @@ public class DosungUserController {
 	@ResponseBody
 	@RequestMapping(value="/idcheck/{username}",method=RequestMethod.GET)
 	public String idCheck(@PathVariable("username") String username) {
-		DosungUserVO userVO = user.findById(username);
+		UserVO userVO = user.findById(username);
 		if(userVO == null) {
 			return "OK";
 		}
@@ -93,7 +93,7 @@ public class DosungUserController {
 	@ResponseBody
 	@RequestMapping(value="/emailcheck",method=RequestMethod.GET)
 	public String emailCheck( String email) {
-		DosungUserVO userVO = user.findByEmail(email);
+		UserVO userVO = user.findByEmail(email);
 		if(userVO == null) {
 			return "OK";
 		}
