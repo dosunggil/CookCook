@@ -1,7 +1,8 @@
-package com.cho.recipe.dao;
+package com.cho.recipe.persistance;
 
 import java.util.List;
 
+import com.cho.recipe.dao.GenericDao;
 import com.cho.recipe.model.UserVO;
 
 public interface UserDao extends GenericDao<UserVO, String>{

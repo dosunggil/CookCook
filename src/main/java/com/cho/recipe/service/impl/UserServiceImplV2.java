@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cho.recipe.dao.UserDao;
 import com.cho.recipe.model.UserVO;
+import com.cho.recipe.persistance.UserDao;
 
 
 @Service

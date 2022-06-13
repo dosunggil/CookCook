@@ -1,7 +1,7 @@
 package com.cho.recipe.service;
 
-import com.cho.recipe.dao.UserDao;
 import com.cho.recipe.model.UserVO;
+import com.cho.recipe.persistance.UserDao;
 
 public interface UserService extends UserDao{
 

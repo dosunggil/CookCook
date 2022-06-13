@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // index 객체에서 각 요소의 첨자를 가져오고
   // 첨자를 사용하여 input tag를 각 순서대로 변수에 담겠다
   const username = inputList[index.username];
+
   const password = inputList[index.password];
   const re_password = inputList[index.re_password];
   const name = inputList[index.name];
@@ -151,28 +152,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const username1 = document.querySelector("div.username");
   if (id_check) {
     id_check.addEventListener("click", () => {
-      if (username.value === "") {
+      if (username1.value === "") {
         username_isBlank();
         return false;
       }
-      fetch(`${rootPath}/ahn/user/idcheck?username=${username.value}`)
-        .then((res) => {
-          console.table(index);
-          console.table(res);
-          return res.text();
-        })
+      // fetch(`${rootPath}/ahn/user/idcheck?username=${username.value}`)
+      fetch(`${rootPath}/ahn/user/idcheck/${username1.value}`)
+        // .then((res) => {
+        //   console.table(index);
+        //   console.table(res);
+        //   return res.text();
+        // })
+        .then((res) => res.text())
         .then((result) => {
           if (result === "OK") {
             console.log("ok출력");
             username_msg.classList.remove("warn");
             username_msg.classList.add("ok");
             username_msg.innerText = " * 사용할 수 있는 ID 입니다";
+            username_msg.style.color = "blue";
           } else {
             username_msg.classList.remove("ok");
             username_msg.classList.add("warn");
             username_msg.innerText = " * 이미 가입된 ID 입니다";
+            username_msg.style.color = "red";
           }
         });
     });
@@ -197,10 +203,12 @@ document.addEventListener("DOMContentLoaded", () => {
             nickname_msg.classList.remove("warn");
             nickname_msg.classList.add("ok");
             nickname_msg.innerText = " * 사용할 수 있는 닉네임 입니다";
+            nickname_msg.style.color = "blue";
           } else {
             nickname_msg.classList.remove("ok");
             nickname_msg.classList.add("warn");
             nickname_msg.innerText = " * 이미 가입된 닉네임 입니다";
+            nickname_msg.style.color = "red";
           }
         });
     });

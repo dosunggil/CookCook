@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.UserService;
 
@@ -139,8 +140,8 @@ public class UserController {
 	 * 정규식(Rexp)을 사용하여 dot(.) 이후 문자열을 포함하여 변수에 저장하도록 변수를 수정 {username:+} 형식으로 지정한다
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/idcheck", method = RequestMethod.GET)
-	public String idcheck(String username) {
+	@RequestMapping(value = "/idcheck/{username}", method = RequestMethod.GET)
+	public String idcheck(@PathVariable("username") String username) {
 		UserVO userVO = userService.findById(username);
 		// if(username.equalsIgnoreCase(userVO.getUsername()))
 //		if(userVO.getUsername().equalsIgnoreCase(username)) {
@@ -154,6 +155,7 @@ public class UserController {
 			return "FAIL";
 		}
 	}
+	
 
 	@ResponseBody
 	@RequestMapping(value = "/nicknamecheck", method = RequestMethod.GET)

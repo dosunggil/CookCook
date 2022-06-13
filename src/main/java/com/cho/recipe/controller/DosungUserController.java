@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cho.recipe.config.QualifierConfig;
 import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.DosungUserService;
+import com.cho.recipe.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,6 +27,9 @@ public class DosungUserController {
 	@Autowired
 	@Qualifier(QualifierConfig.USER_V2)
 	private DosungUserService user;
+	
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Model model) {
@@ -49,6 +54,7 @@ public class DosungUserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(DosungUserVO vo, Model model, HttpSession session) {
 		DosungUserVO loginUser = user.findById(vo.getUsername());
+		UserVO loginUser1 = userService.findById(vo.getUsername());
 		if (loginUser == null) {
 			model.addAttribute("error", "USERNAME_FAIL");
 			return "redirect:/cho/user/login";
