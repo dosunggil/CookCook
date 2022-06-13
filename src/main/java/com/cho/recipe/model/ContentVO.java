@@ -13,9 +13,14 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+/*
+ * 게시글 테이블 
+ */
 public class ContentVO {
-	private String postSeq;
+	private String postSeq; // PK
 	private String contentsTitle;
 	private String contentsArticle;
-	private String contentPhoto;
+	private String contentSmallPhoto;
+	private String contentBigPhoto;
+	private String cookInfoSeq; // 게시글 테이블 FK,요리정보 테이블의 PK
 }

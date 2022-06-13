@@ -17,7 +17,7 @@ header {
 	height: 70px;
 	/* box-shadow: 0 0 10px 1px #d7d7d7; */
 	border-bottom: 1px solid #4444444a;
-	min-width: 1190px;
+	min-width: 1024px;
 	align-items: center;
 	align-content: center;
 	z-index: 1000 !important;
@@ -25,7 +25,7 @@ header {
 
 div.top_nav {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: flex-end;
@@ -46,24 +46,25 @@ div.logo_box .logo {
 	height: auto;
 }
 
-.drop-menu {
-	border: 1px solid #d7d7d7;
-	position: absolute;
-	width: 1131px;
-	background-color: #fff;
-	top: 66px;
-	left: 0;
-	z-index: 100;
+.hidden-box {
+	
 	transition: opacity 200ms;
 	opacity: 0;
 	visibility: hidden;
-	/* transform : translateY(-1rem); */
-	box-sizing: border-box;
+}
+.profile-menu-container{
+	padding: 30px 100px;
+	display: flex;
+	flex-direction: row;
+	border: 1px solid black;
+	position: absolute;
+	
 }
 
 .visibility {
 	visibility: visible;
 	opacity: 1;
+	display: flex !important;
 }
 
 /* div.cookcook:hover .drop-menu {
@@ -75,6 +76,15 @@ div.logo_box .logo {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	border: 1px solid #d7d7d7;
+	position: absolute;
+	width: 1031px;
+	background-color: #fff;
+	top: 66px;
+	left: 0;
+	z-index: 100;
+	/* transform : translateY(-1rem); */
+	box-sizing: border-box;
 }
 
 .drop-menu-container>div {
@@ -158,7 +168,7 @@ div.profile {
 main {
 	min-width: 1190px;
 	height: 100%;
-	padding-bottom: 150px;
+/* 	padding-bottom: 150px; */
 }
 
 fieldset {
@@ -168,7 +178,7 @@ fieldset {
 
 div.middle_nav {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	margin: auto;
 }
 
@@ -194,14 +204,14 @@ div.middle_nav div.container {
 } */
 div.content_main {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	/* padding : 20px 50px 0 50px; */
 	margin: 15px auto;
 }
 
 div.content_top {
 	position: relative;
-	width: 1130px;
+	width: 1030px;
 	height: 600px;
 	margin: 0 auto;
 	padding-top : 50px;
@@ -291,7 +301,7 @@ div.content_main .list_box {
 	transition-duration: 200ms;
 }
 img.img-login {
-	width:auto;
+	width:30px;
 }
 div.text-box {
 	margin: 5px;
@@ -350,7 +360,7 @@ footer {
 }
 
 footer ul {
-	width: 1130px;
+	width: 1030px;
 	margin: 0 auto;
 	display: flex;
 }

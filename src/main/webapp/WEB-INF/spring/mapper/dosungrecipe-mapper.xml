@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.cho.recipe.persistance.DosungRecipeDao">
+	<select id="selectAll" resultType="DosungRecipeVO">
+		Select * From tbl_user_post
+	</select>
+	<select id="findById" resultType="DosungRecipeVO">
+		Select *
+		from tbl_user_post where post_seq = #{post_seq}
+	</select>
+
+
+	<insert id="insert" parameterType="DosungRecipeVO">
+
+	insert into tbl_user(	
+			post_seq,
+			post_title,
+			post_content,
+			post_img,
+			post_eng,
+			post_dtls,
+			post_hashtag	
+			)
+		values 
+			(
+			seq_post.NEXTVAL,
+			#{post_title},
+			#{post_content},
+			#{post_img},
+			#{post_eng},
+			#{post_dtls},
+			#{post_hashtag}
+			)
+	</insert>
+
+	<update id="update" parameterType="DosungRecipeVO">
+		update tbl_user set 
+				password = #{password},	
+				email = #{email},
+				name = #{name},
+				nickname = #{nickname},
+				role = #{role}	
+		where	username = #{username}
+	</update>
+	<delete id="delete">
+		delete from tbl_users where username= #{username}
+	
+	</delete>	
+	
+	
+	<select id="create_user_post_table">
+	
+		create table tbl_user (
+			username		VARCHAR2(50)		PRIMARY KEY	,
+			password		VARCHAR2(125)		not null,
+			email	    	nVARCHAR2(125)		not null unique,
+			nickname		nVARCHAR2(50)		,
+			name		    nVARCHAR2(50)		,
+			role	    	VARCHAR2(20)		
+)
+	</select>
+
+</mapper>

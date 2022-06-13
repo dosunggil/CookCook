@@ -1,0 +1,45 @@
+@charset "UTF-8";
+div.cho-list-container {
+	position:relative;
+	width: 1030px;
+	margin: 0 auto;
+	padding : 100px 0 150px;
+	min-height: 1000px;
+	
+}
+div.cho-list-box {
+	border-top: 1px solid #ccc;
+	
+	position: relative;
+	height: 190px;
+	display : flex;
+	flex-direction: column;
+	padding: 35px 0;
+}
+
+#cho-rcp_nm {
+	font-size: 24px;
+	font-weight: 800;
+	margin-bottom : 15px;
+	
+}
+#cho-info_eng {
+	font-size: 18px;
+	font-weight: 600;
+}
+div.cho-list-img {
+	border: 1px solid #9e9e9e;
+	
+	position: absolute;
+	right:0;
+	
+	width: 250px;
+	height: 190px;
+	overflow: hidden;
+}
+
+div.cho-list-img img {
+	width: 250px;
+	height: 190px;
+	object-fit: cover;
+}
