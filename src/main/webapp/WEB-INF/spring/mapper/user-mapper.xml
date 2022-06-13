@@ -52,17 +52,5 @@
 	</delete>	
 	
 	
-	<select id="create_user_table">
-	
-		create table tbl_user (
-			username		VARCHAR2(50)		PRIMARY KEY	,
-			password		VARCHAR2(125)		not null,
-			email	    	nVARCHAR2(125)		not null unique,
-			nickname		nVARCHAR2(50)		,
-			name		    nVARCHAR2(50)		,
-			role	    	VARCHAR2(20)		
-)
-	</select>
-
 </mapper>
 

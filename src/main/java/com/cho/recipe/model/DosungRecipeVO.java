@@ -41,17 +41,10 @@ public class DosungRecipeVO extends DosungPostVO{
 	@JsonProperty("RCP_PARTS_DTLS")
 	private String RCP_PARTS_DTLS;// 재료정보
 
-	private String recipe_content;//	nVARCHAR2(1000)		not null		,
+	private String rcp_content;//	nVARCHAR2(1000)		not null		,
 
 	private int POST_STAR;// 별점
 	
-	
-//	private String recipe_seq	;//	VARCHAR2(10)			PRIMARY KEY	,
-//	private String recipe_title;//		nVARCHAR2(125)		not null		,
-//	private String recipe_eng	;//	    NUMBER(5)				,
-//	private String recipe_hashtag;//	    nVARCHAR2(200)				,
-//	private String recipe_img;//		VARCHAR2(500)				,
-//	private String recipe_dtls;//		nVARCHAR2(1000),
 	
 
 
