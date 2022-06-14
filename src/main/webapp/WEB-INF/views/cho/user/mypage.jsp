@@ -14,8 +14,8 @@
 <body>
 <h1>여기는 마이페이지</h1>
 <ul>
-		<c:forEach items="${BUY_BOOKS}" var="BOOK">
-			<li>${BOOK.book.isbn}, &nbsp; &nbsp; ${BOOK.book.title},&nbsp; &nbsp; ${BOOK.book.author} 
+		<c:forEach items="${MY_RECIPES}" var="RECIPE">
+			<li>${RECIPE.b_seq}, &nbsp; &nbsp; ${RECIPE.recipe.RCP_PARTS_DTLS},&nbsp; &nbsp;
 		</c:forEach>
 	</ul>
 <a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>

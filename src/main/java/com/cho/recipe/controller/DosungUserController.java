@@ -1,5 +1,7 @@
 package com.cho.recipe.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cho.recipe.config.QualifierConfig;
+import com.cho.recipe.model.DosungRecipeVO;
+import com.cho.recipe.model.DosungUserRecipeVO;
 import com.cho.recipe.model.DosungUserVO;
-import com.cho.recipe.model.UserVO;
+import com.cho.recipe.service.DosungRecipeService;
+import com.cho.recipe.service.DosungUserRecipeService;
 import com.cho.recipe.service.DosungUserService;
-import com.cho.recipe.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,7 +33,10 @@ public class DosungUserController {
 	private DosungUserService user;
 	
 	@Autowired
-	private UserService userService;
+	private DosungRecipeService dosungRcpService;
+	@Autowired
+	private DosungUserRecipeService userRecipeService;
+	
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Model model) {
@@ -54,7 +61,6 @@ public class DosungUserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(DosungUserVO vo, Model model, HttpSession session) {
 		DosungUserVO loginUser = user.findById(vo.getUsername());
-		UserVO loginUser1 = userService.findById(vo.getUsername());
 		if (loginUser == null) {
 			model.addAttribute("error", "USERNAME_FAIL");
 			return "redirect:/cho/user/login";
@@ -83,6 +89,26 @@ public class DosungUserController {
 			return "redirect:/cho/user/login";
 		}
 		model.addAttribute("LAYOUT","MYPAGE");
+		
+		try {
+			List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(loginUser.getUsername());
+			
+			for(DosungUserRecipeVO VO : URlist) {
+				
+				long seq = VO.getB_seq();
+				DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
+				
+				VO.setRecipe(RcpVO);
+			}
+			
+			model.addAttribute("MY_RECIPES",URlist);
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
 		return null;
 	}
 	

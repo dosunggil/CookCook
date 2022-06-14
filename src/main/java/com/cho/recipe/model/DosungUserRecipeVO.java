@@ -21,4 +21,8 @@ public class DosungUserRecipeVO {
 	private long  b_seq;
 	private String  b_username;
 	private String  b_date;
+	
+	
+	private DosungRecipeVO recipe;
+	private DosungUserVO user;
 }

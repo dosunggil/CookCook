@@ -25,7 +25,7 @@
 			insert into tbl_recipe(	
 					RCP_SEQ		,
 					RCP_NM		,
-					recipe_content,
+					rcp_content,
 					ATT_FILE_NO_MK	,
 					INFO_ENG		 ,
 					RCP_PARTS_DTLS	,
@@ -35,7 +35,7 @@
 					(
 					#{RCP_SEQ},
 					#{RCP_NM},
-					#{recipe_content},
+					#{rcp_content},
 					#{ATT_FILE_NO_MK},
 					#{INFO_ENG},
 					#{RCP_PARTS_DTLS},

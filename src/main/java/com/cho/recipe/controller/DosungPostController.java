@@ -153,6 +153,7 @@ public class DosungPostController {
 		}
 		recipeService.insert(recipeVO);
 		userRecipeService.insert(userVO, recipeVO);
+	
 		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
 		return "redirect:/cho/user/mypage";
 		

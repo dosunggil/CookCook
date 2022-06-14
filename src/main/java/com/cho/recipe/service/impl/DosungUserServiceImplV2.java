@@ -3,6 +3,7 @@ package com.cho.recipe.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,17 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service(QualifierConfig.USER_V2)
+@Primary
 public class DosungUserServiceImplV2 extends DosungUserServiceImplV1{
 
 	@Autowired
 	protected PasswordEncoder passwordEncoder;
 	
+	
+	@Override
+	public DosungUserVO findById(String id) {
+		return userDao.findById(id);
+	}
 	@Override
 	public int join(DosungUserVO vo) {
 		
@@ -27,6 +34,7 @@ public class DosungUserServiceImplV2 extends DosungUserServiceImplV1{
 		} else {
 			vo.setRole("GUEST");
 		}
+	
 		
 		// password 를 암호화 하자
 		String planPassword = vo.getPassword();
