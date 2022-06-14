@@ -20,6 +20,12 @@ public class HomeController {
 		
 		return "home";
 	}
+	@RequestMapping(value = "/detail")
+	public String home() {
+		
+		
+		return "ahn/log/detail";
+	}
 
 	
 }
