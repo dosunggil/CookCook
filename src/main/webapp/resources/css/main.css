@@ -23,6 +23,7 @@ header {
 	z-index: 1000 !important;
 }
 
+
 div.top_nav {
 	position: relative;
 	width: 1030px;
@@ -31,7 +32,14 @@ div.top_nav {
 	justify-content: flex-end;
 	align-items: center;
 }
-
+nav.nav_mypage {
+	position: relative;
+	width: 1030px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
 div.logo_box {
 	/* 	width: 200px; */
 	display: flex;
