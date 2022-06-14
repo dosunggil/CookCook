@@ -13,7 +13,7 @@
 		<input class="w3-input" name="username" id="username"  value="${USER.username}" hidden="hidden">
 		<input class="w3-input" name="RCP_NM" id="title" placeholder="제목" value="${RECIPE.RCP_NM}">
 		
-		<input class="w3-input" name="recipe_content" id="content" placeholder="요리를 간략하게 설명하세요." value="${RECIPE.recipe_content}">
+		<input class="w3-input" name= "rcp_content" id="content" placeholder="요리를 간략하게 설명하세요." value="${RECIPE.recipe_content}">
 		<input class="w3-input" name="ATT_FILE_NO_MK" id="img" placeholder="이미지주소." value="${RECIPE.ATT_FILE_NO_MK}">
 		<input class="w3-input" name="INFO_ENG" id="eng" placeholder="열량." value="${RECIPE.INFO_ENG}">
 		<input class="w3-input" name="RCP_PARTS_DTLS" id="dtls" placeholder="재료정보." value="${RECIPE.RCP_PARTS_DTLS}">
