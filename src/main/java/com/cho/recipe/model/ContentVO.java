@@ -16,7 +16,7 @@ import lombok.ToString;
 /*
  * 게시글 테이블
  */
-public class ContentVO {
+public class ContentVO { //3523d85ec57e4478a88b
 	private String POST_SEQ;
 	private String POST_TITLE;
 	private String POST_CONTENT;
