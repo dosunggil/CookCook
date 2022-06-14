@@ -33,6 +33,9 @@ public class DosungDetailVO {
 	private List<String> manual; // 만드는 법
 	private List<String> manual_img; // 만드는 법_img
 	
+	
+
+	
 	@JsonProperty("MANUAL01")
 	private String MANUAL01 ;
 	@JsonProperty("MANUAL02")
@@ -115,6 +118,7 @@ public class DosungDetailVO {
 	@JsonProperty("MANUAL_IMG20")
 	private String MANUAL_IMG20;
 	
+	
 
 	private List<String> getManual() {
 		List<String> menual = new ArrayList<>();
@@ -142,33 +146,110 @@ public class DosungDetailVO {
 		return menual;
 		
 	}
-	private List<String> getManual_Img() {
-		List<String> menual = new ArrayList<>();
+	protected List<DosungManualVO> manual1; // 만드는 법 + 만드는법 이미지
+	
+	public List<DosungManualVO> getManual1() {
+		List<DosungManualVO> menual = new ArrayList<>();
+		DosungManualVO manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL01);
+		manualVO.setManual_img(MANUAL_IMG01);
+		menual.add(manualVO);
 		
-		menual.add(0, this.MANUAL_IMG01);
-		menual.add(1, this.MANUAL_IMG02);
-		menual.add(2, this.MANUAL_IMG03);
-		menual.add(3, this.MANUAL_IMG04);
-		menual.add(4, this.MANUAL_IMG05);
-		menual.add(5, this.MANUAL_IMG06);
-		menual.add(6, this.MANUAL_IMG07);
-		menual.add(7, this.MANUAL_IMG08);
-		menual.add(8, this.MANUAL_IMG09);
-		menual.add(9, this.MANUAL_IMG10);
-		menual.add(10, this.MANUAL_IMG11);
-		menual.add(11, this.MANUAL_IMG12);
-		menual.add(12, this.MANUAL_IMG13);
-		menual.add(13, this.MANUAL_IMG14);
-		menual.add(14, this.MANUAL_IMG15);
-		menual.add(15, this.MANUAL_IMG16);
-		menual.add(16, this.MANUAL_IMG17);
-		menual.add(17, this.MANUAL_IMG18);
-		menual.add(18, this.MANUAL_IMG19);
-		menual.add(19, this.MANUAL_IMG20);
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL02);
+		manualVO.setManual_img(MANUAL_IMG02);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL03);
+		manualVO.setManual_img(MANUAL_IMG03);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL04);
+		manualVO.setManual_img(MANUAL_IMG04);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL05);
+		manualVO.setManual_img(MANUAL_IMG05);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL06);
+		manualVO.setManual_img(MANUAL_IMG06);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL07);
+		manualVO.setManual_img(MANUAL_IMG07);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL08);
+		manualVO.setManual_img(MANUAL_IMG08);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL09);
+		manualVO.setManual_img(MANUAL_IMG09);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL10);
+		manualVO.setManual_img(MANUAL_IMG10);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL11);
+		manualVO.setManual_img(MANUAL_IMG11);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL12);
+		manualVO.setManual_img(MANUAL_IMG12);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL13);
+		manualVO.setManual_img(MANUAL_IMG13);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL14);
+		manualVO.setManual_img(MANUAL_IMG14);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL15);
+		manualVO.setManual_img(MANUAL_IMG15);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL16);
+		manualVO.setManual_img(MANUAL_IMG16);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL17);
+		manualVO.setManual_img(MANUAL_IMG17);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL18);
+		manualVO.setManual_img(MANUAL_IMG18);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL19);
+		manualVO.setManual_img(MANUAL_IMG19);
+		menual.add(manualVO);
+		
+		manualVO = new DosungManualVO();
+		manualVO.setManual(MANUAL20);
+		manualVO.setManual_img(MANUAL_IMG20);
+		menual.add(manualVO);
 		return menual;
-		
 	}
-	
-	
-	
+
 }
