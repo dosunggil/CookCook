@@ -16,12 +16,21 @@
 				</div>
 				<h1>${RECIPE.RCP_NM}</h1>
 				<div>
-				
-				열량(kcal)  : ${RECIPE.INFO_ENG}
-				
+				칼로리   : ${RECIPE.INFO_ENG}
+				탄수화물 : ${DETAIL.INFO_CAR}
+				단백질   : ${DETAIL.INFO_PRO}
+				지방     : ${DETAIL.INFO_FAT}
+				나트륨   : ${DETAIL.INFO_NA}
 				</div>
 			</div>
 			<div class="cho-detail-middle cho-detail">
+				
+					  
+					  
+						
+				  <%--    <p>책명 : ${DETAIL.manual.get(0)}</p>
+				     <p>책명 : ${DETAIL.MANUAL01}</p> --%>
+			
 			</div>
 			<div class="cho-detail-bottom cho-detail">
 			</div>

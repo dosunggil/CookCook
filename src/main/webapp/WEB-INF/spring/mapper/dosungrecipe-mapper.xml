@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.cho.recipe.persistance.DosungRecipeDao">
+	<select id="selectAll" resultType="DosungRecipeVO">
+		Select * From tbl_recipe
+	</select>
+	<select id="findById" resultType="DosungRecipeVO">
+		Select *
+		from tbl_recipe where RCP_SEQ = #{RCP_SEQ}
+	</select>
+
+	<select id="findByNm"  resultType="DosungRecipeVO">
+		Select *
+		from tbl_recipe where RCP_NM = #{RCP_NM}
+	</select>
+
+
+	<insert id="insert" parameterType="DosungRecipeVO">
+		<selectKey keyProperty="RCP_SEQ" resultType="Long" order="BEFORE">
+			Select seq_recipe.nextval from dual
+		</selectKey>
+			insert into tbl_recipe(	
+					RCP_SEQ		,
+					RCP_NM		,
+					rcp_content,
+					ATT_FILE_NO_MK	,
+					INFO_ENG		 ,
+					RCP_PARTS_DTLS	,
+					HASH_TAG	    		
+					)
+				values 
+					(
+					#{RCP_SEQ},
+					#{RCP_NM},
+					#{rcp_content},
+					#{ATT_FILE_NO_MK},
+					#{INFO_ENG},
+					#{RCP_PARTS_DTLS},
+					#{HASH_TAG}
+					)
+			</insert>
+
+	<update id="update" parameterType="DosungRecipeVO">
+		update tbl_recipeset 
+				password = #{password},	
+				email = #{email},
+				name = #{name},
+				nickname = #{nickname},
+				role = #{role}	
+		where	username = #{username}
+	</update>
+	<delete id="delete">
+		delete from tbl_users where username= #{username}
+	
+	</delete>	
+	
+	
+
+
+</mapper>

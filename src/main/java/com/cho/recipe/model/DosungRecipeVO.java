@@ -17,13 +17,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Builder
-public class DosungPostVO  {
-
-//	public DosungPostVO(String rCP_PARTS_DTLS) {
-//		RCP_PARTS_DTLS = rCP_PARTS_DTLS;
-//	}
-
+public class DosungRecipeVO extends DosungPostVO{
+	
+	/*
+	 * tbl_recipe 테이블과 연결
+	 * 관계테이블 아님!!
+	 */
+	
 	@JsonProperty("RCP_SEQ")
 	private long RCP_SEQ;// 일련번호
 
@@ -41,11 +41,12 @@ public class DosungPostVO  {
 
 	@JsonProperty("RCP_PARTS_DTLS")
 	private String RCP_PARTS_DTLS;// 재료정보
-	
+
 	private String rcp_content;//	nVARCHAR2(1000)		not null		,
 
-
-
 	private int POST_STAR;// 별점
+	
+	
+
 
 }

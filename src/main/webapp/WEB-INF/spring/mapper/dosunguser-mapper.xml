@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.cho.recipe.persistance.DosungUserDao">
+	<select id="selectAll" resultType="DosungUserVO">
+		Select * From tbl_user
+	</select>
+
+
+	<select id="findById" resultType="DosungUserVO">
+		Select * from tbl_user where username = #{username}
+	</select>
+
+	<select id="findByEmail" resultType="DosungUserVO">
+		Select * from tbl_user where email = #{email}
+	</select> 
+
+
+	<insert id="insert" parameterType="DosungUserVO">
+
+	insert into tbl_user(	
+			username,
+			password,	
+			email,		
+			name,		
+			nickname,	
+			role		
+			)
+		values 
+			(
+			#{username},
+			#{password},	
+			#{email},		
+			#{name},		
+			#{nickname},	
+			#{role}
+			)
+	</insert>
+
+	<update id="update" parameterType="DosungUserVO">
+		update tbl_user set 
+				password = #{password},	
+				email = #{email},
+				name = #{name},
+				nickname = #{nickname},
+				role = #{role}	
+		where	username = #{username}
+	</update>
+	<delete id="delete">
+		delete from tbl_users where username= #{username}
+	
+	</delete>	
+	
+	
+</mapper>
+

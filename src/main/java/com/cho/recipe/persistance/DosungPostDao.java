@@ -1,10 +1,10 @@
-package com.cho.recipe.dao;
+package com.cho.recipe.persistance;
 
 import java.util.List;
 
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
-import com.cho.recipe.persistance.GenericDao;
+import com.cho.recipe.model.DosungUserVO;
 
 public interface DosungPostDao extends GenericDao<DosungPostVO, String>{
 
@@ -15,4 +15,5 @@ public interface DosungPostDao extends GenericDao<DosungPostVO, String>{
 	public String getJsonString(String queryString);
 	public List<DosungPostVO> getRecipes(String queryString);
 	public List<DosungDetailVO> getDetail(String queryString);
+	
 }

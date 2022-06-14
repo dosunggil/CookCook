@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nm = tr.dataset.nm;
     //const dtls = tr.dataset.dtls;
     //alert(seq);
-    document.location.href = `${rootPath}/cho/${seq}/${nm}/detail`;
+    document.location.href = `${rootPath}/cho/post/${seq}/${nm}/detail`;
   });
 });

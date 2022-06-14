@@ -10,21 +10,33 @@
 <!-- 공용 -->
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+<link  href="${rootPath}/resources/css/main.css?0004" rel="stylesheet" />
 <!-- 공용 끝 -->
 
 <!-- 조도성 -->
-<script src="${rootPath}/resources/js/theme.js?ver=2022-05-30-0004"></script>
-<link  href="${rootPath}/resources/css/main.css?ver=2022-05-30-0002" rel="stylesheet" />
+<script src="${rootPath}/resources/js/theme.js?ver=2022-05-30-0005"></script>
+<script src="${rootPath}/resources/js/home.js?19999"></script>
+<script src="${rootPath}/resources/js/cho/login.js?ver=2022-05-18-018"></script>
+<script src="${rootPath}/resources/js/cho/join.js?ver=2022-05-18-018"></script>
+<script src="${rootPath}/resources/js/cho/recipe/input.js?ver=2022-05-18-018"></script>
+<script src="${rootPath}/resources/js/cho/gotodetail.js?ver=2022-05-18-018"></script>
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />
 <link  href="${rootPath}/resources/css/cho/detail.css" rel="stylesheet" />
+<<<<<<< HEAD
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-019"></script>
 <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
 <!--  <script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-007"></script> -->
+=======
+<%-- <script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script> --%>
+>>>>>>> master
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->
-<script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script>
+<script src="${rootPath}/resources/js/ahn/log.js?ver=2022-05-09-006" /></script>
+<script src="${rootPath}/resources/js/ahn/join.js?ver=2022-05-09-007" /></script>
+<%-- <script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script> --%>
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/log.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/detail.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/signup.css" />

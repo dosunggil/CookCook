@@ -22,11 +22,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.cho.recipe.config.DosungPostConfig;
-import com.cho.recipe.dao.DosungPostDao;
 import com.cho.recipe.model.DosungCOOK;
 import com.cho.recipe.model.DosungCOOK2;
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
+import com.cho.recipe.persistance.DosungPostDao;
 import com.cho.recipe.service.DosungPostService;
 
 import lombok.extern.slf4j.Slf4j;
