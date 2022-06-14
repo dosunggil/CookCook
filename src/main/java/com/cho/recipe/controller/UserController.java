@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.model.UserVO;
+import com.cho.recipe.service.DosungUserRecipeService;
 import com.cho.recipe.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +23,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private DosungUserRecipeService dosungUserRecipeService;
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -173,5 +176,5 @@ public class UserController {
 			return "FAIL";
 		}
 	}
-	
+
 }
