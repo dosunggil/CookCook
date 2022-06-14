@@ -1,27 +1,18 @@
 package com.cho.recipe.model;
 
-<<<<<<< HEAD
-=======
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
->>>>>>> master
-import lombok.NoArgsConstructor;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.Getter;
 
-<<<<<<< HEAD
-@Getter
-@Setter
-=======
-
+/*
+ * 커밋용 
+ */
 @Setter
 @Getter
->>>>>>> master
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
