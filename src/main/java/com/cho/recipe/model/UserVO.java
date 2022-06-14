@@ -1,31 +1,15 @@
 package com.cho.recipe.model;
 
-import lombok.AllArgsConstructor;
-<<<<<<< HEAD
-=======
-import lombok.Builder;
->>>>>>> master
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.Getter;
 
-<<<<<<< HEAD
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-public class UserVO {
-	private String username;
-	private String password;
-	private String nickname;
-	private String name;
-	private String email;
-=======
-
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -38,5 +22,5 @@ public class UserVO {
 	private String nickname;
 	private String email;
 	private String role;
->>>>>>> master
+
 }

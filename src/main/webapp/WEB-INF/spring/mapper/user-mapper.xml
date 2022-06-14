@@ -21,7 +21,7 @@
  		SELECT * FROM tbl_users
  		WHERE email = #{email}
  	</select>
- 	<select id="findByNick" resultType="UserVO">
+ 	<select id="findByNickName" resultType="UserVO">
  		SELECT * FROM tbl_users
  		WHERE nickname = #{nickname}
  	</select>

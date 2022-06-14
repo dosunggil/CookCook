@@ -72,11 +72,7 @@ public class DosungPostController {
 		List<DosungRecipeVO> llist = recipeService.findByNm(title.split(" ")[0]);
 		
 		//recipeList.addAll(llist);
-		
-<<<<<<< HEAD
-		recipeList.add(null);
-=======
->>>>>>> master
+
 		model.addAttribute("RECIPES", recipeList);
 
 		return "cho/post/search_result";

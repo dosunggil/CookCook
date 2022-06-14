@@ -48,10 +48,10 @@ public class UserServiceImplV1 implements UserService {
 	}
 
 	@Override
-	public UserVO findByNick(String nickname) {
-		return userDao.findByNick(nickname);
+	public UserVO findByNickName(String nickname) {
+		return userDao.findByNickName(nickname);
 	}
-
+	
 	@Override
 	public int insert(UserVO vo) {
 		// TODO Auto-generated method stub
@@ -98,7 +98,6 @@ public class UserServiceImplV1 implements UserService {
 		userVO.setPassword(encPassword);
 
 		// user 정보를 insert
-		userDao.insert(userVO);
 
 		// 1. user table에 데이터가 있는지 확인하기 위하여
 		// 전체 데이터를 select 하기
@@ -111,6 +110,7 @@ public class UserServiceImplV1 implements UserService {
 		} else {
 			userVO.setRole("USER");
 		}
+		userDao.insert(userVO);
 		return null;
 	}
 
@@ -119,10 +119,6 @@ public class UserServiceImplV1 implements UserService {
 		return userDao.findByName(name);
 	}
 
-	@Override
-	public List<UserVO> findByNickName(String nickName) {
-		return userDao.findByNickName(nickName);
-	}
 
 	@Override
 	public UserVO findByEmail(String email) {
