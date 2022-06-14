@@ -92,7 +92,18 @@ public class DosungUserController {
 		
 			List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(loginUser.getUsername());
 			
+<<<<<<< HEAD
 			
+=======
+			for(DosungUserRecipeVO VO : URlist) {
+				
+				long seq = VO.getB_seq();
+				DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
+				
+				VO.setRecipe(RcpVO);
+			}
+			log.debug("디테일을볼까?22" + URlist.toString());
+>>>>>>> master
 			
 			model.addAttribute("MY_RECIPES",URlist);
 		return null;

@@ -21,7 +21,10 @@ public class DosungManualVO {
 	
 	private String manual_seq;//		VARCHAR2(10)			PRIMARY KEY	,
 	private String post_seq	;//	VARCHAR2(10)		NOT NULL		,
+	private String manual_num		;//NUMBER(2)
+
+	
+	
 	private String manual		  ;//  nVARCHAR2(200)				,
 	private String manual_img   ;//   nVARCHAR2(500)				,
-	private String manual_num		;//NUMBER(2)
 }

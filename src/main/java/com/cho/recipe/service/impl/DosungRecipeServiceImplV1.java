@@ -53,8 +53,7 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 
 	@Override
 	public DosungRecipeVO findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dosungRecipeDaoVv1.findById(id);
 	}
 
 
