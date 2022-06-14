@@ -1,6 +1,5 @@
 package com.cho.recipe.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,9 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/*
- * 커밋용 
- */
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -25,5 +22,4 @@ public class UserVO {
 	private String nickname;
 	private String email;
 	private String role;
-
 }

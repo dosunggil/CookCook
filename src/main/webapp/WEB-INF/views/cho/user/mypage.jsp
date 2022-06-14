@@ -17,6 +17,7 @@
 		<c:forEach items="${MY_RECIPES}" var="RECIPE">
 			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
 			 ${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
+			 <img src="${RECIPE.recipe.ATT_FILE_NO_MK}">
 		</c:forEach>
 	</ul>
 <a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>
