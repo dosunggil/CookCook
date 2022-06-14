@@ -21,7 +21,7 @@
 							<div class="logre" style="font-size: 12px; color:red;">로그인이 필요한 서비스입니다.</div>
 						</c:if>
 						<c:if test="${error =='USERNAME_FAIL'}">
-							<div class="logre" style="font-size: 12px; color:red;">존재하는 ID가 없습니다. 회원가입을 먼저 하세요.</div>
+							<div class="logre">존재하는 ID가 없습니다. 회원가입을 먼저 하세요.</div>
 						</c:if>
 						<c:if test="${error =='PASSWORD_FAIL'}">
 							<div class="logre" style="font-size: 12px; color:red;">비밀번호를 확인하세요.</div>
