@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.cho.recipe.model.DosungRecipeVO;
 import com.cho.recipe.model.DosungUserRecipeVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.persistance.DosungRecipeDao;
 import com.cho.recipe.persistance.DosungUserRecipeDao;
 import com.cho.recipe.service.DosungUserRecipeService;
@@ -58,7 +58,7 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 
 	
 	@Override
-	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO) {
+	public int insert(UserVO userVO, DosungRecipeVO recipeVO) {
 		// 구입한 도서정보를 tbl_buybooks 에 추가하기
 		//recipeDao.insert(recipeVO);
 		

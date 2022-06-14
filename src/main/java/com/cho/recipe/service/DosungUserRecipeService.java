@@ -1,9 +1,9 @@
 package com.cho.recipe.service;
 
 import com.cho.recipe.model.DosungRecipeVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.persistance.DosungUserRecipeDao;
 
 public interface DosungUserRecipeService extends DosungUserRecipeDao {
-	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO);
+	public int insert(UserVO userVO, DosungRecipeVO recipeVO);
 }

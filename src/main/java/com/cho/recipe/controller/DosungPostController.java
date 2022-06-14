@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.model.DosungRecipeVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.DosungPostService;
 import com.cho.recipe.service.DosungRecipeService;
 import com.cho.recipe.service.DosungUserRecipeService;
@@ -140,7 +140,7 @@ public class DosungPostController {
 	public String insert(Model model,HttpSession session) {
 		model.addAttribute("LAYOUT","POST-INPUT");
 		
-		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
+		UserVO userVO = (UserVO) session.getAttribute("USER");
 		if(userVO == null) {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/cho/user/login";
@@ -152,7 +152,7 @@ public class DosungPostController {
 	public String insert(DosungRecipeVO recipeVO,HttpSession session, Model model) {
 		
 		log.debug("레피시 정보 : " + recipeVO.toString());
-		DosungUserVO userVO = (DosungUserVO) session.getAttribute("USER");
+		UserVO userVO = (UserVO) session.getAttribute("USER");
 		if(userVO == null) {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/cho/user/login";

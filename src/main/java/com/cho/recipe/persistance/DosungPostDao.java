@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.cho.recipe.model.DosungDetailVO;
 import com.cho.recipe.model.DosungPostVO;
-import com.cho.recipe.model.DosungUserVO;
+import com.cho.recipe.model.UserVO;
 
 public interface DosungPostDao extends GenericDao<DosungPostVO, String>{
 
