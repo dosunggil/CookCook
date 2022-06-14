@@ -117,9 +117,9 @@ public class UserController {
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(UserVO userVO) {
-		log.debug("JOIN");
-		log.debug(userVO.toString());
+		
 		userService.join(userVO);
+		log.debug("관리자인가?" + userVO.toString());
 
 		/*
 		 * return "문자열" : Forwarding => views/문자열.jsp를 rendering 하라
@@ -160,7 +160,7 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value = "/nicknamecheck", method = RequestMethod.GET)
 	public String nickcheck(String nickname) {
-		UserVO userVO = userService.findByNick(nickname);
+		UserVO userVO = (UserVO) userService.findByNickName(nickname);
 		// if(username.equalsIgnoreCase(userVO.getUsername()))
 //	if(userVO.getUsername().equalsIgnoreCase(nickname)) {
 //		return "FAIL";

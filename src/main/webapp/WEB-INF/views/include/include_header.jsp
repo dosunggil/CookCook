@@ -30,7 +30,7 @@
 		<div class="profile">
 			<c:if test="${empty USER}">
 				<div class="btn-login">
-					<a href="${rootPath}/cho/user/login"> <img class="img-login"
+					<a href="${rootPath}/ahn/log/log"> <img class="img-login"
 						src="${rootPath}/resources/images/in.png" />
 					</a>
 				</div>
