@@ -35,8 +35,7 @@ public class ContentsServiceImplV1 implements ContentsService {
 	}
 	@Override
 	public List<DosungRecipeVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return contentListDao.selectAll();
 	}
 	@Override
 	public DosungRecipeVO findById(Long id) {

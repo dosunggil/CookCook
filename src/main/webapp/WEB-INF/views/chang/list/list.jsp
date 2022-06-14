@@ -11,14 +11,14 @@
 	<main>
 		<div class="ch-main">
 			<c:forEach items="${CONTENT}" var="postVO">
-				<section class="section-colum" data-postseq="${postVO.post_seq}" >
+				<section class="section-colum" data-postseq="${postVO.RCP_SEQ}" >
 					<article class="img-article">
-						<img src=${postVO.POST_IMG_SMALL}>
+						<img src=${postVO.ATT_FILE_NO_MK}>
 					</article>
 					<div class="div-article">
 						<article class="title-writer">username</article>
-						<article class="title-article">${postVO.POST_TITLE}</article>
-						<article class="content-article">${postVO.POST_CONTENT}</article>
+						<article class="title-article">${postVO.RCP_NM}</article>
+						<!--   <article class="content-article">${postVO.POST_CONTENT}</article> -->
 						<article class="stars-article">stars</article>
 					</div>
 				</section>
