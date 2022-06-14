@@ -99,6 +99,7 @@ public class DosungUserController {
 				
 				VO.setRecipe(RcpVO);
 			}
+			log.debug("디테일을볼까?22" + URlist.toString());
 			
 			model.addAttribute("MY_RECIPES",URlist);
 		return null;

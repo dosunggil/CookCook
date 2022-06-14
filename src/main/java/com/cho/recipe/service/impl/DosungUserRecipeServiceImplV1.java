@@ -61,7 +61,6 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO) {
 		// 구입한 도서정보를 tbl_buybooks 에 추가하기
 		//recipeDao.insert(recipeVO);
-		log.debug("insert 직후 : " + recipeVO.toString());
 		
 		
 		Date date = new Date(System.currentTimeMillis());
@@ -72,7 +71,6 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 				.b_seq(recipeVO.getRCP_SEQ())
 				.b_username(userVO.getUsername())
 				.build();
-		log.debug("짜잔" + userrecipeVO.getB_seq());
 		userRecipeDao.insert(userrecipeVO);
 		return 0;
 	}

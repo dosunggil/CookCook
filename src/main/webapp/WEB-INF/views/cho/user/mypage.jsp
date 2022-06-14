@@ -13,9 +13,10 @@
 </head>
 <body>
 <h1>여기는 마이페이지</h1>
-<ul>
+	<ul>
 		<c:forEach items="${MY_RECIPES}" var="RECIPE">
-			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp; ${RECIPE.recipe.RCP_PARTS_DTLS},&nbsp; &nbsp;
+			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
+			 ${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
 		</c:forEach>
 	</ul>
 <a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>
