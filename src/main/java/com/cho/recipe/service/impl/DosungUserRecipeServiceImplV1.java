@@ -46,8 +46,7 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 
 	@Override
 	public List<DosungUserRecipeVO> findByUserName(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		return userRecipeDao.findByUserName(username);
 	}
 
 	// 쓰지 않을거양
@@ -61,7 +60,9 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 	@Override
 	public int insert(DosungUserVO userVO, DosungRecipeVO recipeVO) {
 		// 구입한 도서정보를 tbl_buybooks 에 추가하기
-	//	recipeDao.insert(recipeVO);
+		//recipeDao.insert(recipeVO);
+		log.debug("insert 직후 : " + recipeVO.toString());
+		
 		
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -41,6 +41,8 @@ public class DosungPostVO  {
 
 	@JsonProperty("RCP_PARTS_DTLS")
 	private String RCP_PARTS_DTLS;// 재료정보
+	
+	private String rcp_content;//	nVARCHAR2(1000)		not null		,
 
 
 

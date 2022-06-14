@@ -7,6 +7,8 @@
 	<select id="selectAll" resultType="DosungUserVO">
 		Select * From tbl_user
 	</select>
+
+
 	<select id="findById" resultType="DosungUserVO">
 		Select * from tbl_user where username = #{username}
 	</select>

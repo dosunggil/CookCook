@@ -25,11 +25,7 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 		return null;
 	}
 
-	@Override
-	public DosungRecipeVO findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 
 	@Override
@@ -38,21 +34,36 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 		return 0;
 	}
 
-	@Override
-	public int delete(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int insert(DosungRecipeVO vo) {
-		// TODO Auto-generated method stub
+		dosungRecipeDaoVv1.insert(vo);
 		return 0;
 	}
 
 	@Override
 	public List<DosungRecipeVO> findByNm(String title) {
 		return dosungRecipeDaoVv1.findByNm(title);
+	}
+
+	
+
+
+
+
+	@Override
+	public DosungRecipeVO findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	@Override
+	public int delete(Long id) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

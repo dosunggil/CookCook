@@ -13,7 +13,6 @@ import com.cho.recipe.service.DosungUserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-//@Service(QualifierConfig.USER_V1)
 public class DosungUserServiceImplV1 implements DosungUserService{
 
 	@Autowired

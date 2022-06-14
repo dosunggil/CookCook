@@ -1,5 +1,6 @@
 package com.cho.recipe.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -44,13 +45,19 @@ public class DosungPostController {
 		 * title 이 검색어
 		 */
 		String quString = post.queryString("LIST", title);
-		List<DosungPostVO> recipeList = post.getRecipes(quString);
-		List<DosungRecipeVO> llist = recipeService.findByNm(title);
+		List<DosungPostVO> recipeList = new ArrayList<DosungPostVO>();
+		recipeList = post.getRecipes(quString);
 		
-		log.debug("짜짠" + llist.toString());
-		/* recipeList.addAll(llist); */
+		List<DosungRecipeVO> llist = new ArrayList<DosungRecipeVO>();
+		llist = recipeService.findByNm(title);
+		
+		if(recipeList == null) {
+			model.addAttribute("RECIPES", llist);
+			
+		} else {
+		recipeList.addAll(0,llist);
 			model.addAttribute("RECIPES", recipeList);
-	
+		}
 
 		return "cho/post/search_result";
 	}
@@ -153,6 +160,7 @@ public class DosungPostController {
 		}
 		recipeService.insert(recipeVO);
 		userRecipeService.insert(userVO, recipeVO);
+	
 		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
 		return "redirect:/cho/user/mypage";
 		
