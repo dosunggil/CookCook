@@ -7,20 +7,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
-@Setter
 @Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
-public class UserVO {
-
-	private String username;
-	private String password;
-	private String name;
-	private String nickname;
-	private String email;
-	private String role;
-
+public class RegisterVO {
+	private String c_seq;
+	private String r_date;
+	private String c_username;
+	private String c_post_seq;
+	private ContentVO contentVO;
+	private UserVO userVO;
 }

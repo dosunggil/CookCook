@@ -10,16 +10,16 @@
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
 		<div class="ch-main">
-			<c:forEach items="CONTENT" var="postVO">
-				<section class="section-colum">
+			<c:forEach items="${CONTENT}" var="postVO">
+				<section class="section-colum" data-postseq="${postVO.post_seq}" >
 					<article class="img-article">
-						<img src="${rootPath}/resources/images/pizza.jpg">
+						<img src=${postVO.POST_IMG_SMALL}>
 					</article>
 					<div class="div-article">
-						<article class="title-writer"><%-- ${postVO.username}--%></article>
-						<article class="title-article">${postVO.contentsTitle}</article>
-						<article class="content-article">${postVO.contentsArticle}</article>
-						<article class="stars-article"><%--${postVO.stars}--%></article>
+						<article class="title-writer">username</article>
+						<article class="title-article">${postVO.POST_TITLE}</article>
+						<article class="content-article">${postVO.POST_CONTENT}</article>
+						<article class="stars-article">stars</article>
 					</div>
 				</section>
 			</c:forEach>

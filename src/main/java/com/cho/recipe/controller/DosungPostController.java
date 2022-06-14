@@ -23,8 +23,7 @@ import com.cho.recipe.service.DosungUserRecipeService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping(value = "/cho")
-@Controller
+@RequestMapping(value = "/cho")@Controller
 public class DosungPostController {
 
 	@Autowired
@@ -74,6 +73,10 @@ public class DosungPostController {
 		
 		//recipeList.addAll(llist);
 		
+<<<<<<< HEAD
+		recipeList.add(null);
+=======
+>>>>>>> master
 		model.addAttribute("RECIPES", recipeList);
 
 		return "cho/post/search_result";
