@@ -1,105 +1,103 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 section {
-	
-	margin-top: 200px;
+  margin-top: 200px;
 }
 div.logobox {
-	text-align: center;
+  text-align: center;
 }
 #log_form {
-	flex: 1;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #log_body {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	display: flex;
-	
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
 }
 
 #login_body {
-	width: 600px;
-	padding: 40px;
-	background-color: white;
-	text-align: center;
-	border-radius: 10px;
-	border: 2px solid #888;
-	margin: 0 auto;
+  width: 600px;
+  padding: 40px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #888;
+  margin: 0 auto;
 }
 
 #login_body input {
-	display: block;
-	margin: 10px auto;
-	text-align: center;
-	width: 280px;
-	padding: 16px 12px;
-	background: none;
-	outline: none;
-	border: 0;
-	color: black;
-	transition: 0.5s;
-	border: 2px solid #888;
-	color: black;
-	border-radius: 10px;
-	color: black;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  width: 280px;
+  padding: 16px 12px;
+  background: none;
+  outline: none;
+  border: 0;
+  color: black;
+  transition: 0.5s;
+  border: 2px solid #888;
+  color: black;
+  border-radius: 10px;
+  color: black;
 }
 
 button.login {
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	width: 280px;
-	padding: 16px 12px;
-	background: none;
-	outline: none;
-	border: 0;
-	border: 2px solid white;
-	color: white;
-	background-color: #ff7f00;
-	border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  width: 280px;
+  padding: 16px 12px;
+  background: none;
+  outline: none;
+  border: 0;
+  border: 2px solid white;
+  color: white;
+  background-color: #ff7f00;
+  border-radius: 10px;
 }
 
 #login_body input:focus {
-	border: 2px solid black;
+  border: 2px solid black;
 }
 
 div.log_under ul {
-	display: flex;
-	list-style: none;
-	margin: 30px auto 0;
+  display: flex;
+  list-style: none;
+  margin: 30px auto 0;
 }
 
 div.log_under ul li {
-	margin: auto;
-	font-size: 14px;
-	font-weight: bold;
+  margin: auto;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-div.log_under ul li, button:hover {
-	cursor: pointer;
+div.log_under ul li,
+button:hover {
+  cursor: pointer;
 }
 
 img {
-	width: 20%;
+  width: 20%;
 }
 
-p.show {
-	margin: 20px;
-	display: none;
-	/* onclick시 display: block; */
-	color: red;
-	font-size: 10px;
+div.logre {
+  margin: 20px;
+  /* onclick시 display: block; */
+  color: red;
+  font-size: 12px;
+  text-align: center;
 }

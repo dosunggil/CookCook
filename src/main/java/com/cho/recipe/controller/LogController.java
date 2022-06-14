@@ -29,8 +29,9 @@ public class LogController {
 	
 	
 	@RequestMapping(value = "log", method = RequestMethod.GET)
-	public String login() {
-
+	public String login(String error, Model model) {
+		model.addAttribute("error", error);
+		model.addAttribute("LAYOUT", "LOGIN");
 		return null;
 	}
 	
