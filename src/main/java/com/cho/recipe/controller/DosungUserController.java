@@ -90,7 +90,6 @@ public class DosungUserController {
 		}
 		model.addAttribute("LAYOUT","MYPAGE");
 		
-		try {
 			List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(loginUser.getUsername());
 			
 			for(DosungUserRecipeVO VO : URlist) {
@@ -102,13 +101,6 @@ public class DosungUserController {
 			}
 			
 			model.addAttribute("MY_RECIPES",URlist);
-			
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
 		return null;
 	}
 	
