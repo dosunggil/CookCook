@@ -43,9 +43,11 @@
  	<update id="update" parameterType="UserVO">
  		UPDATE tbl_users SET
 		        password = #{password},	
-		        email = #{email},	
+		       
 		        nickname = #{nickname},		
-		        role = #{role}	
+		       
+		        photo = #{photo},
+		        bio = #{bio}	
  		WHERE username = #{username}
  	</update>
  	<delete id="delete">
