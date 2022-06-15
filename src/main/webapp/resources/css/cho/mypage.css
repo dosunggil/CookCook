@@ -24,7 +24,9 @@ nav.cho-nav-mypage ul li {
 	margin: 0 5px;
 	font-weight: 700;
 }
-
+input.cho-nickname::placeholder {
+	color: red;
+}
 nav.cho-nav-mypage ul li:hover {
 	cursor: pointer;
 }

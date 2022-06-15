@@ -12,7 +12,8 @@
 		<nav class="cho-nav-mypage">
 			<ul>
 				<li>내 프로필</li>
-				<li>레시피 관리</li>
+				<li>암호 관리</li>
+				<li>내 레시피</li>
 			</ul>
 		</nav>
 		<div class="cho-container-mypage">
@@ -27,14 +28,15 @@
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
 							<div>이름</div>
-							<input placeholder="이름" type="text" class="cho-nickname" value="${USER.nickname}" name="nickname">
+							<input placeholder="" type="text" class="cho-nickname" value="${USER.nickname}" name="nickname">
 							<div>상태메세지</div>
 							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.bio}</textarea>
 						</div>
 						<div class="cho-edit-photo">
-							<img src="${USER.photo}" name="photo">
+							<img src="${rootPath}/resources/images/${USER.photo}" >
 							<div class="cho-edit-btns">
 								<input accept=".gif, .jpg, .png" type="file" name="photo"
+								value="${USER.photo}"
 									id="cho-photo" style="display: none;"> <label
 									class="btn-edit-photo" for="cho-photo">수정</label>
 								<div class="btn-edit-photo">삭제</div>
