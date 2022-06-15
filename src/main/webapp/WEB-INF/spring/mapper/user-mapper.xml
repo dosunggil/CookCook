@@ -42,14 +42,7 @@
  	</insert>
  	<update id="update" parameterType="UserVO">
  		UPDATE tbl_users SET
-		        nickname = #{nickname},		
-		       	photo = #{photo},
-		       	bio = #{bio}
- 		WHERE username = #{username}
- 	</update>
- 	<update id="updatePass" parameterType="UserVO">
- 		UPDATE tbl_users SET
-		        password = #{password},	
+
  		WHERE username = #{username}
  	</update>
  	<delete id="delete">
