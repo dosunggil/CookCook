@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const join_form = document.querySelector("form.join");
 
   const index = {
-    name: 0,
-    username: 1,
-    nickname: 2,
-    email: 3,
-    password: 4,
-    re_password: 5,
+    username: 0,
+    nickname: 1,
+    email: 2,
+    password: 3,
+    re_password: 4,
   };
   // form.join 내부에 있는 모든 input box
   // SelectAll을 사용하면 tag 요소들을 배열로 가져온다
@@ -85,11 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // join button 클릭
   if (join_btn) {
     join_btn.addEventListener("click", () => {
-      if (name.value === "") {
-        alert("이름을 입력해 주세요");
-        name.focus();
-        return false;
-      }
       if (username.value === "") {
         alert("아이디를 입력해 주세요");
         username.focus();
@@ -136,15 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
       if (email.value === "") {
-        alert("비밀번호를 입력해 주세요");
+        alert("이메일을 입력해 주세요");
         email.focus();
         return false;
       }
-      if (!emailRule.test(email.value)) {
-        alert("이메일 형식이 잘못되었습니다(*@* 형식) 다시 입력해주세요");
-        email.focus();
-        return false;
-      }
+      // if (!emailRule.test(email.value)) {
+      //   alert("이메일 형식이 잘못되었습니다(*@* 형식) 다시 입력해주세요");
+      //   email.focus();
+      //   return false;
+      // }
 
       // 유효성 검사 종료
       // form에 담긴 데이터를 서버로 전송한다
