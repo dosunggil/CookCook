@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-
+<link  href="${rootPath}/resources/css/cho/mypage.css" rel="stylesheet" />
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
-	<nav class="top_nav">
+	<nav class="cho-nav-mypage">
 		<ul>
 				<li>내 프로필</li>
 				<li>레시피 관리</li>
@@ -16,19 +16,6 @@
 	</nav>
 	
 	<h1>여기는 마이페이지</h1>
-	<ul>
-		<c:forEach items="${MY_RECIPES}" var="RECIPE">
-<<<<<<< HEAD
-			<li>${RECIPE.b_seq},&nbsp; &nbsp;${RECIPE.b_username}, &nbsp;
-				&nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
-				${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
-=======
-			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
-			 ${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
-			 <img src="${RECIPE.recipe.ATT_FILE_NO_MK}">
->>>>>>> master
-		</c:forEach>
-	</ul>
-	
+
 </body>
 </html>
