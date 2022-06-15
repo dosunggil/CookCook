@@ -15,7 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserServiceImplV1 implements UserService {
 
-	
 	protected final UserDao userDao;
 	// security-context.xml에 설정된 bean 불러오기
 	protected final PasswordEncoder passwordEncoder;
@@ -48,17 +47,15 @@ public class UserServiceImplV1 implements UserService {
 	}
 
 	@Override
-	public List<UserVO>  findByNickName(String nickname) {
+	public List<UserVO> findByNickName(String nickname) {
 		return userDao.findByNickName(nickname);
 	}
-	
+
 	@Override
 	public int insert(UserVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-	
 
 	@Override
 	public int delete(String id) {
@@ -108,8 +105,6 @@ public class UserServiceImplV1 implements UserService {
 		return null;
 	}
 
-
-
 	@Override
 	public UserVO findByEmail(String email) {
 		return userDao.findByEmail(email);
@@ -120,9 +115,16 @@ public class UserServiceImplV1 implements UserService {
 		userDao.update(vo);
 		return 0;
 	}
+
 	@Override
-	public int updatePass(UserVO vo) {
-		userDao.updatePass(vo);
+	public int updatePass(UserVO userVO) {
+
+		String planPassword = userVO.getPassword();
+
+		String encPassword = passwordEncoder.encode(planPassword);
+		userVO.setPassword(encPassword);
+
+		userDao.updatePass(userVO);
 		return 0;
 	}
 }
