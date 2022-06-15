@@ -58,11 +58,7 @@ public class UserServiceImplV1 implements UserService {
 		return 0;
 	}
 
-	@Override
-	public int update(UserVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int delete(String id) {
@@ -117,5 +113,16 @@ public class UserServiceImplV1 implements UserService {
 	@Override
 	public UserVO findByEmail(String email) {
 		return userDao.findByEmail(email);
+	}
+
+	@Override
+	public int update(UserVO vo) {
+		userDao.update(vo);
+		return 0;
+	}
+	@Override
+	public int updatePass(UserVO vo) {
+		userDao.updatePass(vo);
+		return 0;
 	}
 }

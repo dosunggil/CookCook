@@ -198,15 +198,24 @@ public class UserController {
 	@RequestMapping(value = "/searchPASS", method = RequestMethod.POST)
 	public String searchPASS(String username, String email, Model model) {
 
-		UserVO VO = userService.findByEmail(email);
-		if (VO == null) {
-			model.addAttribute("USERNAME", "NULL");
+		UserVO VO1 = userService.findById(username);
+		UserVO VO2 = userService.findByEmail(email);
+		
+		if (VO1 == null) {
+			model.addAttribute("USERPASS2", "NULL");
 
-		} else {
-			model.addAttribute("USERNAME", "OK");
-			model.addAttribute("USER1", VO);
 		}
-		return "ahn/user/searchID2";
+		
+		if (VO2 == null) {
+			model.addAttribute("USERPASS2", "NULL");
+
+		} 
+		if (VO1.getUsername().equals(VO2.getUsername())) {
+			model.addAttribute("USERPASS2", "OK");
+		} else {
+			model.addAttribute("USERPASS2", "NULL");
+		}
+		return "ahn/user/searPASS2";
 	}
 
 }

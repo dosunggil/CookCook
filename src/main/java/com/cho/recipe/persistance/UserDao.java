@@ -18,5 +18,6 @@ public interface UserDao extends GenericDao<UserVO, String>{
 	public UserVO findByEmail(String email);
 	public void create_user_table();
 
+	public int updatePass(UserVO vo);
 	
 }
