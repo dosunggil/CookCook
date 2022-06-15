@@ -5,8 +5,7 @@ import java.util.List;
 import com.cho.recipe.model.UserVO;
 
 public interface DosungUserDao extends GenericDao<UserVO, String> {
-	public List<UserVO> findByName(String name);
-	public List<UserVO> findByNickName(String name);
+	public List<UserVO> findByNickName(String nickName);
 	
 	/*
 	 * email 항목을 unique 로 한다면
