@@ -18,6 +18,8 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 	@Autowired
 	protected DosungUserDao userDao;
 	
+
+	
 	@Autowired
 	@Override
 	public void create_user_table() {
@@ -29,14 +31,10 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 //		}
 		
 	}
-	@Override
-	public List<UserVO> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
-	public List<UserVO> findByNickName(String name) {
+	public List<UserVO> findByNickName(String nickName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -67,8 +65,7 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 
 	@Override
 	public int update(UserVO vo) {
-		userDao.update(vo);
-		return 0;
+		return userDao.update(vo); 
 	}
 
 	@Override

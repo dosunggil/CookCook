@@ -22,9 +22,8 @@
 					<p>프로필 사진과 닉네임을 수정할 수 있습니다.</p>
 				</div>
 
-				<form method="POST">
+				<form method="POST" action="${rootPaht}/cho/user/update">
 							<input type="text" value="${USER.username}" name="username" hidden="hidden">
-							<input type="text" value="${USER.password}" name="password" hidden="hidden">
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
 							<div>이름</div>
