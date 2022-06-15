@@ -22,6 +22,9 @@
 <script src="${rootPath}/resources/js/cho/login.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/join.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/recipe/input.js?ver=2022-05-18-018"></script>
+<script src="${rootPath}/resources/js/cho/gotodetail.js?ver=2022-05-18-018"></script>
+
+
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />
 <link  href="${rootPath}/resources/css/cho/detail.css" rel="stylesheet" />
 
