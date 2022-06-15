@@ -19,7 +19,7 @@
 						<article class="title-writer">username</article>
 						<article class="title-article">${postVO.RCP_NM}</article>
 						<!--   <article class="content-article">${postVO.POST_CONTENT}</article> -->
-						<article class="stars-article">stars</article>
+						<article class="stars-article">${postVO.POST_STAR}</article>
 					</div>
 				</section>
 			</c:forEach>

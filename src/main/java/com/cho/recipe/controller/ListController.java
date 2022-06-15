@@ -24,8 +24,9 @@ public class ListController {
 
 	@RequestMapping(value = "/list")
 	public String List(Model model) {
+		log.debug("장준영장준영장준영");
 		List<DosungRecipeVO> contentList = contentsService.selectAll();
-		log.debug("=".repeat(100));
+		log.debug("장준영장준영장준영");
 		log.debug(contentList.toString());
 		model.addAttribute("CONTENT", contentList);
 		return "chang/list/list";
