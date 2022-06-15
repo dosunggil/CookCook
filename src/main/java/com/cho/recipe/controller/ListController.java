@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cho.recipe.model.ContentVO;
+import com.cho.recipe.model.DosungRecipeVO;
 import com.cho.recipe.service.ContentsService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,8 @@ public class ListController {
 
 	@RequestMapping(value = "/list")
 	public String List(Model model) {
-		List<ContentVO> contentList = contentsService.selectAll();
+		List<DosungRecipeVO> contentList = contentsService.selectAll();
+		log.debug("=".repeat(100));
 		log.debug(contentList.toString());
 		model.addAttribute("CONTENT", contentList);
 		return "chang/list/list";

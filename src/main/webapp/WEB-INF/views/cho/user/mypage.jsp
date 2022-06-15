@@ -18,9 +18,15 @@
 	<h1>여기는 마이페이지</h1>
 	<ul>
 		<c:forEach items="${MY_RECIPES}" var="RECIPE">
+<<<<<<< HEAD
 			<li>${RECIPE.b_seq},&nbsp; &nbsp;${RECIPE.b_username}, &nbsp;
 				&nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
 				${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
+=======
+			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
+			 ${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
+			 <img src="${RECIPE.recipe.ATT_FILE_NO_MK}">
+>>>>>>> master
 		</c:forEach>
 	</ul>
 	

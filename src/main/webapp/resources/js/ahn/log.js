@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (search_pass) {
     signup.addEventListener("click", () => {
       let url = `${rootPath}`;
-      url += "/ahn/user/join";
+      url += "/ahn/user/searchPASS";
       document.location.href = url;
     });
   }
   if (search_id) {
-    signup.addEventListener("click", () => {
+    search_id.addEventListener("click", () => {
       let url = `${rootPath}`;
-      url += "/ahn/user/join";
+      url += "/ahn/user/searchID";
       document.location.href = url;
     });
   }

@@ -3,22 +3,22 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cho.recipe.dao.ContentListDao">
-	<select id="selectAll" resultType="ContentVO">
-		select * from tbl_post
+<mapper namespace="com.cho.recipe.persistance.ContentListDao">
+	<select id="selectAll" resultType="DosungPostVO">
+		select * from tbl_recipe
 	</select>
 	
-	<select id="findByPostSeq" resultType = "ContentVO">
-		select * from tbl_post 
+	<select id="findByPostSeq" resultType = "DosungPostVO">
+		select * from tbl_recipe 
 		where post_seq = #{post_seq}
 	</select>
 	<!--manual_seq 이 칼럼은 ContentVO에 있는 값  -->
-	<select id="findByContnetID" resultType="RecipeVO">
+	<select id="findByContnetID" resultType="DosungPostVO">
 		select * from tbl_recipe 
 		where RCP_SEQ = #{manual_seq}
 	</select>
-	<select id="findByRecipeID" resultType="ManualVO">
-		select * from tbl_manual 
+	<select id="findByRecipeID" resultType="DosungManualVO">
+		select * from tbl_recipe_manual 
 		where MANUAL_SEQ = #{RCP_SEQ}
 	</select>
 	

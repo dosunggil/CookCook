@@ -4,23 +4,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.cho.recipe.persistance.DosungUserDao">
-	<select id="selectAll" resultType="DosungUserVO">
-		Select * From tbl_user
+	<select id="selectAll" resultType="UserVO">
+		Select * From tbl_users
 	</select>
 
 
-	<select id="findById" resultType="DosungUserVO">
-		Select * from tbl_user where username = #{username}
+	<select id="findById" resultType="UserVO">
+		Select * from tbl_users where username = #{username}
 	</select>
 
-	<select id="findByEmail" resultType="DosungUserVO">
-		Select * from tbl_user where email = #{email}
+	<select id="findByEmail" resultType="UserVO">
+		Select * from tbl_users where email = #{email}
 	</select> 
 
 
-	<insert id="insert" parameterType="DosungUserVO">
+	<insert id="insert" parameterType="UserVO">
 
-	insert into tbl_user(	
+	insert into tbl_users(	
 			username,
 			password,	
 			email,		
@@ -39,8 +39,8 @@
 			)
 	</insert>
 
-	<update id="update" parameterType="DosungUserVO">
-		update tbl_user set 
+	<update id="update" parameterType="UserVO">
+		update tbl_users set 
 				password = #{password},	
 				email = #{email},
 				name = #{name},

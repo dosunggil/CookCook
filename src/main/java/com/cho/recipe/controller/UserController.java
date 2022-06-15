@@ -5,25 +5,28 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cho.recipe.model.DosungUserVO;
 import com.cho.recipe.model.UserVO;
+import com.cho.recipe.service.DosungUserRecipeService;
 import com.cho.recipe.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping(value="ahn/user")
+@RequestMapping(value = "ahn/user")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private DosungUserRecipeService dosungUserRecipeService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
@@ -117,9 +120,9 @@ public class UserController {
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(UserVO userVO) {
-		log.debug("JOIN");
-		log.debug(userVO.toString());
+
 		userService.join(userVO);
+		log.debug("관리자인가?" + userVO.toString());
 
 		/*
 		 * return "문자열" : Forwarding => views/문자열.jsp를 rendering 하라
@@ -155,12 +158,11 @@ public class UserController {
 			return "FAIL";
 		}
 	}
-	
 
 	@ResponseBody
 	@RequestMapping(value = "/nicknamecheck", method = RequestMethod.GET)
 	public String nickcheck(String nickname) {
-		UserVO userVO = userService.findByNick(nickname);
+		UserVO userVO = (UserVO) userService.findByNickName(nickname);
 		// if(username.equalsIgnoreCase(userVO.getUsername()))
 //	if(userVO.getUsername().equalsIgnoreCase(nickname)) {
 //		return "FAIL";
@@ -173,5 +175,25 @@ public class UserController {
 			return "FAIL";
 		}
 	}
-	
+
+	@RequestMapping(value = "/searchID", method = RequestMethod.GET)
+	public String searchID() {
+
+		return null;
+	}
+
+	@RequestMapping(value = "/searchID", method = RequestMethod.POST)
+	public String searchID(String email, Model model) {
+
+		UserVO VO = userService.findByEmail(email);
+		if (VO == null) {
+			model.addAttribute("USERNAME", "NULL");
+
+		} else {
+			model.addAttribute("USERNAME", "OK");
+			model.addAttribute("USER1", VO);
+		}
+		return "ahn/user/searchID2";
+	}
+
 }
