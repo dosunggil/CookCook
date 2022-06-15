@@ -22,11 +22,14 @@
 			<c:choose>
 				<c:when test="${USERNAME == 'NULL'}">
 					<div> 해당 이메일로 등록된 유저 정보가 없습니다.</div>
+					<a href="${rootPath}/ahn/user/searchID">다시 조회하기</a>
+					<a href="${rootPath}/ahn/log/log">로그인하기</a>		
 				</c:when>
 				<c:when test="${USERNAME == 'OK'}">
 					<div>
 						귀하의 ID는 <span style="color:red">${USER1.username}</span> 입니다.
 					</div>
+					<a href="${rootPath}/ahn/log/log">로그인하기</a>
 				</c:when>
 			</c:choose>
 			</div>

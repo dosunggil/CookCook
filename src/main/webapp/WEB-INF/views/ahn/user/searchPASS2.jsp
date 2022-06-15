@@ -8,29 +8,32 @@
 <meta charset="UTF-8">
 <title>retisterContent</title>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-<style>
-.searchPASS {
-	margin-left: 0 auto;
-}
-</style>
+
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main class="mainA">
 		<div class="formA">
 			<div class="searchPASS">
-				<form method="POST">
-					<c:choose>
-						<c:when test="${USERPASS2 == 'NULL'}">
-							<div>일치하는 정보가 없습니다. 다시 입력해주세요.</div>
-						</c:when>
-						<c:when test="${USERPASS2 == 'OK'}">
-							<div>
-								<input name="password"> 패스워드 
-								<input> 패스워드확인
-							</div>
-						</c:when>
-					</c:choose>
+				<form class="join" autocomplete="off" method="POST"
+				action="${rootPath}/ahn/user/searchPASS2">
+					<div class="colum-mainA password">
+						<div>변경 할 비밀번호</div>
+						<div>
+							<input class="password1" name="password" type="password">
+						</div>
+					</div>
+					<div class="colum-mainA re_password">
+						<div>비밀번호 확인</div>
+						<div>
+							<input class="re_password1" name="re_password" type="password">
+						</div>
+					</div>
+					<div class="colum-mainA-btn">
+						<div>
+							<button type="button" class="btn-sign" id="btn-modify">변경하기</button>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>

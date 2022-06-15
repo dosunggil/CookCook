@@ -57,7 +57,7 @@
 						</div>
 						<div class="colum-mainA-btn">
 							<div>
-								<button type="button" class="btn-sign">가입하기</button>
+								<button type="button" class="btn-sign btn-join">가입하기</button>
 							</div>
 						</div>
 					</div>
