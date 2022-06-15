@@ -13,10 +13,12 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main class="mainA">
+		
 		<div class="formA">
 			<div class="searchPASS">
 				<form class="join" autocomplete="off" method="POST"
-				action="${rootPath}/ahn/user/searchPASS2">
+				action="${rootPath}/ahn/user/updatePASS">
+					<input name="username"  hidden="hidden" value="${USER.username}"></input>
 					<div class="colum-mainA password">
 						<div>변경 할 비밀번호</div>
 						<div>

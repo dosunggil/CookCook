@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
+//http://localhost:808ipe/ahn/user/searchPASS/updatePASS
 @RequestMapping(value = "/ahn/user")
 public class UserController {
 
@@ -217,12 +218,31 @@ public class UserController {
 			return "ahn/user/searchPASS";
 		} 
 		if (VO1.getUsername().equals(VO2.getUsername())) {
+			
+			model.addAttribute("USER", VO1);
 			return "ahn/user/searchPASS2";
 		} else {
 			model.addAttribute("USERPASS2", "NULL");
 			
 		}
 		return "ahn/log/log";
+	}
+	@RequestMapping(value="/updatePASS", method=RequestMethod.GET)
+	public String updatePass(@PathVariable("password") String password, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("PASSWORD");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		return null;
+	}
+	
+	// http://localhost:808/searchPASS/updatePASS
+	@RequestMapping(value="/updatePASS", method=RequestMethod.POST)
+	public String updatePass(UserVO vo) {
+		userService.updatePass(vo);
+		
+		return "redirect:/";
 	}
 
 
