@@ -115,14 +115,17 @@ public class DosungUserController {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/ahn/log/log";
 		}
+		
+		UserVO realUser = dosungUserService.findById(username);
+		model.addAttribute("USER",realUser);
 		return "cho/user/update";
 	}
 	@RequestMapping(value="/{username}/update", method=RequestMethod.POST)
 	public String update(UserVO userVO) {
 		
 		userService.update(userVO);
-		
-		return "home";
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
 	}
 	
 	@RequestMapping(value="/updatePass", method=RequestMethod.POST)
