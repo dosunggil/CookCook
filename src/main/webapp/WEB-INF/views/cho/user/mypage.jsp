@@ -26,9 +26,9 @@
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
 							<div>이름</div>
-							<input type="text" value="${USER.name}" name="name">
+							<input type="text" value="${USER.nickname}" name="name">
 							<div>상태메세지</div>
-							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.nickname}</textarea>
+							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.bio}</textarea>
 						</div>
 						<div class="cho-edit-photo">
 							<img src="${USER.photo}">
