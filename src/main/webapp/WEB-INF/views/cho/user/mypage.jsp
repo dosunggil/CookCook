@@ -1,25 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set value="${pageContext.request.contextPath}" var="rootPath"/>
-
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE-edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Insert title here</title>
-</head>
+<%@ include file="/WEB-INF/views/include/include_head.jsp"%>
+
 <body>
-<h1>여기는 마이페이지</h1>
+	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
+	<nav class="top_nav">
+		<ul>
+				<li>내 프로필</li>
+				<li>레시피 관리</li>
+		</ul>
+	</nav>
+	
+	<h1>여기는 마이페이지</h1>
 	<ul>
 		<c:forEach items="${MY_RECIPES}" var="RECIPE">
+<<<<<<< HEAD
+			<li>${RECIPE.b_seq},&nbsp; &nbsp;${RECIPE.b_username}, &nbsp;
+				&nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
+				${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
+=======
 			<li>${RECIPE.b_seq}, &nbsp; &nbsp;${RECIPE.b_username}, &nbsp; &nbsp; ${RECIPE.b_date}, &nbsp; &nbsp;
 			 ${RECIPE.recipe.RCP_NM},&nbsp; &nbsp;
 			 <img src="${RECIPE.recipe.ATT_FILE_NO_MK}">
+>>>>>>> master
 		</c:forEach>
 	</ul>
-<a href="${rootPath}/cho/recipe/insert">레시피 등록하기</a>
+	
 </body>
 </html>
