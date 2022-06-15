@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   if (search_pass) {
-    signup.addEventListener("click", () => {
+    search_pass.addEventListener("click", () => {
       let url = `${rootPath}`;
       url += "/ahn/user/searchPASS";
       document.location.href = url;
