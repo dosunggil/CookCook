@@ -115,8 +115,10 @@ public class DosungUserController {
 			model.addAttribute("error","LOGIN_NEED");
 			return "redirect:/ahn/log/log";
 		}
+		
 		return "cho/user/update";
 	}
+	
 	@RequestMapping(value="/{username}/update", method=RequestMethod.POST)
 	public String update(UserVO userVO) {
 		
