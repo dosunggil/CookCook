@@ -48,7 +48,7 @@ public class UserServiceImplV1 implements UserService {
 	}
 
 	@Override
-	public UserVO findByNickName(String nickname) {
+	public List<UserVO>  findByNickName(String nickname) {
 		return userDao.findByNickName(nickname);
 	}
 	
@@ -74,12 +74,10 @@ public class UserServiceImplV1 implements UserService {
 	public UserVO login(UserVO userVO) {
 		String username = userVO.getUsername();
 		String password = userVO.getPassword();
-		String name = userVO.getName();
 		String nickname = userVO.getNickname();
 		String email = userVO.getEmail();
 
 		if (username.equalsIgnoreCase("ghdrlfehd") && password.equals("1234")) {
-			userVO.setName("홍길동");
 			userVO.setNickname("hong");
 			userVO.setEmail("hong@naver.com");
 		} else {
@@ -114,10 +112,6 @@ public class UserServiceImplV1 implements UserService {
 		return null;
 	}
 
-	@Override
-	public List<UserVO> findByName(String name) {
-		return userDao.findByName(name);
-	}
 
 
 	@Override
