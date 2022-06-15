@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping(value = "ahn/user")
+@RequestMapping(value = "/ahn/user")
 public class UserController {
 
 	@Autowired
@@ -180,6 +180,12 @@ public class UserController {
 
 		return null;
 	}
+	@RequestMapping(value = "/searchPASS", method = RequestMethod.GET)
+	public String searchPASS() {
+
+		
+		return null;
+	}
 
 	@RequestMapping(value = "/searchID", method = RequestMethod.POST)
 	public String searchID(String email, Model model) {
@@ -203,19 +209,21 @@ public class UserController {
 		
 		if (VO1 == null) {
 			model.addAttribute("USERPASS2", "NULL");
-
+			return "ahn/user/searchPASS";
 		}
 		
 		if (VO2 == null) {
 			model.addAttribute("USERPASS2", "NULL");
-
+			return "ahn/user/searchPASS";
 		} 
 		if (VO1.getUsername().equals(VO2.getUsername())) {
-			model.addAttribute("USERPASS2", "OK");
+			return "ahn/user/searchPASS2";
 		} else {
 			model.addAttribute("USERPASS2", "NULL");
+			
 		}
-		return "ahn/user/searPASS2";
+		return "ahn/log/log";
 	}
+
 
 }

@@ -9,36 +9,38 @@
 <title>retisterContent</title>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
 <style>
-	a{
+a {
 	text-decoration: inherit;
-	}
-	colum-mainA-btn {
-		margin-left: 0 auto;
-	}
-	.form-mainA {
-		margin: 10px;
-	}
+}
+
+colum-mainA-btn {
+	margin-left: 0 auto;
+}
+
+.form-mainA {
+	margin: 10px;
+}
 </style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main class="mainA">
 		<div class="formA">
-			<form class="join" autocomplete="off" method="POST">
+			<form class="join" autocomplete="off" method="POST"
+			>
 				<fieldset>
 					<legend>Search</legend>
 					<div class="form-mainA">
-						<div>이메일</div>
-						<div>
-							<input name="email" type="text">
+						<div class="colum-mainA email">
+							<div>이메일</div>
+							<div>
+								<input class="input-email" name="email" type="text">
+							</div>
 						</div>
-					</div>
-					<div class="colum-mainA-btn">
-						<div>
-							<button type="submit" class="btn-sign">
-							<a href="${rootPath}/ahn/user/searchID">
-							조회하기</a>
-							</button>
+						<div class="colum-mainA-btn">
+							<div>
+								<button type="button" class="btn-sign btn-searchID" id="btn-search">조회하기</button>
+							</div>
 						</div>
 					</div>
 				</fieldset>
