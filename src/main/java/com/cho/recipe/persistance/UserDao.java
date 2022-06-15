@@ -6,8 +6,7 @@ import com.cho.recipe.model.UserVO;
 
 public interface UserDao extends GenericDao<UserVO, String>{
 
-	public List<UserVO> findByName(String name);
-	public UserVO findByNickName(String nickName);
+	public List<UserVO> findByNickName(String nickName);
 	
 	/*
 	 * Username, password 찾기에서 email 을 활용하는 경우가 많기 때문에

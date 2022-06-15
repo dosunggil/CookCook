@@ -17,12 +17,6 @@
 				<fieldset>
 					<legend>Sign Up</legend>
 					<div class="form-mainA">
-						<div class="colum-mainA name">
-							<div>이름</div>
-							<div>
-								<input name="name" type="text">
-							</div>
-						</div>
 						<div class="colum-mainA username" >
 							<div>아이디</div>
 							<div>

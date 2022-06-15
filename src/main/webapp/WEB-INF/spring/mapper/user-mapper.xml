@@ -13,10 +13,7 @@
  		SELECT * FROM tbl_users
  		WHERE username = #{username}
  	</select>
- 	<select id="findByName" resultType="UserVO">
- 		SELECT * FROM tbl_users
- 		WHERE name = #{name}
- 	</select>
+ 
  	<select id="findByEmail" resultType="UserVO">
  		SELECT * FROM tbl_users
  		WHERE email = #{email}
@@ -33,14 +30,12 @@
  		        username,
 		        password,	
 		        email,	
-		        name,	
 		        nickname,		
 		        role	
  			) VALUES (
  		        #{username},
 		        #{password},	
 		        #{email},	
-		        #{name},	
 		        #{nickname},		
 		        #{role}	
  			)
@@ -49,7 +44,6 @@
  		UPDATE tbl_users SET
 		        password = #{password},	
 		        email = #{email},	
-		        name = #{name},	
 		        nickname = #{nickname},		
 		        role = #{role}	
  		WHERE username = #{username}

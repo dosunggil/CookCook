@@ -24,7 +24,6 @@
 			username,
 			password,	
 			email,		
-			name,		
 			nickname,	
 			role		
 			)
@@ -33,7 +32,6 @@
 			#{username},
 			#{password},	
 			#{email},		
-			#{name},		
 			#{nickname},	
 			#{role}
 			)
@@ -43,7 +41,6 @@
 		update tbl_users set 
 				password = #{password},	
 				email = #{email},
-				name = #{name},
 				nickname = #{nickname},
 				role = #{role}	
 		where	username = #{username}

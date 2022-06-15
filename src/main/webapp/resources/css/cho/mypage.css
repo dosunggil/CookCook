@@ -1,10 +1,13 @@
 @charset "UTF-8";
+
 main.cho-main-mypage {
 	min-width: 1190px;
 	display: flex;
-	flex-direction : column;
+	flex-direction: column;
 	align-items: center;
+	height: 100vh;
 }
+
 nav.cho-nav-mypage {
 	position: relative;
 	width: 1030px;
@@ -17,24 +20,105 @@ nav.cho-nav-mypage ul {
 
 nav.cho-nav-mypage ul li {
 	padding: 12px 12px;
-	font-size:  16px;
-	margin : 0 5px;
+	font-size: 16px;
+	margin: 0 5px;
 	font-weight: 700;
 }
+
 nav.cho-nav-mypage ul li:hover {
 	cursor: pointer;
-	}
-	
+}
+
 div.cho-container-mypage {
 	width: 1030px;
-	border : 1px solid blue;
+}
 
+div.cho-container-mypage2 {
+	margin: 35px;
 }
-div.cho-container-mypage .cho-mypage-top{
-	margin-top : 25px;
-	margin-left : 25px;
+
+div.cho-container-mypage .cho-mypage-top {
+	padding-bottom: 50px;
+	border-bottom: 1px solid #4444444a;
+	width: 900px;
 }
-div.cho-container-mypage .cho-mypage-middle{
-	
-	
+.cho-mypage-top p {
+	color : #666666;
+}
+
+.cho-mypage-middle {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #4444444a;
+	width: 900px;
+}
+
+.cho-mypage-middle .cho-edit-photo {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+}
+
+.cho-edit-btns {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cho-mypage-middle .cho-edit-status {
+	margin: 0 0 0 30px;
+}
+
+.cho-mypage-middle .cho-edit-status div {
+	font-weight: 800;
+	font-size: 16px;
+}
+
+.cho-mypage-middle .cho-edit-status input {
+	height: 32px;
+}
+
+.cho-edit-status input, .cho-edit-status textarea {
+	margin: 8px 0 16px;
+	padding: 0 10px;
+	width: 400px;
+	border: 1px solid #4444444a;
+}
+
+.cho-edit-status textarea {
+	padding-top: 5px;
+}
+
+.cho-mypage-middle .cho-edit-photo img {
+	object-fit : cover;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.btn-edit-photo {
+	padding: 5px 12px;
+	margin: 5px;
+	border: 1px solid #4444444a;
+	outline: hidden;
+	width: 28px;
+}
+.btn-edit-photo:hover {
+	cursor : pointer;
+}
+.cho-mypage-bottom {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	display: flex;
+}
+
+.cho-mypage-bottom button {
+	padding: 5px 12px;
+	margin: 5px;
+	border: 1px solid #4444444a;
+	outline: none;
 }
