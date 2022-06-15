@@ -67,7 +67,7 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 
 	@Override
 	public int update(UserVO vo) {
-		// TODO Auto-generated method stub
+		userDao.update(vo);
 		return 0;
 	}
 
@@ -102,6 +102,11 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 		int ret = userDao.insert(vo);
 		
 		return ret;
+	}
+	@Override
+	public int updatePass(UserVO vo) {
+		userDao.updatePass(vo);
+		return 0;
 	}
 
 
