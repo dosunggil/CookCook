@@ -26,7 +26,7 @@
 <link  href="${rootPath}/resources/css/cho/detail.css" rel="stylesheet" />
 
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-019"></script>
-<script src="${rootPath}/resources/js/log.js?ver=2022-05-13-001"></script>
+<script src="${rootPath}/resources/js/log.js?ver=2022-05-13-002"></script>
 <!--  <script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-007"></script> -->
 <!-- 조도성 끝-->
 
