@@ -22,4 +22,5 @@ public class UserVO {
 	private String nickname;
 	private String email;
 	private String role;
+	private String photo;
 }
