@@ -116,6 +116,10 @@ public class DosungUserController {
 			return "redirect:/ahn/log/log";
 		}
 		
+
+		UserVO realUser = dosungUserService.findById(username);
+		model.addAttribute("USER",realUser);
+
 		return "cho/user/update";
 	}
 	
@@ -123,8 +127,8 @@ public class DosungUserController {
 	public String update(UserVO userVO) {
 		
 		userService.update(userVO);
-		
-		return "home";
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
 	}
 	
 	@RequestMapping(value="/updatePass", method=RequestMethod.POST)
