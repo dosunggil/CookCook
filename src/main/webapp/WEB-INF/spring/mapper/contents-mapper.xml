@@ -36,6 +36,16 @@
 					#{RCP_PARTS_DTLS},
 					#{HASH_TAG}
 					)
-			</insert>
+	</insert>
+	<update id="update" parameterType="DosungPostVO">
+	UPDATE tbl_recipe SET 
+			RCP_NM = #{st_grade},
+			rcp_content = #{rcp_content},
+			ATT_FILE_NO_MK = #{ATT_FILE_NO_MK},
+			INFO_ENG = #{INFO_ENG},
+			RCP_PARTS_DTLS = #{RCP_PARTS_DTLS},
+			HASH_TAG = #{HASH_TAG}
+		WHERE RCP_SEQ = #{st_name}
+	</update>	
 	
 </mapper>

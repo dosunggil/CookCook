@@ -65,7 +65,7 @@
 									<img />
 								</div>
 								<div>
-									<input type="text" class="manual" name="manual" value="${manualVO.manual}" >
+									<input type="text" class="manual" name="manual" >
 								</div>
 							</div>
 							

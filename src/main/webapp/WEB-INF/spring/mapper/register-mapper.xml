@@ -9,5 +9,11 @@
 		select * from tbl_user_recipe 
 		where b_username = #{b_username}
 	</select>
+	<update id="update" parameterType="DosungUserRecipeVO">
+		UPDATE tbl_user_recipe SET 
+			b_username = #{manual_num},
+			b_date = #{INFO_ENG},
+		WHERE b_seq = #{post_seq},
+	</update>
 	
 </mapper>
