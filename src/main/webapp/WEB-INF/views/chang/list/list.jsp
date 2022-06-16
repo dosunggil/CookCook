@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
@@ -18,7 +17,6 @@
 					<div class="div-article">
 						<article class="title-writer">username</article>
 						<article class="title-article">${postVO.RCP_NM}</article>
-						<!--   <article class="content-article">${postVO.POST_CONTENT}</article> -->
 						<article class="stars-article">${postVO.POST_STAR}</article>
 					</div>
 				</section>

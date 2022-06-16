@@ -10,16 +10,12 @@
 	
 	<select id="findByPostSeq" resultType = "DosungPostVO">
 		select * from tbl_recipe 
-		where post_seq = #{post_seq}
-	</select>
-	<!--manual_seq 이 칼럼은 ContentVO에 있는 값  -->
-	<select id="findByContnetID" resultType="DosungPostVO">
-		select * from tbl_recipe 
-		where RCP_SEQ = #{manual_seq}
+		where RCP_SEQ = #{post_seq}
 	</select>
 	<select id="findByRecipeID" resultType="DosungManualVO">
-		select * from tbl_recipe_manual 
-		where MANUAL_SEQ = #{RCP_SEQ}
+		select * from tbl_manual 
+		where RCP_SEQ = #{RCP_SEQ}
+		order by MANUAL_SEQ
 	</select>
 	
 </mapper>

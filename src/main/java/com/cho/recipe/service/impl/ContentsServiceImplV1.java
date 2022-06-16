@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.cho.recipe.model.ContentVO;
+import com.cho.recipe.model.DosungManualVO;
+import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.model.DosungRecipeVO;
 import com.cho.recipe.model.ManualVO;
 import com.cho.recipe.model.RecipeVO;
@@ -19,17 +21,16 @@ public class ContentsServiceImplV1 implements ContentsService {
 		this.contentListDao=contentListDao;
 	}
 	@Override
+	public List<DosungManualVO> findByRecipeID(String RCP_SEQ) {
+		
+		return contentListDao.findByRecipeID(RCP_SEQ);
+	}
+	@Override
+	public DosungPostVO findByPostSeq(String RCP_SEQ) {
+		return contentListDao.findByPostSeq(RCP_SEQ);
+	}
+	@Override
 	public RecipeVO findByContnetID(String contentId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<ManualVO> findByRecipeID(String recipeId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public ContentVO findByPostSeq(String post_seq) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -57,6 +58,7 @@ public class ContentsServiceImplV1 implements ContentsService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 	
 
 
