@@ -94,13 +94,11 @@ public class ListController {
 	@RequestMapping(value="/{userid}/update", method=RequestMethod.POST)
 	public String update(DosungManualVO manualVO, DosungRecipeVO postVO) {
 		
-		//contentsService.update(postVO);
+		contentsService.update(postVO);
 		
-		//contentsService.update(manualVO, postVO);
+		contentsService.update(manualVO, postVO);
 		
 		return "redirect:/list";
-		
-		
 	}
 	
 	@RequestMapping(value="/delete/{postseq}")

@@ -48,5 +48,10 @@ public class ManualServiceImplV1 implements ManualService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	@Override
+	public int update(DosungManualVO manualVO, long rcp_SEQ) {
+		manualDao.update(manualVO,rcp_SEQ);
+		return 0;
+	}
 
 }

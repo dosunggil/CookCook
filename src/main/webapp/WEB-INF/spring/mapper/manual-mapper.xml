@@ -29,4 +29,15 @@
 				)
 	</insert>
 	
+	<update id="update" parameterType="DosungManualVO">
+		UPDATE tbl_recipe_manual SET 
+			post_seq = #{post_seq},
+			manual_num = #{manual_num},
+			INFO_ENG = #{INFO_ENG},
+			manual = #{manual},
+			manual_img = #{manual_img}
+		WHERE manual_seq = #{manual_seq},
+	</update>
+	
+	
 </mapper>

@@ -52,12 +52,17 @@ public class ContentsServiceImplV1 implements ContentsService {
 	}
 	@Override
 	public int update(DosungRecipeVO vo) {
-		// TODO Auto-generated method stub
+		contentListDao.insert(vo);
 		return 0;
 	}
 	@Override
 	public int delete(Long id) {
 		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int update(DosungManualVO manualVO, DosungRecipeVO postVO) {
+		manualDao.update(manualVO,postVO.getRCP_SEQ());
 		return 0;
 	}
 
