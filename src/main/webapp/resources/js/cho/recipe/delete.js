@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const list_container = document.querySelector("div.cho-myrecipe-list");
-  const btn_delete = document.querySelector("div.cho-btn-delete");
+  const btn_delete = document.querySelector("button.cho-btn-delete");
 
   btn_delete?.addEventListener("click", (e) => {
     const targget = e.target;

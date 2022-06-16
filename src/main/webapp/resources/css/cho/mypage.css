@@ -46,6 +46,19 @@ div.cho-container-mypage .cho-mypage-top {
 	border-bottom: 1px solid #4444444a;
 	width: 900px;
 }
+.cho-mypage-top{
+	position: relative;
+	
+}
+a.cho-btn-regrecipe {
+	position:  absolute;
+		padding: 5px 12px;
+	margin: 5px;
+	border: 1px solid #4444444a;
+	right: 0;
+	bottom : 50px;
+	
+}
 
 .cho-mypage-top p {
 	color: #666666;
@@ -95,7 +108,10 @@ div.cho-myrecipe-content {
 div.cho-myrecipe-img, div.cho-myrecipe-content {
 	
 }
-
+a {
+	text-decoration: none;
+	color : inherit;
+}
 div.cho-myrecipe-img {
 	border: 1px solid blue;
 	margin-left: 30px;
@@ -152,7 +168,6 @@ div.cho-myrecipe-img {
 	padding: 5px 12px;
 	margin: 5px;
 	border: 1px solid #4444444a;
-	outline: hidden;
 	width: 28px;
 }
 

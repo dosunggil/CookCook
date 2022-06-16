@@ -11,7 +11,7 @@
 	<main class="cho-main-mypage">
 		<nav class="cho-nav-mypage">
 			<ul>
-				<li>내 프로필</li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/update">내 프로필</a></li>
 				<li>암호 관리</li>
 				<li><a href="${rootPath}/cho/user/${USER.username}/updateRecipe">내 레시피</a></li>
 			</ul>

@@ -24,7 +24,7 @@
 <script src="${rootPath}/resources/js/cho/recipe/input.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/gotodetail.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/update.js?ver=2022-05-18-018"></script>
-<script src="${rootPath}/resources/js/cho/recipe/delete.js?ver-018"></script>
+<script src="${rootPath}/resources/js/cho/recipe/delete2.js?ver-019"></script>
 
 
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />

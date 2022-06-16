@@ -2,6 +2,10 @@ package com.cho.recipe.persistance;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.ui.Model;
+
 import com.cho.recipe.model.UserVO;
 
 public interface DosungUserDao extends GenericDao<UserVO, String> {
@@ -16,5 +20,8 @@ public interface DosungUserDao extends GenericDao<UserVO, String> {
 	public void create_user_table();
 	
 	public int updatePass(UserVO vo);
+	
+	public String usercheck(String username, Model model, HttpSession session);
+	public String loggin(UserVO vo , Model model, HttpSession session);
 
 }
