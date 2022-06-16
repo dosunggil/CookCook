@@ -24,9 +24,11 @@ nav.cho-nav-mypage ul li {
 	margin: 0 5px;
 	font-weight: 700;
 }
+
 input.cho-nickname::placeholder {
 	color: red;
 }
+
 nav.cho-nav-mypage ul li:hover {
 	cursor: pointer;
 }
@@ -44,8 +46,9 @@ div.cho-container-mypage .cho-mypage-top {
 	border-bottom: 1px solid #4444444a;
 	width: 900px;
 }
+
 .cho-mypage-top p {
-	color : #666666;
+	color: #666666;
 }
 
 .cho-mypage-middle {
@@ -56,6 +59,50 @@ div.cho-container-mypage .cho-mypage-top {
 	padding-bottom: 50px;
 	border-bottom: 1px solid #4444444a;
 	width: 900px;
+}
+
+.cho-myrecipe-middle {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #4444444a;
+	width: 900px;
+}
+
+div.cho-myrecipe-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #4444444a;
+	position: relative;
+}
+
+div.cho-myrecipe-content {
+	margin-right: 10px;
+	padding: 15px 10px;
+}
+
+.cho-btn-delete {
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+}
+
+div.cho-myrecipe-img, div.cho-myrecipe-content {
+	
+}
+
+div.cho-myrecipe-img {
+	border: 1px solid blue;
+	margin-left: 30px;
+	margin-right: 30px; width : 200px;
+	height: 200px;
+	object-fit: cover;
+	width: 200px;
 }
 
 .cho-mypage-middle .cho-edit-photo {
@@ -94,7 +141,7 @@ div.cho-container-mypage .cho-mypage-top {
 }
 
 .cho-mypage-middle .cho-edit-photo img {
-	object-fit : cover;
+	object-fit: cover;
 	width: 250px;
 	height: 250px;
 	border-radius: 50%;
@@ -108,9 +155,11 @@ div.cho-container-mypage .cho-mypage-top {
 	outline: hidden;
 	width: 28px;
 }
+
 .btn-edit-photo:hover {
-	cursor : pointer;
+	cursor: pointer;
 }
+
 .cho-mypage-bottom {
 	margin-top: 30px;
 	display: flex;

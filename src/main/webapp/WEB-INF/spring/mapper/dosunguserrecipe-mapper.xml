@@ -50,7 +50,7 @@
 		where	username = #{username}
 	</update>
 	<delete id="delete">
-		delete from tbl_users where username= #{username}
+		delete from tbl_user_recipe where b_seq= #{rcp_seq}
 	
 	</delete>	
 	

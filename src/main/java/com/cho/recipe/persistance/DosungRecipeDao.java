@@ -12,4 +12,5 @@ public interface DosungRecipeDao extends GenericDao<DosungRecipeVO, Long> {
 	
 	
 	public List<DosungRecipeVO> findByNm(String nm);
+	public int delete(int rcp_seq); 
 }
