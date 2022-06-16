@@ -14,15 +14,18 @@
 					<div class=cont>
 						<div class=divs>
 							<article class=content_in>
-								<input type="file" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK" accept="image/*" id="ch-see-image">
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00016_1.png -->
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00009_1.png -->
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00010_1.png -->
+								<input type="text" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK" >
 								<img />
 							</article>
 							<article class=content_in>
 								<h1>
-									<input type="text" class="RCP_NM" name="RCP_NM" value="${postVO.RCP_NM }" placeholder="요리 제목을 입력해 주세요">
+									<input type="text" class="RCP_NM" name="RCP_NM" value="${postVO.RCP_NM}">
 								</h1>
 								<div class="sub-content">
-									<textarea rows="4" cols="45" class="rcp_content" name="rcp_content" placeholder="요리 내용을 입력해 주세요"></textarea>
+									<textarea rows="4" cols="45" class="rcp_content" name="rcp_content" value="${postVO.rcp_content} "></textarea>
 								</div>
 							</article>
 						</div>
@@ -36,12 +39,12 @@
 										<table>
 											<tr>
 												<th>100g당 열량</th>
-												<td><input type="text" placeholder="열량입력" name="INFO_ENG" class="info_eng" value="${postVO.INFO_ENG}">Kcal</td>
+												<td><input type="text" name="INFO_ENG" class="info_eng" value="${postVO.INFO_ENG}">Kcal</td>
 											</tr>
 										</table>
 										<div class="ch-ingredient">양념&재료</div>
 										<div class="ch-rcp-parts-dtls">
-											<textarea rows="4" cols="45" class="rcp_parts-dtls" name="RCP_PARTS_DTLS"></textarea>
+											<textarea rows="4" cols="45" class="rcp_parts-dtls" name="RCP_PARTS_DTLS" value="${postVO.RCP_PARTS_DTLS}"></textarea>
 										</div>
 									</div>
 								</div>
@@ -56,54 +59,22 @@
 							</div>
 							<div class="add-input-image-title">
 								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
+									<input type="text" name="manual_img" >
 								</div>
 								<div>
 									<img />
 								</div>
 								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
+									<input type="text" class="manual" name="manual" value="${manualVO.manual}" >
 								</div>
 							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
+							
+							
 						</div>
 					</div>
-	
 				</div>
 			</section>
-			<button class="ch-button-register">저장</button>
+			<button class="ch-button-update">수정하기</button>
 		</form>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>

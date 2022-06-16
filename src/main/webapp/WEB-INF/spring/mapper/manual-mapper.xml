@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cho.recipe.persistance.ManualDao">
+	
+	<select id="findByRecipeID" resultType="DosungManualVO">
+		select * from tbl_recipe_manual 
+		where RCP_SEQ = #{RCP_SEQ}
+		order by MANUAL_SEQ
+	</select>
+	<insert id="insert" parameterType="DosungManualVO">
+	<selectKey keyProperty="manual_seq" resultType="Long" order="BEFORE">
+			Select seq_manual.nextval from dual
+		</selectKey>
+			insert into tbl_recipe_manual (
+				manual_seq,
+				RCP_SEQ,
+				MANUAL,
+				MANUAL_IMG,
+				MANUAL_NUM
+				) values(
+				#{manual_seq},
+				#{post_seq},
+				#{manual},
+				#{manual_img},
+				#{manual_num}
+				)
+	</insert>
+	
+</mapper>
