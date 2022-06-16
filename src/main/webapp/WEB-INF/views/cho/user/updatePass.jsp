@@ -22,16 +22,17 @@
 					<p>프로필 사진과 닉네임을 수정할 수 있습니다.</p>
 				</div>
 
-				<form method="POST">
+				<form method="POST" action="${rootPaht}/cho/user/update">
+							<input type="text" value="${USER.username}" name="username" hidden="hidden">
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
 							<div>이름</div>
-							<input type="text" value="${USER.name}" name="name">
+							<input type="text" value="${USER.nickname}" name="nickname">
 							<div>상태메세지</div>
-							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.nickname}</textarea>
+							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.bio}</textarea>
 						</div>
 						<div class="cho-edit-photo">
-							<img src="${USER.photo}">
+							<img src="${USER.photo}" name="photo">
 							<div class="cho-edit-btns">
 								<input accept=".gif, .jpg, .png" type="file" name="photo"
 									id="cho-photo" style="display: none;"> <label

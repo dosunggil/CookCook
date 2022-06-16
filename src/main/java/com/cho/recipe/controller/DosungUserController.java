@@ -20,6 +20,7 @@ import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.DosungRecipeService;
 import com.cho.recipe.service.DosungUserRecipeService;
 import com.cho.recipe.service.DosungUserService;
+import com.cho.recipe.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +31,10 @@ public class DosungUserController {
 
 	@Autowired
 	@Qualifier(QualifierConfig.USER_V2)
-	private DosungUserService user;
+	private DosungUserService dosungUserService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@Autowired
 	private DosungRecipeService dosungRcpService;
@@ -47,7 +51,7 @@ public class DosungUserController {
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(UserVO vo) {
 		log.debug("회원정보 : " + vo.toString());
-		user.join(vo);
+		dosungUserService.join(vo);
 		return "redirect:/cho/user/login";
 	}
 
@@ -60,14 +64,14 @@ public class DosungUserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(UserVO vo, Model model, HttpSession session) {
-		UserVO loginUser = user.findById(vo.getUsername());
+		UserVO loginUser = dosungUserService.findById(vo.getUsername());
 		if (loginUser == null) {
-			model.addAttribute("error", "USERNAME_FAIL");
+			model.addAttribute("error", "USER_FAIL");
 			return "redirect:/cho/user/login";
 		}
-		loginUser = user.login(vo);
+		loginUser = dosungUserService.login(vo);
 		if (loginUser == null) {
-			model.addAttribute("error", "PASSWORD_FAIL");
+			model.addAttribute("error", "USER_FAIL");
 			return "redirect:/cho/user/login";
 		}
 		session.setAttribute("USER", loginUser);
@@ -86,7 +90,7 @@ public class DosungUserController {
 		UserVO loginUser = (UserVO) session.getAttribute("USER");
 		if(loginUser ==null) {
 			model.addAttribute("error","LOGIN_NEED");
-			return "redirect:/cho/user/login";
+			return "redirect:/ahn/log/log";
 		}
 		model.addAttribute("LAYOUT","MYPAGE");
 		
@@ -104,12 +108,76 @@ public class DosungUserController {
 			model.addAttribute("MY_RECIPES",URlist);
 		return null;
 	}
+	@RequestMapping(value="/{username}/update", method=RequestMethod.GET)
+	public String update(@PathVariable("username") String username, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("USER");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		
+
+		UserVO realUser = dosungUserService.findById(username);
+		model.addAttribute("USER",realUser);
+
+		return "cho/user/update";
+	}
+	@RequestMapping(value="/{username}/update", method=RequestMethod.POST)
+	public String update(UserVO userVO) {
+		
+		userService.update(userVO);
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
+	}
+
+	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.GET)
+	public String updateRecipe(@PathVariable("username") String username, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("USER");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		UserVO realUser = dosungUserService.findById(username);
+		model.addAttribute("USER",realUser);
+		
+		List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(realUser.getUsername());
+		
+				
+		for(DosungUserRecipeVO VO : URlist) {
+			
+			long seq = VO.getB_seq();
+			DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
+			
+			VO.setRecipe(RcpVO);
+		}
+				
+		model.addAttribute("MY_RECIPES",URlist);
+		
+		
+		return "cho/user/updateRecipe";
+	}
+	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.POST)
+	public String updateRecipe(UserVO userVO) {
+		
+		userService.update(userVO);
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
+	}
+	
+	@RequestMapping(value="/updatePass", method=RequestMethod.POST)
+	public String updatePass(UserVO vo) {
+		
+		return  "redirect:/cho/user/mypage";
+	}
+
+	
+	
 	
 	
 	@ResponseBody
 	@RequestMapping(value="/idcheck/{username}",method=RequestMethod.GET)
 	public String idCheck(@PathVariable("username") String username) {
-		UserVO userVO = user.findById(username);
+		UserVO userVO = dosungUserService.findById(username);
 		if(userVO == null) {
 			return "OK";
 		}
@@ -118,10 +186,11 @@ public class DosungUserController {
 	@ResponseBody
 	@RequestMapping(value="/emailcheck",method=RequestMethod.GET)
 	public String emailCheck( String email) {
-		UserVO userVO = user.findByEmail(email);
+		UserVO userVO = dosungUserService.findByEmail(email);
 		if(userVO == null) {
 			return "OK";
 		}
 		return "FAIL";
 	}
 }
+

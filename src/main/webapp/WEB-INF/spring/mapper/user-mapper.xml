@@ -41,13 +41,17 @@
  			)
  	</insert>
  	<update id="update" parameterType="UserVO">
- 		UPDATE tbl_users SET
-		        password = #{password},	
-		        email = #{email},	
+			UPDATE tbl_users SET
 		        nickname = #{nickname},		
-		        role = #{role}	
- 		WHERE username = #{username}
- 	</update>
+		        photo = #{photo},
+		        bio = #{bio}	
+		where	username = #{username}
+	</update>
+	<update id="updatePass" parameterType="UserVO">
+			UPDATE tbl_users SET
+		        password= #{password}	
+		where	username = #{username}
+	</update>
  	<delete id="delete">
  		DELETE FROM tbl_users WHERE username = #{username}
  	</delete>

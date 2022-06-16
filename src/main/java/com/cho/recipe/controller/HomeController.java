@@ -3,18 +3,21 @@ package com.cho.recipe.controller;
 import java.util.List;
 import java.util.Locale;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cho.recipe.model.DosungManualVO;
-import com.cho.recipe.model.DosungPostVO;
-import com.cho.recipe.service.ContentsService;
 
-import lombok.extern.slf4j.Slf4j;
+import com.cho.recipe.model.UserVO;
+import com.cho.recipe.service.DosungUserService;
+
 
 /**
  * Handles requests for the application home page.
@@ -28,10 +31,17 @@ public class HomeController {
 		this.contentsService=contentsService;
 	}
 	
+	@Autowired
+	private DosungUserService dosungUserService;
 	
 	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model, HttpSession session) {
+		UserVO userVO = (UserVO) session.getAttribute("USER");
 		
+		if(userVO != null) {
+			UserVO realUserVO = dosungUserService.findById(userVO.getUsername());
+			session.setAttribute("USER", realUserVO);
+		}
 		return "home";
 	}
 	@RequestMapping(value = "/detail/{postseq}", method=RequestMethod.GET)

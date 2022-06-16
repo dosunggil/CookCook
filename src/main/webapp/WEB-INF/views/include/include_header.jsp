@@ -37,13 +37,14 @@
 			</c:if>
 			<c:if test="${not empty USER}">
 				<div class="btn-profile btn-open">
-					<img class="img-profile"src="${rootPath}/resources/images/mokoko.png" />
+					<img class="img-profile"src="${rootPath}/resources/images/${USER.photo}" />
 				</div>
 				<div class="hidden-box">
 					<div class="profile-menu-container">
 						<div class="profile-menu profile-mypage">
-							<a href="${rootPath}/cho/user/mypage">마이페이지</a></div>
-						<div class="profile-menu profile-recipe">레시피관리</div>
+							<a href="${rootPath}/cho/user/${USER.username}/update">마이페이지</a></div>
+						<div class="profile-menu profile-recipe">
+						<a href="${rootPath}/cho/user/${USER.username}/updateRecipe">레시피관리</a></div>
 						<div class="profile-menu profile-logout">
 							<a href="${rootPath}/cho/user/logout"><img class="img-logout"src="${rootPath}/resources/images/logout.png" />
 							로그아웃</a></div>

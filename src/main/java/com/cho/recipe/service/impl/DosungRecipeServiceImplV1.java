@@ -64,6 +64,14 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+	@Override
+	public int delete(int rcp_seq) {
+		int ret = dosungRecipeDaoVv1.delete(rcp_seq);
+		return ret;
+		
+	}
 	
 	
 

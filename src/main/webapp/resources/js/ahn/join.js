@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const id_check = document.querySelector("button.btn-idA");
   const nick_check = document.querySelector("button.btn-nickA");
-  const join_btn = document.querySelector("button.btn-sign");
+  const join_btn = document.querySelector("button.btn-join");
   const join_form = document.querySelector("form.join");
 
   const index = {
-    name: 0,
-    username: 1,
-    nickname: 2,
-    email: 3,
-    password: 4,
-    re_password: 5,
+    username: 0,
+    nickname: 1,
+    email: 2,
+    password: 3,
+    re_password: 4,
   };
   // form.join 내부에 있는 모든 input box
   // SelectAll을 사용하면 tag 요소들을 배열로 가져온다
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const password = inputList[index.password];
   const re_password = inputList[index.re_password];
-  const name = inputList[index.name];
   const email = inputList[index.email];
   const nickname = inputList[index.nickname];
 
@@ -85,11 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // join button 클릭
   if (join_btn) {
     join_btn.addEventListener("click", () => {
-      if (name.value === "") {
-        alert("이름을 입력해 주세요");
-        name.focus();
-        return false;
-      }
       if (username.value === "") {
         alert("아이디를 입력해 주세요");
         username.focus();
@@ -136,19 +129,86 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
       if (email.value === "") {
-        alert("비밀번호를 입력해 주세요");
+        alert("이메일을 입력해 주세요");
         email.focus();
         return false;
       }
-      if (!emailRule.test(email.value)) {
-        alert("이메일 형식이 잘못되었습니다(*@* 형식) 다시 입력해주세요");
-        email.focus();
-        return false;
-      }
+      // if (!emailRule.test(email.value)) {
+      //   alert("이메일 형식이 잘못되었습니다(*@* 형식) 다시 입력해주세요");
+      //   email.focus();
+      //   return false;
+      // }
 
       // 유효성 검사 종료
       // form에 담긴 데이터를 서버로 전송한다
       join_form.submit();
+    });
+  }
+  const btnbtn = document.querySelector("#btn-search");
+
+  if (btnbtn) {
+    const email11 = document.querySelector("input.input-email");
+    btnbtn.addEventListener("click", () => {
+      if (email11.value === "") {
+        alert("이메일을 입력해 주세요");
+        email11.focus();
+        return false;
+      }
+      const bbbform = document.querySelector("form.join");
+      bbbform.submit();
+    });
+  }
+
+  const btnbtn2 = document.querySelector("#btn-search2");
+  const username222 = document.querySelector("input.input-username");
+  const email222 = document.querySelector("input.input-email2");
+  const formpass = document.querySelector("form.join");
+  const btn_modify = document.querySelector("#btn-modify");
+  if (btnbtn2) {
+    btnbtn2.addEventListener("click", () => {
+      if (username222.value === "") {
+        alert("아이디를 입력해 주세요");
+        username222.focus();
+        return false;
+      }
+      if (email222.value === "") {
+        alert("이메일을 입력해 주세요");
+        email222.focus();
+        return false;
+      }
+
+      formpass.submit();
+    });
+  }
+  const password1 = document.querySelector("input.password1");
+  const re_password1 = document.querySelector("input.re_password1");
+  if (btn_modify) {
+    btn_modify.addEventListener("click", () => {
+      if (password1.value === "") {
+        alert("비밀번호를 입력해 주세요");
+        password1.focus();
+        return false;
+      }
+      if (re_password1.value === "") {
+        alert("비밀번호 확인을 입력해 주세요");
+        re_password1.focus();
+        return false;
+      }
+      if (password1.value !== re_password1.value) {
+        alert("비밀번호와 비밀번호 확인 값이 서로 다릅니다");
+        password1.value = "";
+        re_password1.value = "";
+        password1.focus();
+        return false;
+      }
+      if (passRule.test(password1.value) === false) {
+        alert(
+          "비밀번호는 영문자, 숫자 포함 \n6자리 ~ 12자리의 문자열 까지 입력하세요"
+        );
+        password1.focus();
+        return false;
+      }
+      formpass.submit();
     });
   }
 

@@ -18,7 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping(value = "ahn/user")
+//http://localhost:808ipe/ahn/user/searchPASS/updatePASS
+@RequestMapping(value = "/ahn/user")
 public class UserController {
 
 	@Autowired
@@ -180,6 +181,12 @@ public class UserController {
 
 		return null;
 	}
+	@RequestMapping(value = "/searchPASS", method = RequestMethod.GET)
+	public String searchPASS() {
+
+		
+		return null;
+	}
 
 	@RequestMapping(value = "/searchID", method = RequestMethod.POST)
 	public String searchID(String email, Model model) {
@@ -198,15 +205,45 @@ public class UserController {
 	@RequestMapping(value = "/searchPASS", method = RequestMethod.POST)
 	public String searchPASS(String username, String email, Model model) {
 
-		UserVO VO = userService.findByEmail(email);
-		if (VO == null) {
-			model.addAttribute("USERNAME", "NULL");
-
-		} else {
-			model.addAttribute("USERNAME", "OK");
-			model.addAttribute("USER1", VO);
+		UserVO VO1 = userService.findById(username);
+		UserVO VO2 = userService.findByEmail(email);
+		
+		if (VO1 == null) {
+			model.addAttribute("USERPASS2", "NULL");
+			return "ahn/user/searchPASS";
 		}
-		return "ahn/user/searchID2";
+		
+		if (VO2 == null) {
+			model.addAttribute("USERPASS2", "NULL");
+			return "ahn/user/searchPASS";
+		} 
+		if (VO1.getUsername().equals(VO2.getUsername())) {
+			
+			model.addAttribute("USER", VO1);
+			return "ahn/user/searchPASS2";
+		} else {
+			model.addAttribute("USERPASS2", "NULL");
+			
+		}
+		return "ahn/log/log";
 	}
+	@RequestMapping(value="/updatePASS", method=RequestMethod.GET)
+	public String updatePass(@PathVariable("password") String password, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("PASSWORD");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		return null;
+	}
+	
+	// http://localhost:808/searchPASS/updatePASS
+	@RequestMapping(value="/updatePASS", method=RequestMethod.POST)
+	public String updatePass(UserVO vo) {
+		userService.updatePass(vo);
+		
+		return "redirect:/";
+	}
+
 
 }

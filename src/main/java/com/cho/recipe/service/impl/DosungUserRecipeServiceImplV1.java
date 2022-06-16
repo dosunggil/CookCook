@@ -75,4 +75,11 @@ public class DosungUserRecipeServiceImplV1 implements DosungUserRecipeService{
 		return 0;
 	}
 
+	@Override
+	public int delete(int rcp_seq) {
+		int ret = userRecipeDao.delete(rcp_seq);
+		recipeDao.delete(rcp_seq);
+		return ret;
+	}
+
 }
