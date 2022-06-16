@@ -21,4 +21,5 @@ public int insert(DosungUserRecipeVO vo);
 	
 	public int delete(int rcp_seq);
 	
+	
 }

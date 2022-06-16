@@ -17,7 +17,6 @@ import com.cho.recipe.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Controller
 //http://localhost:808ipe/ahn/user/searchPASS/updatePASS
 @RequestMapping(value = "/ahn/user")
 public class UserController {
@@ -178,13 +177,10 @@ public class UserController {
 
 	@RequestMapping(value = "/searchID", method = RequestMethod.GET)
 	public String searchID() {
-
 		return null;
 	}
 	@RequestMapping(value = "/searchPASS", method = RequestMethod.GET)
 	public String searchPASS() {
-
-		
 		return null;
 	}
 

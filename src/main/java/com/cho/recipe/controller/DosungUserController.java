@@ -32,50 +32,27 @@ public class DosungUserController {
 	@Autowired
 	@Qualifier(QualifierConfig.USER_V2)
 	private DosungUserService dosungUserService;
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private DosungRecipeService dosungRcpService;
 	@Autowired
 	private DosungUserRecipeService userRecipeService;
-	
 
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String join(Model model) {
-		model.addAttribute("LAYOUT", "JOIN");
-		return null;
-	}
 
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(UserVO vo) {
-		log.debug("회원정보 : " + vo.toString());
-		dosungUserService.join(vo);
-		return "redirect:/cho/user/login";
-	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(String error, Model model) {
 		model.addAttribute("error", error);
 		model.addAttribute("LAYOUT", "LOGIN");
-		return null;
+		return "ahn/log/log";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(UserVO vo, Model model, HttpSession session) {
-		UserVO loginUser = dosungUserService.findById(vo.getUsername());
-		if (loginUser == null) {
-			model.addAttribute("error", "USER_FAIL");
-			return "redirect:/cho/user/login";
-		}
-		loginUser = dosungUserService.login(vo);
-		if (loginUser == null) {
-			model.addAttribute("error", "USER_FAIL");
-			return "redirect:/cho/user/login";
-		}
-		session.setAttribute("USER", loginUser);
-		return "redirect:/";
+		return dosungUserService.loggin(vo, model, session);
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -85,112 +62,119 @@ public class DosungUserController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value="/mypage",method=RequestMethod.GET)
-	public String mypage(Model model, HttpSession session) {
-		UserVO loginUser = (UserVO) session.getAttribute("USER");
-		if(loginUser ==null) {
-			model.addAttribute("error","LOGIN_NEED");
-			return "redirect:/ahn/log/log";
-		}
-		model.addAttribute("LAYOUT","MYPAGE");
-		
-			List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(loginUser.getUsername());
-			
-			for(DosungUserRecipeVO VO : URlist) {
-				
-				long seq = VO.getB_seq();
-				DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
-				
-				VO.setRecipe(RcpVO);
-			}
-			log.debug("디테일을볼까?22" + URlist.toString());
-			
-			model.addAttribute("MY_RECIPES",URlist);
-		return null;
-	}
-	@RequestMapping(value="/{username}/update", method=RequestMethod.GET)
+	@RequestMapping(value = "/{username}/update", method = RequestMethod.GET)
 	public String update(@PathVariable("username") String username, Model model, HttpSession session) {
-		UserVO loginUser = (UserVO) session.getAttribute("USER");
-		if(loginUser ==null) {
-			model.addAttribute("error","LOGIN_NEED");
-			return "redirect:/ahn/log/log";
-		}
-		
-
-		UserVO realUser = dosungUserService.findById(username);
-		model.addAttribute("USER",realUser);
-
+		String str = dosungUserService.usercheck(username, model, session);
+		if (str != null)	return str;
 		return "cho/user/update";
 	}
-	@RequestMapping(value="/{username}/update", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/{username}/update", method = RequestMethod.POST)
 	public String update(UserVO userVO) {
-		
+
 		userService.update(userVO);
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
 		return retStr;
 	}
 
-	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.GET)
+	@RequestMapping(value = "/{username}/updateRecipe", method = RequestMethod.GET)
 	public String updateRecipe(@PathVariable("username") String username, Model model, HttpSession session) {
-		UserVO loginUser = (UserVO) session.getAttribute("USER");
-		if(loginUser ==null) {
-			model.addAttribute("error","LOGIN_NEED");
-			return "redirect:/ahn/log/log";
-		}
-		UserVO realUser = dosungUserService.findById(username);
-		model.addAttribute("USER",realUser);
-		
-		List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(realUser.getUsername());
-		
-				
-		for(DosungUserRecipeVO VO : URlist) {
-			
+		String str = dosungUserService.usercheck(username, model, session);
+		if (str != null)	return str;
+		List<DosungUserRecipeVO> URlist = userRecipeService
+				.findByUserName(((UserVO) session.getAttribute("USER")).getUsername());
+		for (DosungUserRecipeVO VO : URlist) {
 			long seq = VO.getB_seq();
 			DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
-			
 			VO.setRecipe(RcpVO);
 		}
-				
-		model.addAttribute("MY_RECIPES",URlist);
-		
-		
+		model.addAttribute("MY_RECIPES", URlist);
 		return "cho/user/updateRecipe";
 	}
-	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/{username}/updateRecipe", method = RequestMethod.POST)
 	public String updateRecipe(UserVO userVO) {
-		
 		userService.update(userVO);
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
 		return retStr;
 	}
-	
-	@RequestMapping(value="/updatePass", method=RequestMethod.POST)
-	public String updatePass(UserVO vo) {
-		
-		return  "redirect:/cho/user/mypage";
-	}
 
-	
-	
-	
-	
 	@ResponseBody
-	@RequestMapping(value="/idcheck/{username}",method=RequestMethod.GET)
+	@RequestMapping(value = "/idcheck/{username}", method = RequestMethod.GET)
 	public String idCheck(@PathVariable("username") String username) {
 		UserVO userVO = dosungUserService.findById(username);
-		if(userVO == null) {
+		if (userVO == null) {
 			return "OK";
 		}
 		return "FAIL";
 	}
-	@ResponseBody
-	@RequestMapping(value="/emailcheck",method=RequestMethod.GET)
-	public String emailCheck( String email) {
-		UserVO userVO = dosungUserService.findByEmail(email);
-		if(userVO == null) {
-			return "OK";
-		}
-		return "FAIL";
-	}
-}
 
+	@ResponseBody
+	@RequestMapping(value = "/emailcheck", method = RequestMethod.GET)
+	public String emailCheck(String email) {
+		UserVO userVO = dosungUserService.findByEmail(email);
+		if (userVO == null) {
+			return "OK";
+		}
+		return "FAIL";
+	}
+	@RequestMapping(value = "/searchID", method = RequestMethod.GET)
+	public String searchID() {
+		return "ahn/user/searchID";
+	}
+	@RequestMapping(value = "/searchPASS", method = RequestMethod.GET)
+	public String searchPASS() {
+		return "ahn/user/searchPASS";
+	}
+
+	@RequestMapping(value = "/searchID", method = RequestMethod.POST)
+	public String searchID(String email, Model model) {
+
+		UserVO VO = userService.findByEmail(email);
+		if (VO == null) {
+			model.addAttribute("USERNAME", "NULL");
+
+		} else {
+			model.addAttribute("USERNAME", "OK");
+			model.addAttribute("USER1", VO);
+		}
+		return "ahn/user/searchID2";
+	}
+	
+	@RequestMapping(value = "/searchPASS", method = RequestMethod.POST)
+	public String searchPASS(String username, String email, Model model) {
+
+		UserVO VO1 = userService.findById(username);
+		UserVO VO2 = userService.findByEmail(email);
+		
+		if (VO1 == null) {
+			model.addAttribute("USERPASS2", "NULL");
+			return "ahn/user/searchPASS";
+		}
+		
+		if (VO2 == null) {
+			model.addAttribute("USERPASS2", "NULL");
+			return "ahn/user/searchPASS";
+		} 
+		if (VO1.getUsername().equals(VO2.getUsername())) {
+			
+			model.addAttribute("USER", VO1);
+			return "ahn/user/searchPASS2";
+		} else {
+			model.addAttribute("USERPASS2", "NULL");
+		}
+		return "ahn/log/log";
+	}
+	
+	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	public String join() {
+		return "ahn/user/join";
+	}
+
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public String join(UserVO userVO) {
+		userService.join(userVO);
+		return "redirect:/ahn/log/log";
+	}
+
+}

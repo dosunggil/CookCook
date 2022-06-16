@@ -14,7 +14,7 @@
 			</div>
 			<div id="login_body">
 				<div>
-					<form method="POST">
+					<form method="POST" action="${rootPath}/cho/user/login">
 						<input type="text" placeholder="ID" name="username" class="id" />
 						<input type="password" placeholder="비밀번호" name="password" />
 						<c:if test="${error =='LOGIN_NEED'}">
@@ -28,9 +28,9 @@
 				</div>
 				<div class="log_under">
 					<ul>
-						<li class="search_id">아이디 찾기</li>
-						<li class="search_pass">비밀번호 찾기</li>
-						<li class="signup">회원가입</li>
+						<li class="search_id"><a href="${rootPath}/cho/user/searchID">아이디 찾기</a></li>
+						<li class="search_pass"><a href="${rootPath}/cho/user/searchPASS">비밀번호 찾기</a></li>
+						<li class="signup"><a href="${rootPath}/cho/user/join">회원가입</a></li>
 					</ul>
 				</div>
 			</div>

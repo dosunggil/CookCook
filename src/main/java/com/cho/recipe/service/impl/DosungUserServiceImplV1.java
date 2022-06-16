@@ -2,10 +2,11 @@ package com.cho.recipe.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import javax.servlet.http.HttpSession;
 
-import com.cho.recipe.config.QualifierConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+
 import com.cho.recipe.model.UserVO;
 import com.cho.recipe.persistance.DosungUserDao;
 import com.cho.recipe.service.DosungUserService;
@@ -106,5 +107,37 @@ public class DosungUserServiceImplV1 implements DosungUserService{
 		return 0;
 	}
 
+
+	@Override
+	public String usercheck(String username, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("USER");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		realUser(username, session);
+		return null;
+	}
+
+	public void realUser(String username, HttpSession session) {
+		UserVO realUser = findById(username);
+		session.setAttribute("USER",realUser);
+	}
+	
+	@Override
+	public String loggin(UserVO vo , Model model, HttpSession session) {
+		UserVO loginUser = findById(vo.getUsername());
+		if (loginUser == null) {
+			model.addAttribute("error", "USER_FAIL");
+			return "redirect:/ahn/log/log";
+		}
+		loginUser = login(vo);
+		if (loginUser == null) {
+			model.addAttribute("error", "USER_FAIL");
+			return "redirect:/ahn/log/log";
+		}
+		session.setAttribute("USER", loginUser);
+		return "redirect:/";
+	}
 
 }

@@ -150,7 +150,11 @@ public class DosungPostController {
 			model.addAttribute("error", "LOGIN_NEED");
 			return "redirect:/cho/user/login";
 		}
+		
+		
 		recipeService.insert(recipeVO);
+		
+		
 		userRecipeService.insert(userVO, recipeVO);
 
 		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
@@ -168,6 +172,7 @@ public class DosungPostController {
 		}
 
 		userRecipeService.delete(REC_SEQ);
+		
 
 		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
 		return retStr;

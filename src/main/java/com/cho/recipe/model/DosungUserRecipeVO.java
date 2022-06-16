@@ -24,5 +24,4 @@ public class DosungUserRecipeVO {
 	
 	
 	private DosungRecipeVO recipe;
-	private UserVO user;
 }
