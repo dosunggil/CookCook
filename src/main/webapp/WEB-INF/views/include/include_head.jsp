@@ -36,7 +36,9 @@
 
 <!-- 안혁 -->
 <script src="${rootPath}/resources/js/ahn/log.js?ver=2022-05-09-006" /></script>
-<script src="${rootPath}/resources/js/ahn/join.js?ver=2022-05-09-008" /></script>
+
+<script src="${rootPath}/resources/js/ahn/join.js?ver=2022-05-09-007" /></script>
+
 
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/log.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/detail.css" />
@@ -47,7 +49,7 @@
 <!-- 장준영 -->
 <link rel="stylesheet" href="${rootPath}/resources/css/chang/list.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/chang/registerContent.css" />
-<script src="${rootPath}/resources/js/chang/list.js?ver=2022-05-13-004"></script>
+<script src="${rootPath}/resources/js/chang/list.js?ver=2022-06-15-003"></script>
 <!-- 장준영 끝 -->
 <script>const rootPath = "${rootPath}"</script>
 </head>

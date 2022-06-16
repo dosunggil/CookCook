@@ -13,16 +13,11 @@
 				<div class=cont>
 					<div class=divs>
 						<article class=content_in>
-							<img src="${rootPath}/resources/images/tokbokk.jpg" />
+							<img src="${postVO.ATT_FILE_NO_MK}" />
 						</article>
 						<article class=content_in>
-							<h1>마늘쫑고추장무침 만드는 법 :</h1>
-							<h1>10분만에 완성되는 간단한 밑반찬 ♩</h1>
-							<div class="sub-content">요즘 식비 좀 줄여보겠다고 늘 있는 반찬에만 간단히 먹었더니 새로운 반찬이 먹고 싶더라고요. 그래서
-								오래간만에 매콤달콤 밥도둑 마늘쫑 고추장 무침을 만들어 봤어요! 끓는 물에 마늘쫑 데쳐 양념 넣고 무치기만 하면
-								간단하게 완성되는 밑반찬이다 보니 주부들에게 늘 사랑받는 반찬, 마늘쫑 고추장 무침 ♩ 그럼 한 번 만들어볼까요?
-								:)></div>
-
+							<h1>${postVO.RCP_NM }</h1>
+							<div class="sub-content">${postVO.rcp_content}</div>
 						</article>
 					</div>
 					<div class=divs>
@@ -34,53 +29,13 @@
 								<div>
 									<table>
 										<tr>
-											<th>보관온도</th>
-											<td>0~5℃</td>
-										</tr>
-										<tr>
 											<th>100g당 열량</th>
-											<td>253Kcal</td>
+											<td>${postVO.INFO_ENG}Kcal</td>
 										</tr>
 									</table>
+									<div class="ch-ingredient">양념&재료</div>
+									<div class="ch-rcp-parts-dtls">${postVO.RCP_PARTS_DTLS}</div>
 								</div>
-								<b class=rea_tit>[재료]</b>
-								<ul>
-									<li>"닭"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1마리(약 800g)</span></li>
-									<li>"대파"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1단(약 100g)</span></li>
-									<li>"꽈리고추"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1묶음(약 80g)</span></li>
-								</ul>
-								<b class=rea_tit>[양념]</b>
-								<ul>
-									<li>"고춧가루"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1T(약 10g)</span></li>
-									<li>"후추가루"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">0.5T(약 5g)</span></li>
-									<li>"통깨"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">0.5T(약 5g)</span></li>
-									<li>"다진마늘"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1T(약 10g)</span></li>
-									<li>"고추장"<img
-										src="https://recipe1.ezmember.co.kr/img/mobile/icon_info.png"
-										style="width: 20px; height: 20px; margin-left: 2px; vertical-align: middle;">
-										<span class="ingre_unit">1T(약 10g)</span></li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -88,14 +43,10 @@
 						<div id=proc>
 							<div>RECIPE 순서</div>
 						<div>
-							<p>1.대파는 송송 썬다.</p>
-							<p>2.팬에 기름을 두르고 닭을 굽듯이 볶는다.</p>
-							<p>3.송송 썬 대파를 넣고 함께 볶는다.</p>
-							<p>4.닭이 어느 정도 익으면 설탕을 넣는다.</p>
-							<p>5.가운데에 자리를 만들어 간장을 넣고 볶는다.</p>
-							<p>6.물, 다진마늘을 넣고 국물이 자작할 때까지 졸인다.</p>
-							<p>7.꽈리고추를 넣고 빠르게 볶은 후 불을 끈다.</p>
-							<p>8.후추, 통깨를 뿌려 완성한다.</p>
+							<c:forEach items="${MANUAL}" var="manual">
+								<img src="${manual.manual_img}" />
+								<p>${manual.manual}</p>
+							</c:forEach>
 						</div>
 						</div>
 					</div>
@@ -120,6 +71,7 @@
 				</div>
 			</div>
 		</section>
+		<button class="ch-button-list">리스트 가기</button>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
