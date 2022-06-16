@@ -18,6 +18,9 @@ import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.ContentsService;
 import com.cho.recipe.service.DosungUserService;
+import com.cho.recipe.service.ManualService;
+
+import lombok.extern.slf4j.Slf4j;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,10 +33,13 @@ import lombok.extern.slf4j.Slf4j;
 public class HomeController {
 
 	private final ContentsService contentsService;
-	public HomeController(@Qualifier("contentsServicev1") ContentsService contentsService) {
-		this.contentsService=contentsService;
+	private final ManualService manualService;
+	public HomeController(@Qualifier("contentsServicev1") ContentsService contentsService,
+			@Qualifier("manualServicev1") ManualService manualService) {
+		this.contentsService = contentsService;
+		this.manualService = manualService;
 	}
-	
+
 	@Autowired
 	private DosungUserService dosungUserService;
 	
@@ -48,9 +54,9 @@ public class HomeController {
 		return "home";
 	}
 	@RequestMapping(value = "/detail/{postseq}", method=RequestMethod.GET)
-	public String home(@PathVariable("postseq") String rcp_seq, Model model) {
+	public String home(@PathVariable("postseq") long rcp_seq, Model model) {
 		DosungPostVO postVO  = contentsService.findByPostSeq(rcp_seq);
-		List<DosungManualVO> manuals = contentsService.findByRecipeID(rcp_seq);
+		List<DosungManualVO> manuals = manualService.findByRecipeID(rcp_seq);
 	
 		model.addAttribute("postVO", postVO);
 		model.addAttribute("MANUAL", manuals);

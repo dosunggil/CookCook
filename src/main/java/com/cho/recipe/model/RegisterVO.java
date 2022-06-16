@@ -14,10 +14,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 public class RegisterVO {
-	private String c_seq;
+	private long c_seq;
 	private String r_date;
 	private String c_username;
-	private String c_post_seq;
-	private ContentVO contentVO;
-	private UserVO userVO;
+	private long c_post_seq;
 }

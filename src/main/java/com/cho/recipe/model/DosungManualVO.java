@@ -19,8 +19,8 @@ public class DosungManualVO {
 	 * tbl_manual 테이블과 연결
 	 */
 	
-	private String manual_seq;//		VARCHAR2(10)			PRIMARY KEY	,
-	private String post_seq	;//	VARCHAR2(10)		NOT NULL		,
+	private long manual_seq;//		VARCHAR2(10)			PRIMARY KEY	,
+	private long post_seq	;//	VARCHAR2(10)		NOT NULL		,
 	private String manual_num		;//NUMBER(2)
 
 	

@@ -12,10 +12,30 @@
 		select * from tbl_recipe 
 		where RCP_SEQ = #{post_seq}
 	</select>
-	<select id="findByRecipeID" resultType="DosungManualVO">
-		select * from tbl_manual 
-		where RCP_SEQ = #{RCP_SEQ}
-		order by MANUAL_SEQ
-	</select>
+	
+	<insert id="insert" parameterType="DosungPostVO">
+		<selectKey keyProperty="RCP_SEQ" resultType="Long" order="BEFORE">
+			Select seq_recipe.nextval from dual
+		</selectKey>
+			insert into tbl_recipe(	
+					RCP_SEQ		,
+					RCP_NM		,
+					rcp_content,
+					ATT_FILE_NO_MK	,
+					INFO_ENG		 ,
+					RCP_PARTS_DTLS	,
+					HASH_TAG	    		
+					)
+				values 
+					(
+					#{RCP_SEQ},
+					#{RCP_NM},
+					#{rcp_content},
+					#{ATT_FILE_NO_MK},
+					#{INFO_ENG},
+					#{RCP_PARTS_DTLS},
+					#{HASH_TAG}
+					)
+			</insert>
 	
 </mapper>

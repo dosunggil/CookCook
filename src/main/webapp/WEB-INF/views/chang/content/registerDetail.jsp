@@ -14,7 +14,10 @@
 					<div class=cont>
 						<div class=divs>
 							<article class=content_in>
-								<input type="file" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK" accept="image/*" id="ch-see-image">
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00016_1.png -->
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00009_1.png -->
+							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00010_1.png -->
+								<input type="text" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK">
 								<img />
 							</article>
 							<article class=content_in>
@@ -56,7 +59,7 @@
 							</div>
 							<div class="add-input-image-title">
 								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
+									<input type="text" name="manual_img">
 								</div>
 								<div>
 									<img />
@@ -65,42 +68,10 @@
 									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
 								</div>
 							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
-							<div class="add-input-image-title">
-								<div>
-									<input type="file" name="manual_img" accept="image/*" class="manual_img">
-								</div>
-								<div>
-									<img />
-								</div>
-								<div>
-									<input type="text" class="manual" name="manual"  placeholder="레시피순서를 입력해주세요">
-								</div>
-							</div>
+							
+							
 						</div>
 					</div>
-	
 				</div>
 			</section>
 			<button class="ch-button-register">저장</button>
