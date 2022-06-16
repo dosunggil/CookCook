@@ -23,20 +23,18 @@ import com.cho.recipe.service.DosungUserRecipeService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping(value = "/cho")@Controller
+@RequestMapping(value = "/cho")
+@Controller
 public class DosungPostController {
 
 	@Autowired
 	private DosungPostService post;
-	
-	
-	@Autowired 
+
+	@Autowired
 	private DosungRecipeService recipeService;
-	
+
 	@Autowired
 	private DosungUserRecipeService userRecipeService;
-	
-	
 
 	@RequestMapping(value = "/post/search", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title, Model model) {
@@ -46,23 +44,23 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = new ArrayList<DosungPostVO>();
 		recipeList = post.getRecipes(quString);
-		
+
 		List<DosungRecipeVO> llist = new ArrayList<DosungRecipeVO>();
 		llist = recipeService.findByNm(title);
-		
-		if(recipeList == null) {
+
+		if (recipeList == null) {
 			model.addAttribute("RECIPES", llist);
-			
+
 		} else {
-		recipeList.addAll(0,llist);
+			recipeList.addAll(0, llist);
 			model.addAttribute("RECIPES", recipeList);
 		}
 
 		return "cho/post/search_result";
 	}
 
-	@RequestMapping(value = "/post/search_result", method = RequestMethod.POST , produces = "application/json;charset=UTF-8")
-	public String getRecipes(String title,String dtls, Model model) {
+	@RequestMapping(value = "/post/search_result", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	public String getRecipes(String title, String dtls, Model model) {
 
 		/*
 		 * title 이 검색어
@@ -70,8 +68,8 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungRecipeVO> llist = recipeService.findByNm(title.split(" ")[0]);
-		
-		//recipeList.addAll(llist);
+
+		// recipeList.addAll(llist);
 
 		model.addAttribute("RECIPES", recipeList);
 
@@ -79,37 +77,35 @@ public class DosungPostController {
 	}
 
 	@RequestMapping(value = "/post/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-	public String detail(@PathVariable("nm") String nm, @PathVariable("seq")  long seq, Model model) {
+	public String detail(@PathVariable("nm") String nm, @PathVariable("seq") long seq, Model model) {
 
-		
-	/*
-	 * String queryString = naver.queryString("LIST", isbn);
-	 * String queryString = naver.queryString("DETAIL", isbn);
-	 * 
-	 * 이렇게 해서 두 경우로 나누자!
-	 * NaverServiceImplV1 getNaver 참고 !!
-	 */
+		/*
+		 * String queryString = naver.queryString("LIST", isbn); String queryString =
+		 * naver.queryString("DETAIL", isbn);
+		 * 
+		 * 이렇게 해서 두 경우로 나누자! NaverServiceImplV1 getNaver 참고 !!
+		 */
 		String quString = post.queryString("LIST", nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungDetailVO> detailList = post.getDetail(quString);
 //		log.debug("받아온 디테일 내용입니다2. " + detailList.toString());
-		
+
 		DosungPostVO postVO = null;
-		for(DosungPostVO dVO : recipeList) {
-			if(dVO.getRCP_SEQ() == seq){
+		for (DosungPostVO dVO : recipeList) {
+			if (dVO.getRCP_SEQ() == seq) {
 				postVO = dVO;
 				break;
 			}
 		}
-		DosungDetailVO dVO  = null;
+		DosungDetailVO dVO = null;
 		dVO = detailList.get(0);
-		
+
 //		DosungDetailVO detailVO = null;
 //		detailVO = detaill.splitDetail(dVO);
-		
+
 		model.addAttribute("RECIPE", postVO);
-		model.addAttribute("DETAIL",dVO);
-		
+		model.addAttribute("DETAIL", dVO);
+
 //		@ResponseBody
 //		@RequestMapping(value="/{isbn}/book",method=RequestMethod.GET)
 //		public BookVO book(@PathVariable("isbn") String isbn) {
@@ -121,9 +117,7 @@ public class DosungPostController {
 //			return bookVO;
 //			
 //		}
-		
-		
-		
+
 		/*
 		 * open api 에서는 findbyid 가 아닌 다른 방법을 찾아야한다.
 		 */
@@ -131,40 +125,52 @@ public class DosungPostController {
 		 * DosungPostVO postVO = post.findById(seq);
 		 * model.addAttribute("RECIPE",postVO);
 		 */
-		//log.debug("결과는? " + vo.toString());
+		// log.debug("결과는? " + vo.toString());
 
 		return "cho/post/detail";
 	}
-	
-	@RequestMapping(value="/recipe/insert",method=RequestMethod.GET)
-	public String insert(Model model,HttpSession session) {
-		model.addAttribute("LAYOUT","POST-INPUT");
-		
+
+	@RequestMapping(value = "/recipe/insert", method = RequestMethod.GET)
+	public String insert(Model model, HttpSession session) {
+		model.addAttribute("LAYOUT", "POST-INPUT");
+
 		UserVO userVO = (UserVO) session.getAttribute("USER");
-		if(userVO == null) {
-			model.addAttribute("error","LOGIN_NEED");
+		if (userVO == null) {
+			model.addAttribute("error", "LOGIN_NEED");
 			return "redirect:/cho/user/login";
 		}
 		return null;
 	}
-	
-	@RequestMapping(value="/recipe/insert",method=RequestMethod.POST)
-	public String insert(DosungRecipeVO recipeVO,HttpSession session, Model model) {
-		
-		log.debug("레피시 정보 : " + recipeVO.toString());
+
+	@RequestMapping(value = "/recipe/insert", method = RequestMethod.POST)
+	public String insert(DosungRecipeVO recipeVO, HttpSession session, Model model) {
+
 		UserVO userVO = (UserVO) session.getAttribute("USER");
-		if(userVO == null) {
-			model.addAttribute("error","LOGIN_NEED");
+		if (userVO == null) {
+			model.addAttribute("error", "LOGIN_NEED");
 			return "redirect:/cho/user/login";
 		}
 		recipeService.insert(recipeVO);
 		userRecipeService.insert(userVO, recipeVO);
-	
-		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
-		return "redirect:/cho/user/mypage";
-		
-	}
-	
 
+		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
+		return retStr;
+		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
+
+	}
+
+	@RequestMapping(value = "/{RCP_SEQ}/delete", method = RequestMethod.GET)
+	public String delete(@PathVariable("RCP_SEQ") int REC_SEQ, HttpSession session, Model model) {
+		UserVO userVO = (UserVO) session.getAttribute("USER");
+		if (userVO == null) {
+			model.addAttribute("error", "LOGIN_NEED");
+			return "redirect:/cho/user/login";
+		}
+
+		userRecipeService.delete(REC_SEQ);
+
+		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
+		return retStr;
+	}
 
 }

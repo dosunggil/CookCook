@@ -66,12 +66,12 @@ public class DosungUserController {
 	public String login(UserVO vo, Model model, HttpSession session) {
 		UserVO loginUser = dosungUserService.findById(vo.getUsername());
 		if (loginUser == null) {
-			model.addAttribute("error", "USERNAME_FAIL");
+			model.addAttribute("error", "USER_FAIL");
 			return "redirect:/cho/user/login";
 		}
 		loginUser = dosungUserService.login(vo);
 		if (loginUser == null) {
-			model.addAttribute("error", "PASSWORD_FAIL");
+			model.addAttribute("error", "USER_FAIL");
 			return "redirect:/cho/user/login";
 		}
 		session.setAttribute("USER", loginUser);
@@ -122,9 +122,42 @@ public class DosungUserController {
 
 		return "cho/user/update";
 	}
-	
 	@RequestMapping(value="/{username}/update", method=RequestMethod.POST)
 	public String update(UserVO userVO) {
+		
+		userService.update(userVO);
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
+	}
+
+	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.GET)
+	public String updateRecipe(@PathVariable("username") String username, Model model, HttpSession session) {
+		UserVO loginUser = (UserVO) session.getAttribute("USER");
+		if(loginUser ==null) {
+			model.addAttribute("error","LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+		UserVO realUser = dosungUserService.findById(username);
+		model.addAttribute("USER",realUser);
+		
+		List<DosungUserRecipeVO> URlist = userRecipeService.findByUserName(realUser.getUsername());
+		
+				
+		for(DosungUserRecipeVO VO : URlist) {
+			
+			long seq = VO.getB_seq();
+			DosungRecipeVO RcpVO = dosungRcpService.findById(seq);
+			
+			VO.setRecipe(RcpVO);
+		}
+				
+		model.addAttribute("MY_RECIPES",URlist);
+		
+		
+		return "cho/user/updateRecipe";
+	}
+	@RequestMapping(value="/{username}/updateRecipe", method=RequestMethod.POST)
+	public String updateRecipe(UserVO userVO) {
 		
 		userService.update(userVO);
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());

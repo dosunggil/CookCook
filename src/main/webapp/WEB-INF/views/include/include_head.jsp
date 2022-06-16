@@ -24,20 +24,19 @@
 <script src="${rootPath}/resources/js/cho/recipe/input.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/gotodetail.js?ver=2022-05-18-018"></script>
 <script src="${rootPath}/resources/js/cho/update.js?ver=2022-05-18-018"></script>
+<script src="${rootPath}/resources/js/cho/recipe/delete.js?ver-018"></script>
 
 
 <link  href="${rootPath}/resources/css/cho/list.css" rel="stylesheet" />
 <link  href="${rootPath}/resources/css/cho/detail.css" rel="stylesheet" />
 
 <script src="${rootPath}/resources/js/home.js?ver=2022-05-18-019"></script>
-<script src="${rootPath}/resources/js/log.js?ver=2022-05-13-002"></script>
 <!--  <script src="${rootPath}/resources/js/cho/findbyid.js?ver=2022-06-07-007"></script> -->
 <!-- 조도성 끝-->
 
 <!-- 안혁 -->
 <script src="${rootPath}/resources/js/ahn/log.js?ver=2022-05-09-006" /></script>
 <script src="${rootPath}/resources/js/ahn/join.js?ver=2022-05-09-008" /></script>
-<%-- <script src="${rootPath}/resources/js/log.js?ver=2022-05-09-003" /></script> --%>
 
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/log.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/ahn/detail.css" />

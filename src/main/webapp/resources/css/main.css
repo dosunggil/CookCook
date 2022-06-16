@@ -22,7 +22,12 @@ header {
 	align-content: center;
 	z-index: 1000 !important;
 }
-
+div.btn-profile img.img-profile {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit : cover;
+}
 
 div.top_nav {
 	position: relative;

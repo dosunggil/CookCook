@@ -13,7 +13,7 @@
 			<ul>
 				<li>내 프로필</li>
 				<li>암호 관리</li>
-				<li>내 레시피</li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/updateRecipe">내 레시피</a></li>
 			</ul>
 		</nav>
 		<div class="cho-container-mypage">
@@ -24,7 +24,7 @@
 				</div>
 
 				<form method="POST" class="cho-form-update">
-							<input type="text" value="${USER.username}" name="username" hidden="hidden">
+					<input type="text" value="${USER.username}" name="username" hidden="hidden">
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
 							<div>이름</div>
