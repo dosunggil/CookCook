@@ -11,7 +11,12 @@
 		<form method="post" class="ch-content-input" 
 		<%-- action="${rootPath}/cho/recipe/insert" --%>
 		>
-		<input class="cho-last-code" name="RCP_SEQ" value="${postVO.RCP_SEQ}" hidden="hidden" data-seq="${postVO.RCP_SEQ}">
+		<c:if test="${not empty postVO}">
+		<input class="cho-last-code" name="RCP_SEQ" value="${postVO.RCP_SEQ}"  data-seq="${postVO.RCP_SEQ}">
+		</c:if>
+		<c:if test="${empty postVO}">
+		
+		</c:if>
 			<section class=container>
 				<div class=contents_area>
 					<div class=cont>
@@ -68,15 +73,15 @@
 									<input type="text" class="manual" name="manual" >
 								</div>
 							</div>
-							
-							
 						</div>
 					</div>
 				</div>
 			</section>
-			<button class="ch-button-insert">저장</button>
-			<div class="cho-btn-delete" onclick="AAA()" >삭제</div>
+			<div class="cho-button-box">
+				<button class="ch-button-insert">저장</button>
+				<div class="cho-btn-delete" onclick="AAA()" >삭제</div>
 			
+			</div>
 		</form>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>

@@ -1,7 +1,19 @@
 @charset "UTF-8";
 .cho-detail {
-	border:1px solid black;
 	height:  100%;
+	background-color: #fff;
+	width: 100%;
+	margin-bottom : 80px;
+}
+.cho-detail-top {
+	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+.cho-kcal {
+	font-size: 20px;
 }
 .cho-detail-container {
 	width : 1030px;
@@ -27,4 +39,27 @@ div.cho-detail-container h1 {
 	text-align: center;
 	font-weight: 800;
 	margin-top: 20px;
+}
+.cho-detail-ul-div {
+	padding : 12px;
+	margin: 20px 15px;
+	display: flex;
+	flex-direction : row;
+	justify-content: space-between;
+}
+.cho-detail-ul-div span {
+	font-size: 24px;
+	width:  650px;
+	
+	}
+.cho-detail-ul-div img {
+	flex:1;
+	width: 280px;
+	border-radius: 15px;
+	}
+	
+ul.cho-detail-ul p{
+	margin : 30px 0 50px 30px;
+	font-size: 28px;
+	font-weight: 700;
 }
