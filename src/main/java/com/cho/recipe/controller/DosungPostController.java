@@ -88,7 +88,8 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungDetailVO> detailList = post.getDetail(quString);
-//		log.debug("받아온 디테일 내용입니다2. " + detailList.toString());
+		log.debug("받아온 디테일 내용입니다1. " + recipeList.toString());
+		log.debug("받아온 디테일 내용입니다2. " + detailList.toString());
 
 		DosungPostVO postVO = null;
 		for (DosungPostVO dVO : recipeList) {

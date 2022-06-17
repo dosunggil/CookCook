@@ -8,21 +8,6 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
-<!-- 		<div class="middle_nav"> -->
-<!-- 			<div class="container"> -->
-<!-- 					
-<!-- 				<div class="search_box"> -->
-<!-- 					<form> -->
-<!-- 						<fieldset> -->
-<!-- 							<input type="text" placeholder="레시피 검색!"> -->
-<!-- 							<button type="submit"> -->
-<!-- 								<i class="fa-solid fa-magnifying-glass"></i> -->
-<!-- 							</button> -->
-<!-- 						</fieldset> -->
-<!-- 					</form> -->
-<!-- 				</div> --> 
-<!-- 			</div> -->
-<!-- 		</div> -->
 		<div class="content_top">
 			<div>손쉬운 식재료 보관법</div>
 		</div>
@@ -33,27 +18,16 @@
 					오늘의 <span class="font_highlight">쿡쿡</span>
 				</h3>
 			</div>
-			<div class="list_box">
+			<div class="list_box cho-list-containerVer2">
 				<ul id="list_today">
+				<c:forEach items="${RECIPES}" var="RAND">
 					<li>
-						<div>
-							<img src="${rootPath}/resources/images/tokbokk.jpg" />
+						<div class="cho-list-boxVer2" data-seq="${RAND.RCP_SEQ}" data-nm="${RAND.RCP_NM}">
+							<img class="img-list-home" src="${RAND.ATT_FILE_NO_MK}" />
 						</div>
-						<div class="text-box">진짜 만들기 쉬운 초간단 떡볶이1</div>
+						<div class="text-box">${RAND.RCP_NM}</div>
 					</li>
-					<li>
-					<div>
-					<img src="${rootPath}/resources/images/toast.jpg" />
-					</div>
-						<div class="text-box">역대급 치즈 토스트!2</div></li>
-					<%-- <li><a> <img src="${rootPath}/resources/images/steak.jpg" />
-							<div>촉촉한 함박 스테이크 무조건 맛있게3</div>
-					</a></li> --%>
-					<li>
-					<div>
-					<img src="${rootPath}/resources/images/pasta.jpg" />
-					</div>
-						<div class="text-box">토마토4</div></li>
+				</c:forEach>
 				</ul>
 				<!-- <div class="bracket-box bracket-right"><i style="color:white" class="fa-solid fa-chevron-right fa-3x"></i></div>
 				<div class="bracket-box bracket-left"><i style="color:white" class="fa-solid fa-chevron-left fa-3x"></i></div>

@@ -12,6 +12,10 @@
 .searchID {
 	margin-left: 0 auto;
 }
+
+.form-mainA {
+	height: 100vh;
+}
 </style>
 </head>
 <body>

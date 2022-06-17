@@ -14,6 +14,7 @@ public interface DosungPostDao extends GenericDao<DosungPostVO, String>{
 	public String queryString(String cat, String title);
 	public String getJsonString(String queryString);
 	public List<DosungPostVO> getRecipes(String queryString);
+	public List<DosungPostVO> getAllRecipes();
 	public List<DosungDetailVO> getDetail(String queryString);
 	
 }

@@ -8,7 +8,12 @@
 <meta charset="UTF-8">
 <title>retisterContent</title>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
+<style>
 
+main.mainA {
+	height: 100vh;
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>

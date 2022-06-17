@@ -21,8 +21,8 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 	
 	@Override
 	public List<DosungRecipeVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dosungRecipeDaoVv1.selectAll();
 	}
 
 	
