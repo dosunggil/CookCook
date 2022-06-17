@@ -25,7 +25,7 @@ main.mainA {
 						<div class="colum-mainA username" >
 							<div>아이디</div>
 							<div>
-								<input name="username" type="text">
+								<input class="username" name="username" type="text">
 							</div>
 							<div>
 								<button type="button" class="btn-idA btn-checkA">중복확인</button>
@@ -37,17 +37,18 @@ main.mainA {
 							<div>
 								<input name="nickname" type="text">
 							</div>
+						</div>
+						
+						<div class="colum-mainA email">
+							<div>이메일</div>
+							<div>
+								<input class="emailbox" name="email" type="text">
+							</div>
 							<div>
 								<button type="button" class="btn-nickA btn-checkA">중복확인</button>
 							</div>
 						</div>
 							<div class=nickname1></div>
-						<div class="colum-mainA email">
-							<div>이메일</div>
-							<div>
-								<input name="email" type="text">
-							</div>
-						</div>
 						<div class="colum-mainA password">
 							<div>비밀번호</div>
 							<div>

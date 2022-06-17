@@ -19,6 +19,7 @@ import com.cho.recipe.model.UserVO;
 import com.cho.recipe.service.DosungPostService;
 import com.cho.recipe.service.DosungRecipeService;
 import com.cho.recipe.service.DosungUserRecipeService;
+import com.cho.recipe.service.DosungUserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,6 +32,9 @@ public class DosungPostController {
 	private DosungPostService post;
 
 	@Autowired
+	private DosungUserService dosungUserService;
+
+	@Autowired
 	private DosungRecipeService recipeService;
 
 	@Autowired
@@ -38,9 +42,7 @@ public class DosungPostController {
 
 	@RequestMapping(value = "/post/search", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title, Model model) {
-		/*
-		 * title 이 검색어
-		 */
+
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = new ArrayList<DosungPostVO>();
 		recipeList = post.getRecipes(quString);
@@ -62,14 +64,9 @@ public class DosungPostController {
 	@RequestMapping(value = "/post/search_result", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	public String getRecipes(String title, String dtls, Model model) {
 
-		/*
-		 * title 이 검색어
-		 */
 		String quString = post.queryString("LIST", title);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungRecipeVO> llist = recipeService.findByNm(title.split(" ")[0]);
-
-		// recipeList.addAll(llist);
 
 		model.addAttribute("RECIPES", recipeList);
 
@@ -79,12 +76,6 @@ public class DosungPostController {
 	@RequestMapping(value = "/post/{seq}/{nm}/detail", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public String detail(@PathVariable("nm") String nm, @PathVariable("seq") long seq, Model model) {
 
-		/*
-		 * String queryString = naver.queryString("LIST", isbn); String queryString =
-		 * naver.queryString("DETAIL", isbn);
-		 * 
-		 * 이렇게 해서 두 경우로 나누자! NaverServiceImplV1 getNaver 참고 !!
-		 */
 		String quString = post.queryString("LIST", nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungDetailVO> detailList = post.getDetail(quString);
@@ -101,66 +92,63 @@ public class DosungPostController {
 		DosungDetailVO dVO = null;
 		dVO = detailList.get(0);
 
-//		DosungDetailVO detailVO = null;
-//		detailVO = detaill.splitDetail(dVO);
-
 		model.addAttribute("RECIPE", postVO);
 		model.addAttribute("DETAIL", dVO);
-
-//		@ResponseBody
-//		@RequestMapping(value="/{isbn}/book",method=RequestMethod.GET)
-//		public BookVO book(@PathVariable("isbn") String isbn) {
-//			
-//			String queryString = naver.queryString("BOOK", isbn);
-//			List<Object> bookList = naver.getNaver(queryString);
-//			
-//			BookVO bookVO = (BookVO) bookList.get(0);
-//			return bookVO;
-//			
-//		}
-
-		/*
-		 * open api 에서는 findbyid 가 아닌 다른 방법을 찾아야한다.
-		 */
-		/*
-		 * DosungPostVO postVO = post.findById(seq);
-		 * model.addAttribute("RECIPE",postVO);
-		 */
-		// log.debug("결과는? " + vo.toString());
 
 		return "cho/post/detail";
 	}
 
 	@RequestMapping(value = "/recipe/insert", method = RequestMethod.GET)
 	public String insert(Model model, HttpSession session) {
-		model.addAttribute("LAYOUT", "POST-INPUT");
+		UserVO user = (UserVO) session.getAttribute("USER");
+		if (user == null) {
+			return "redirect:/ahn/log/log";
 
-		UserVO userVO = (UserVO) session.getAttribute("USER");
-		if (userVO == null) {
-			model.addAttribute("error", "LOGIN_NEED");
-			return "redirect:/cho/user/login";
 		}
-		return null;
+		return "chang/content/insertDetail";
 	}
 
 	@RequestMapping(value = "/recipe/insert", method = RequestMethod.POST)
 	public String insert(DosungRecipeVO recipeVO, HttpSession session, Model model) {
-
 		UserVO userVO = (UserVO) session.getAttribute("USER");
 		if (userVO == null) {
 			model.addAttribute("error", "LOGIN_NEED");
-			return "redirect:/cho/user/login";
+			return "redirect:/ahn/log/log";
 		}
-		
-		
+
 		recipeService.insert(recipeVO);
-		
-		
 		userRecipeService.insert(userVO, recipeVO);
 
 		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
 		return retStr;
 		// insert 처리를 수행한 후 list 보기 화면으로 전환하라
+
+	}
+
+	@RequestMapping(value = "/recipe/{seq}/insertUpdate", method = RequestMethod.GET)
+	public String insertUpdate(@PathVariable("seq") long seq, Model model, HttpSession session) {
+		UserVO user = (UserVO) session.getAttribute("USER");
+		if (user == null) {
+			return "redirect:/ahn/log/log";
+		}
+		DosungRecipeVO oneVO = recipeService.findById(seq);
+		model.addAttribute("postVO", oneVO);
+		return "chang/content/insertDetail";
+	}
+
+	@RequestMapping(value = "/recipe/{seq}/insertUpdate", method = RequestMethod.POST)
+	public String insertUpdate(DosungRecipeVO recipeVO, HttpSession session, Model model) {
+		UserVO userVO = (UserVO) session.getAttribute("USER");
+		if (userVO == null) {
+			model.addAttribute("error", "LOGIN_NEED");
+			return "redirect:/ahn/log/log";
+		}
+
+		recipeService.update(recipeVO);
+		
+
+		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
+		return retStr; // insert 처리를 수행한 후 list 보기 화면으로 전환하라
 
 	}
 
@@ -173,8 +161,8 @@ public class DosungPostController {
 		}
 
 		userRecipeService.delete(REC_SEQ);
+		log.debug("삭제 된 숫자"+ userRecipeService.delete(REC_SEQ));
 		
-
 		String retStr = String.format("redirect:/cho/user/%s/updateRecipe", userVO.getUsername());
 		return retStr;
 	}

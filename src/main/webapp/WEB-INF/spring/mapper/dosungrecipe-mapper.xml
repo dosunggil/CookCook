@@ -44,13 +44,14 @@
 			</insert>
 
 	<update id="update" parameterType="DosungRecipeVO">
-		update tbl_recipeset 
-				password = #{password},	
-				email = #{email},
-				name = #{name},
-				nickname = #{nickname},
-				role = #{role}	
-		where	username = #{username}
+		update tbl_recipe SET
+				RCP_NM = #{RCP_NM},	
+				INFO_ENG = #{INFO_ENG},
+				HASH_TAG = #{HASH_TAG},
+				ATT_FILE_NO_MK = #{ATT_FILE_NO_MK},
+				RCP_PARTS_DTLS = #{RCP_PARTS_DTLS},
+				rcp_content = #{rcp_content}
+		where	RCP_SEQ = #{RCP_SEQ}
 	</update>
 	<delete id="delete">
 		delete from tbl_recipe where rcp_seq= #{rcp_seq}

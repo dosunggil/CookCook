@@ -8,24 +8,24 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main>
-		<form method="post" class="ch-content-input">
+		<form method="post" class="ch-content-input" 
+		<%-- action="${rootPath}/cho/recipe/insert" --%>
+		>
+		<input class="cho-last-code" name="RCP_SEQ" value="${postVO.RCP_SEQ}" hidden="hidden" data-seq="${postVO.RCP_SEQ}">
 			<section class=container>
 				<div class=contents_area>
 					<div class=cont>
 						<div class=divs>
 							<article class=content_in>
-							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00016_1.png -->
-							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00009_1.png -->
-							<!-- http://www.foodsafetykorea.go.kr/uploadimg/cook/10_00010_1.png -->
-								<input type="text" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK" >
+								<input type="file" class="ATT_FILE_NO_MK" name="ATT_FILE_NO_MK"   value="${postVO.ATT_FILE_NO_MK}">
 								<img />
 							</article>
-							<article class=content_in>
-								<h1>
-									<input type="text" class="RCP_NM" name="RCP_NM" value="${postVO.RCP_NM}">
+							<article class="content_in" data-seq="${postVO.RCP_SEQ}">
+								<h1> 
+									<input type="text" placeholder="레시피 이름" class="RCP_NM" name="RCP_NM" value="${postVO.RCP_NM}">
 								</h1>
 								<div class="sub-content">
-									<textarea rows="4" cols="45" class="rcp_content" name="rcp_content" value="${postVO.rcp_content} "></textarea>
+									<textarea rows="4" cols="45" placeholder="레시피를 간략하게 설명하세요."class="rcp_content" name="rcp_content" value="${postVO.rcp_content} "></textarea>
 								</div>
 							</article>
 						</div>
@@ -54,9 +54,9 @@
 							<div id=proc>
 								<div>RECIPE 순서</div>
 							</div>
-							<div>
-								<button type="button" class="add-input">추가하기</button><button type="button" class="delete-input">삭제하기</button>
-							</div>
+<!-- 							<div> -->
+<!-- 								<button type="button" class="add-input">추가하기</button><button type="button" class="delete-input">삭제하기</button> -->
+<!-- 							</div> -->
 							<div class="add-input-image-title">
 								<div>
 									<input type="text" name="manual_img" >
@@ -74,7 +74,9 @@
 					</div>
 				</div>
 			</section>
-			<button class="ch-button-update">수정하기</button>
+			<button class="ch-button-insert">저장</button>
+			<div class="cho-btn-delete" onclick="AAA()" >삭제</div>
+			
 		</form>
 	</main>
 	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>

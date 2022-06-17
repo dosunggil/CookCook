@@ -13,10 +13,10 @@
 		Select * from tbl_users where username = #{username}
 	</select>
 
-	<select id="findByEmail" resultType="UserVO">
-		Select * from tbl_users where email = #{email}
-	</select> 
-
+<select id="findByEmail" resultType="UserVO">
+ 		SELECT * FROM tbl_users
+ 		WHERE email = #{email}
+ 	</select>
 
 	<insert id="insert" parameterType="UserVO">
 

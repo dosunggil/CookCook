@@ -31,13 +31,14 @@
 				<div class="cho-myrecipe-middle">
 					<c:forEach items="${MY_RECIPES}" var="RECIPE">
 						<div class="cho-myrecipe-list" data-seq="${RECIPE.recipe.RCP_SEQ}">
-							<div class="cho-myrecipe-img">
-								<img src="${RECIPE.recipe.ATT_FILE_NO_MK }">
-							</div>
-							<div class="cho-myrecipe-content">
-								<p>${RECIPE.recipe.RCP_NM}</p>
-								<p>${RECIPE.recipe.POST_STAR}</p>
-								<button onclick="AAA()"  class="btn-edit-photo cho-btn-delete">삭제</button>
+							<div class="cho-myrecipe-list-inner">
+								<div class="cho-myrecipe-img">
+									<img src="${RECIPE.recipe.ATT_FILE_NO_MK }">
+								</div>
+								<div class="cho-myrecipe-content"  >
+									<p>${RECIPE.recipe.RCP_NM}</p>
+									<p>${RECIPE.recipe.POST_STAR}</p>
+								</div>
 							</div>
 						</div>
 					</c:forEach>

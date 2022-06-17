@@ -91,7 +91,7 @@ public class DosungUserController {
 		return "cho/user/updatePass";
 	}
 	
-	@RequestMapping(value = "/{username}/updatePass", method = RequestMethod.POST)
+	@RequestMapping(value = "/updatePass", method = RequestMethod.POST)
 	public String updatePass(UserVO userVO) {
 		userService.updatePass(userVO);
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
@@ -120,32 +120,7 @@ public class DosungUserController {
 		return retStr;
 	}
 	
-	
-	@ResponseBody
-	@RequestMapping(value = "/idcheck/{username}", method = RequestMethod.GET)
-	public String idCheck(@PathVariable("username") String username) {
-		UserVO userVO = dosungUserService.findById(username);
-		if (userVO == null) {
-			return "OK";
-		}
-		return "FAIL";
-	}
-
-	@ResponseBody
-	@RequestMapping(value = "/emailcheck", method = RequestMethod.GET)
-	public String emailCheck(String email) {
-		UserVO userVO = dosungUserService.findByEmail(email);
-		if (userVO == null) {
-			return "OK";
-		}
-		return "FAIL";
-	}
-	
-	
-	
-	
-	
-	
+		
 	@RequestMapping(value = "/searchID", method = RequestMethod.GET)
 	public String searchID() {
 		return "ahn/user/searchID";
@@ -208,6 +183,29 @@ public class DosungUserController {
 	public String join(UserVO userVO) {
 		userService.join(userVO);
 		return "redirect:/ahn/log/log";
+	}
+	@ResponseBody
+	@RequestMapping(value = "/idcheck/{username}", method = RequestMethod.GET)
+	public String idcheck(@PathVariable("username") String username) {
+		UserVO userVO = userService.findById(username);
+
+		if (userVO == null) {
+			return "OK";
+		} else {
+			return "FAIL";
+		}
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/emailcheck/{email}", method = RequestMethod.GET)
+	public String nickcheck(@PathVariable("email") String email) {
+		UserVO userVO = (UserVO) userService.findByEmail(email);
+
+		if (userVO == null) {
+			return "OK";
+		} else {
+			return "FAIL";
+		}
 	}
 
 }

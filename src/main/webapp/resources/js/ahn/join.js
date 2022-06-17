@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const id_check = document.querySelector("button.btn-idA");
-  const nick_check = document.querySelector("button.btn-nickA");
+  const mail_check = document.querySelector("button.btn-nickA");
   const join_btn = document.querySelector("button.btn-join");
   const join_form = document.querySelector("form.join");
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const password = inputList[index.password];
   const re_password = inputList[index.re_password];
   const email = inputList[index.email];
-  const nickname = inputList[index.nickname];
+  const nickname = inputList[index.email];
 
   const username_msg = document.querySelector("div.username1");
   const nickname_msg = document.querySelector("div.nickname1");
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       */
     // div.username 항목에 warn이라는 class를 덧붙여라
     nickname_msg.classList.add("warn");
-    nickname_msg.innerText = " * 닉네임을 입력해주세요";
+    nickname_msg.innerText = " * 이메일 주소를 입력해주세요.";
     nickname_msg.style.color;
     nickname.focus();
     return false;
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const username1 = document.querySelector("div.username");
+  const username1 = document.querySelector("input.username");
   if (id_check) {
     id_check.addEventListener("click", () => {
       if (username1.value === "") {
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
       // fetch(`${rootPath}/ahn/user/idcheck?username=${username.value}`)
-      fetch(`${rootPath}/ahn/user/idcheck/${username1.value}`)
+      fetch(`${rootPath}/cho/user/idcheck/${username1.value}`)
         // .then((res) => {
         //   console.table(index);
         //   console.table(res);
@@ -244,14 +244,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (nick_check) {
-    nick_check.addEventListener("click", () => {
+  const mailbox = document.querySelector("input.emailbox");
+  if (mail_check) {
+    mail_check.addEventListener("click", () => {
       if (username.value === "") {
         nickname_isBlank();
         return false;
       }
 
-      fetch(`${rootPath}/ahn/user/nicknamecheck?nickname=${nickname.value}`)
+      fetch(
+        `${rootPath}/cho/user/emailcheck/${nickname.value}?nickname=${nickname.value}`
+      )
         .then((res) => {
           console.table(index);
           console.table(res);
@@ -262,12 +265,12 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("ok출력");
             nickname_msg.classList.remove("warn");
             nickname_msg.classList.add("ok");
-            nickname_msg.innerText = " * 사용할 수 있는 닉네임 입니다";
+            nickname_msg.innerText = " * 사용할 수 있는 이메일 주소 입니다";
             nickname_msg.style.color = "blue";
           } else {
             nickname_msg.classList.remove("ok");
             nickname_msg.classList.add("warn");
-            nickname_msg.innerText = " * 이미 가입된 닉네임 입니다";
+            nickname_msg.innerText = " * 이미 가입된 이메일 주소 입니다";
             nickname_msg.style.color = "red";
           }
         });
