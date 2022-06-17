@@ -159,9 +159,9 @@ public class UserController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/nicknamecheck", method = RequestMethod.GET)
-	public String nickcheck(String nickname) {
-		UserVO userVO = (UserVO) userService.findByNickName(nickname);
+	@RequestMapping(value = "/nicknamecheck/{email}", method = RequestMethod.GET)
+	public String nickcheck(@PathVariable("email") String email) {
+		UserVO userVO = (UserVO) userService.findByEmail(email);
 		// if(username.equalsIgnoreCase(userVO.getUsername()))
 //	if(userVO.getUsername().equalsIgnoreCase(nickname)) {
 //		return "FAIL";

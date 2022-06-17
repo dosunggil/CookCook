@@ -30,8 +30,9 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 
 	@Override
 	public int update(DosungRecipeVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dosungRecipeDaoVv1.update(vo);
+		
+		
 	}
 
 

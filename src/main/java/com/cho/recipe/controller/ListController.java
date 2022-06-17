@@ -64,7 +64,7 @@ public class ListController {
 	
 	
 	@RequestMapping(value="/insert", method=RequestMethod.GET)
-	public String insertContent(Model model, @PathVariable() String rcp_seq) {
+	public String insertContent(Model model) {
 		
 		// detail.jsp 수정 버튼을 누르면 rcp_seq 로 조회해와서 registerDetail(insert 용으로 보내야겠지) 로 값과 함께 보내기
 		

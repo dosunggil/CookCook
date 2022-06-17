@@ -11,7 +11,9 @@ div.form-mainA {
   flex-direction: column;
   display: flex;
 }
-
+.username1, .nickname1 {
+	margin: 0 auto;
+}
 .formA {
   padding: 20px 20px;
   width: 650px;

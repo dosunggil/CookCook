@@ -20,7 +20,7 @@ main.mainA {
 		<div class="formA">
 
 			<form class="join" autocomplete="off" method="POST"
-				action="${rootPath}/ahn/user/searchPASS">
+				action="${rootPath}/cho/user/searchPASS">
 				<fieldset>
 					<legend>Sign Up</legend>
 					<div class="form-mainA">
