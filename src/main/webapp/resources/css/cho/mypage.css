@@ -117,17 +117,17 @@ div.cho-myrecipe-content {
 	flex : 1;
 }
 
-.cho-btn-delete {
-	position: absolute;
-	right: 50px;
-	bottom: 50px;
-}
 
 div.cho-myrecipe-img, div.cho-myrecipe-content {
 	}
 a {
 	text-decoration: none;
 	color : inherit;
+}
+.cho-button-box {
+	width: 1030px;
+	margin: 0 auto;
+	display: flex;
 }
 div.cho-myrecipe-img {
 	border: 1px solid blue;
@@ -181,7 +181,7 @@ div.cho-myrecipe-img {
 	border: 1px solid black;
 }
 
-.btn-edit-photo {
+.btn-edit-photo, .ch-button-insert, .cho-btn-delete {
 	padding: 5px 12px;
 	margin: 5px;
 	border: 1px solid #4444444a;

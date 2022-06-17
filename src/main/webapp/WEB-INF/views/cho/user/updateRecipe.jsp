@@ -9,7 +9,6 @@
 
 </script>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-<link href="${rootPath}/resources/css/cho/mypage.css" rel="stylesheet" />
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main class="cho-main-mypage">
@@ -50,5 +49,6 @@
 		
 
 	</main>
+	<%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </body>
 </html>

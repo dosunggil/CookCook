@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <%@ include file="/WEB-INF/views/include/include_head.jsp"%>
-<link href="${rootPath}/resources/css/cho/mypage.css" rel="stylesheet" />
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<main class="cho-main-mypage">
