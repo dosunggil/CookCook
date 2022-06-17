@@ -76,7 +76,6 @@ public class DosungUserController {
 
 	@RequestMapping(value = "/{username}/update", method = RequestMethod.POST)
 	public String update(UserVO userVO) {
-
 		userService.update(userVO);
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
 		return retStr;

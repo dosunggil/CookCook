@@ -37,7 +37,8 @@
 			</c:if>
 			<c:if test="${not empty USER}">
 				<div class="btn-profile btn-open">
-					<img class="img-profile"src="${rootPath}/resources/images/${USER.photo}" />
+					<img class="img-profile"src="${rootPath}/resources/images/${USER.photo}"
+					 onerror="this.onerror=null; this.src='${rootPath}/resources/images/mokoko.png'"; />
 				</div>
 				<div class="hidden-box">
 					<div class="profile-menu-container">
