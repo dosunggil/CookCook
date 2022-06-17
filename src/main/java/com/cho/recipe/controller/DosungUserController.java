@@ -44,7 +44,12 @@ public class DosungUserController {
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(String error, Model model) {
+	public String login(String error, Model model, HttpSession session) {
+		UserVO vo = (UserVO) (session.getAttribute("USER"));
+		if(vo!=null) {
+			return "home";
+		}
+		
 		model.addAttribute("error", error);
 		model.addAttribute("LAYOUT", "LOGIN");
 		return "ahn/log/log";
@@ -76,6 +81,22 @@ public class DosungUserController {
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
 		return retStr;
 	}
+	
+	
+	@RequestMapping(value = "/{username}/updatePass", method = RequestMethod.GET)
+	public String updatePass(@PathVariable("username") String username, Model model, HttpSession session) {
+		String str = dosungUserService.usercheck(username, model, session);
+		if (str != null)	return str;
+		
+		return "cho/user/updatePass";
+	}
+	
+	@RequestMapping(value = "/{username}/updatePass", method = RequestMethod.POST)
+	public String updatePass(UserVO userVO) {
+		userService.updatePass(userVO);
+		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
+		return retStr;
+	}
 
 	@RequestMapping(value = "/{username}/updateRecipe", method = RequestMethod.GET)
 	public String updateRecipe(@PathVariable("username") String username, Model model, HttpSession session) {
@@ -98,7 +119,8 @@ public class DosungUserController {
 		String retStr = String.format("redirect:/cho/user/%s/update", userVO.getUsername());
 		return retStr;
 	}
-
+	
+	
 	@ResponseBody
 	@RequestMapping(value = "/idcheck/{username}", method = RequestMethod.GET)
 	public String idCheck(@PathVariable("username") String username) {
@@ -118,6 +140,12 @@ public class DosungUserController {
 		}
 		return "FAIL";
 	}
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/searchID", method = RequestMethod.GET)
 	public String searchID() {
 		return "ahn/user/searchID";
@@ -167,7 +195,12 @@ public class DosungUserController {
 	}
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String join() {
+	public String join(HttpSession session) {
+		UserVO vo = (UserVO) (session.getAttribute("USER"));
+		if(vo!=null) {
+			return "home";
+		}
+		
 		return "ahn/user/join";
 	}
 

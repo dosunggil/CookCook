@@ -11,38 +11,33 @@
 	<main class="cho-main-mypage">
 		<nav class="cho-nav-mypage">
 			<ul>
-				<li>내 프로필</li>
-				<li>레시피 관리</li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/update">내 프로필</a></li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/updatePass">보안 설정</a></li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/updateRecipe">내 레시피</a></li>
 			</ul>
 		</nav>
 		<div class="cho-container-mypage">
 			<div class="cho-container-mypage2">
 				<div class="cho-mypage-top">
-					<h2>프로필 수정</h2>
-					<p>프로필 사진과 닉네임을 수정할 수 있습니다.</p>
+					<h2>보안 설정</h2>
+					<p>비밀번호를 수정할 수 있습니다.</p>
 				</div>
 
-				<form method="POST" action="${rootPaht}/cho/user/update">
+				<form method="POST"  class="join">
 							<input type="text" value="${USER.username}" name="username" hidden="hidden">
-					<div class="cho-mypage-middle">
+					<div class="cho-mypage-middle cho-mypage-middle-pass">
 						<div class="cho-edit-status">
-							<div>이름</div>
-							<input type="text" value="${USER.nickname}" name="nickname">
-							<div>상태메세지</div>
-							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.bio}</textarea>
+							<div>현재 비밀번호</div>
+							<input type="password" name="pre_password">
+							<div>새 비밀번호</div>
+							<input  class="password1" type="password"  name="password">
+							<div>새 비밀번호 확인</div>
+							<input  class="re_password1" type="password"  name="re_password">
 						</div>
-						<div class="cho-edit-photo">
-							<img src="${USER.photo}" name="photo">
-							<div class="cho-edit-btns">
-								<input accept=".gif, .jpg, .png" type="file" name="photo"
-									id="cho-photo" style="display: none;"> <label
-									class="btn-edit-photo" for="cho-photo">수정</label>
-								<div class="btn-edit-photo">삭제</div>
-							</div>
-						</div>
+						
 					</div>
 					<div class="cho-mypage-bottom">
-						<button type="button">저장</button>
+						<button type="button" id="btn-modify">저장</button>
 						<div class="btn-edit-photo">취소</div>
 					</div>
 				</form>

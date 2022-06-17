@@ -35,7 +35,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/KS50514/Downloads/devTools/lombok.jar"/>
-	<classpathentry kind="lib" path="C:/Users/KS50514/Downloads/devTools/ojdbc8-21.5.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

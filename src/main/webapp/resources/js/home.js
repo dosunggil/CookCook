@@ -8,15 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const list_box = document.querySelector(".list_box");
 
-  if (list_box) {
-    list_box.addEventListener("click", () => {
-      // 추후 수정 예정 현재 li에 클릭이벤트중
-      let url = `${rootPath}`;
-      url += "/detail";
-      document.location.href = url;
-    });
-  }
-
   if (btn_open[0]) {
     btn_open[0].addEventListener("click", () => {
       // const visibility = drop_menu.style.visibility;

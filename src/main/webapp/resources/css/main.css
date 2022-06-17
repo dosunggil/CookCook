@@ -12,7 +12,9 @@ a {
 body {
 	background-color: #e7e7e77a;
 }
-
+img.img-list-home {
+	object-fit : cover;
+}
 header {
 	display: flex;
 	position: relative;
@@ -30,6 +32,7 @@ div.btn-profile img.img-profile {
 	height: 40px;
 	border-radius: 50%;
 	object-fit : cover;
+	border:1px solid black
 }
 
 div.top_nav {
@@ -346,9 +349,7 @@ div.content_main .list_box {
 img.img-login {
 	width:30px;
 }
-img.img-profile {
-	width:50px;
-}
+
 div.text-box {
 	margin: 5px;
 	font-weight: 500;

@@ -74,6 +74,16 @@ a.cho-btn-regrecipe {
 	width: 900px;
 }
 
+.cho-mypage-middle-pass {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #4444444a;
+	width: 900px;
+}
+
 .cho-myrecipe-middle {
 	margin-top: 50px;
 	display: flex;

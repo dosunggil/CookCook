@@ -19,6 +19,10 @@ colum-mainA-btn {
 
 .form-mainA {
 	margin: 10px;
+
+}
+main.mainA {
+	height: 100vh;
 }
 </style>
 </head>

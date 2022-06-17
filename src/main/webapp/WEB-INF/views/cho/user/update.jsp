@@ -12,7 +12,7 @@
 		<nav class="cho-nav-mypage">
 			<ul>
 				<li><a href="${rootPath}/cho/user/${USER.username}/update">내 프로필</a></li>
-				<li>암호 관리</li>
+				<li><a href="${rootPath}/cho/user/${USER.username}/updatePass">보안 설정</a></li>
 				<li><a href="${rootPath}/cho/user/${USER.username}/updateRecipe">내 레시피</a></li>
 			</ul>
 		</nav>
@@ -23,7 +23,7 @@
 					<p>프로필 사진과 닉네임을 수정할 수 있습니다.</p>
 				</div>
 
-				<form method="POST" class="cho-form-update">
+				<form method="POST" class="cho-form-update" >
 					<input type="text" value="${USER.username}" name="username" hidden="hidden">
 					<div class="cho-mypage-middle">
 						<div class="cho-edit-status">
