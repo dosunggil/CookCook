@@ -33,7 +33,7 @@
 							<textarea placeholder="자기소개 글을 입력하세요." rows="7" name="bio">${USER.bio}</textarea>
 						</div>
 						<div class="cho-edit-photo">
-							<img src="${rootPath}/resources/images/${USER.photo}" >
+							<img src="${rootPath}/resources/images/${USER.photo}"  onerror="this.onerror=null; this.src='${rootPath}/resources/images/mokoko.png'"; >
 							<div class="cho-edit-btns">
 								<input accept=".gif, .jpg, .png" type="file" name="photo"
 								value="${USER.photo}"
