@@ -79,18 +79,30 @@ public class DosungPostController {
 		String quString = post.queryString("LIST", nm);
 		List<DosungPostVO> recipeList = post.getRecipes(quString);
 		List<DosungDetailVO> detailList = post.getDetail(quString);
-		log.debug("받아온 디테일 내용입니다1. " + recipeList.toString());
-		log.debug("받아온 디테일 내용입니다2. " + detailList.toString());
-
+		
+		List<DosungRecipeVO> llist = recipeService.findByNm(nm.split(" ")[0]);
+		
+		
 		DosungPostVO postVO = null;
-		for (DosungPostVO dVO : recipeList) {
-			if (dVO.getRCP_SEQ() == seq) {
-				postVO = dVO;
+		DosungDetailVO dVO = null;
+		if(recipeList ==null) {
+			for (DosungPostVO VVO : llist) {
+				if (VVO.getRCP_SEQ() == seq) {
+					postVO = VVO;
+					break;
+				}
+			}
+			dVO = detailList.get(0);
+			
+		} else {
+		for (DosungPostVO VVO : recipeList) {
+			if (VVO.getRCP_SEQ() == seq) {
+				postVO = VVO;
 				break;
 			}
 		}
-		DosungDetailVO dVO = null;
 		dVO = detailList.get(0);
+		}
 
 		model.addAttribute("RECIPE", postVO);
 		model.addAttribute("DETAIL", dVO);
