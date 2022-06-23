@@ -24,4 +24,5 @@ public interface DosungUserDao extends GenericDao<UserVO, String> {
 	public String usercheck(String username, Model model, HttpSession session);
 	public String loggin(UserVO vo , Model model, HttpSession session);
 
+
 }

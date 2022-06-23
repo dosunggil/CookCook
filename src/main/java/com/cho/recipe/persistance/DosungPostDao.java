@@ -17,4 +17,8 @@ public interface DosungPostDao extends GenericDao<DosungPostVO, String>{
 	public List<DosungPostVO> getAllRecipes();
 	public List<DosungDetailVO> getDetail(String queryString);
 	
+
+	
+	
+	
 }

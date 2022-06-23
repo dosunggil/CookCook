@@ -18,6 +18,7 @@ import com.cho.recipe.model.DosungManualVO;
 import com.cho.recipe.model.DosungPostVO;
 import com.cho.recipe.model.DosungRecipeVO;
 import com.cho.recipe.model.UserVO;
+import com.cho.recipe.persistance.UserDao;
 import com.cho.recipe.service.ContentsService;
 import com.cho.recipe.service.DosungPostService;
 import com.cho.recipe.service.DosungRecipeService;
@@ -34,6 +35,9 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HomeController {
 
+	@Autowired
+	private UserDao dao;
+	
 	
 	@Autowired
 	private DosungPostService post;
@@ -74,6 +78,7 @@ public class HomeController {
 		randList.add(recipeList.get(intRan2));
 		randList.add(recipeList.get(intRan3));
 		model.addAttribute("RECIPES", randList);
+		log.debug("여길봐" + dao);
 		return "home";
 	}
 	@RequestMapping(value = "/detail/{postseq}", method=RequestMethod.GET)

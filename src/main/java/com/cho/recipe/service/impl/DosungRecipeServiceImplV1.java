@@ -1,5 +1,6 @@
 package com.cho.recipe.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,16 @@ public class DosungRecipeServiceImplV1 implements DosungRecipeService {
 
 	@Override
 	public List<DosungRecipeVO> findByNm(String title) {
-		return dosungRecipeDaoVv1.findByNm(title);
+		List<DosungRecipeVO> llist = dosungRecipeDaoVv1.selectAll();
+		List<DosungRecipeVO> trueList = new ArrayList<>();
+		
+		for(DosungRecipeVO vo : llist) {
+			if(vo.getRCP_NM().contains(title)) {
+				trueList.add(vo);
+			}
+			
+		}
+		return trueList;
 	}
 
 	
